@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>Erfolgs-Architektur & Methoden-Explorer</title>
     <meta name="description" content="Systematischer Ansatz für nachhaltigen Erfolg: Von Motivation über Disziplin bis zur Identität. Praktische Methoden für Load, Output, Off und Progress. Wissenschaftlich fundiert, praxisnah umsetzbar.">
     <link rel="canonical" href="https://example.com/">
@@ -1081,57 +1082,60 @@
             </div>
 
             <!-- LEGEND -->
-            <div style="margin-top: var(--space-6);">
-                <div class="section-label" style="margin-bottom: var(--space-4);">Legende</div>
-                
-                <div style="display: flex; flex-direction: column; gap: var(--space-5);">
-                  <!-- Gruppe 1: Wirkbereiche -->
-                  <div>
-                    <div class="text-secondary" style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-3);">
-                      Wirkbereiche
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="width: 12px; height: 12px; background: #0ea5e9; border-radius: 50%; flex-shrink: 0;"></span>
-                        <span class="text-primary">LOAD</span>
+            <details class="dayflow-legend" style="margin-top: var(--space-6);">
+                <summary class="dayflow-legend__summary">
+                    <span class="dayflow-legend__summary-text">Legende anzeigen</span>
+                </summary>
+                <div class="dayflow-legend__content" style="margin-top: var(--space-4);">
+                    <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+                      <!-- Gruppe 1: Wirkbereiche -->
+                      <div>
+                        <div class="text-secondary" style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-3);">
+                          Wirkbereiche
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="width: 12px; height: 12px; background: #0ea5e9; border-radius: 50%; flex-shrink: 0;"></span>
+                            <span class="text-primary">LOAD</span>
+                          </div>
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; flex-shrink: 0;"></span>
+                            <span class="text-primary">OUTPUT</span>
+                          </div>
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="width: 12px; height: 12px; background: var(--text-secondary); border-radius: 50%; flex-shrink: 0;"></span>
+                            <span class="text-primary">OFF</span>
+                          </div>
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="width: 12px; height: 12px; background: #a855f7; border-radius: 50%; flex-shrink: 0;"></span>
+                            <span class="text-primary">PROGRESS</span>
+                          </div>
+                        </div>
                       </div>
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; flex-shrink: 0;"></span>
-                        <span class="text-primary">OUTPUT</span>
-                      </div>
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="width: 12px; height: 12px; background: var(--text-secondary); border-radius: 50%; flex-shrink: 0;"></span>
-                        <span class="text-primary">OFF</span>
-                      </div>
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="width: 12px; height: 12px; background: #a855f7; border-radius: 50%; flex-shrink: 0;"></span>
-                        <span class="text-primary">PROGRESS</span>
-                      </div>
-                    </div>
-                  </div>
 
-                  <!-- Gruppe 2: Gewohnheitsklassen -->
-                  <div>
-                    <div class="text-secondary" style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-3);">
-                      Gewohnheitsklassen
+                      <!-- Gruppe 2: Gewohnheitsklassen -->
+                      <div>
+                        <div class="text-secondary" style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-3);">
+                          Gewohnheitsklassen
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">B</span>
+                            <span class="text-primary">Baseline</span>
+                          </div>
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">R</span>
+                            <span class="text-primary">Rotation</span>
+                          </div>
+                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
+                            <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">I</span>
+                            <span class="text-primary">Intervention</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">B</span>
-                        <span class="text-primary">Baseline</span>
-                      </div>
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">R</span>
-                        <span class="text-primary">Rotation</span>
-                      </div>
-                      <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                        <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">I</span>
-                        <span class="text-primary">Intervention</span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-            </div>
+            </details>
 
             <p class="text-secondary" style="font-size: 14px; max-width: 800px; line-height: 1.6; margin-top: var(--space-6);">
               Jeder Block folgt derselben Logik:

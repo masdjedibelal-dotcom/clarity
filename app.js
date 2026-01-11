@@ -33,11 +33,33 @@ const steps = [
     { t: "Identität", d: "Der finale Zustand: Die Handlung ist eins mit dem Selbstbild. Man tut Dinge nicht mehr, um ein Ziel zu erreichen, sondern weil man dieser Mensch IST. Dies ist die stabilste Form des Erfolgs, da kein äußerer Druck und keine künstliche Motivation mehr nötig sind.", s: "Ontologische Transformation", r: "Statische Identität", research:["Identity-Based Habits: 'Ich bin ein Nichtraucher' ist stärker als 'Ich versuche aufzuhören'.","Kognitive Dissonanz sorgt dafür, dass wir uns konsistent zu unserem Selbstbild verhalten.","Werte und Handlungen sind in perfekter Resonanz, was tiefe Zufriedenheit erzeugt."] }
 ];
 
+// Stabiles Mapping für Chart-Datasets: Keys, Labels, Farben
+const CHART_DATASET_CONFIG = {
+    motivation: {
+        key: 'motivation',
+        label: 'Motivation',
+        borderColor: '#f59e0b'
+    },
+    discipline: {
+        key: 'discipline',
+        label: 'Disziplin',
+        borderColor: '#ef4444'
+    },
+    habit: {
+        key: 'habit',
+        label: 'Gewohnheit',
+        borderColor: '#10b981'
+    }
+};
+
+// Reihenfolge für Chart-Rendering (konsistent mit Mapping)
+const CHART_DATASET_ORDER = ['motivation', 'discipline', 'habit'];
+
 const phasesData = [
-    { n: "Aktivierung", m: "Tag 1 - 10", d: "Die Phase der Begeisterung. Alles ist neu, die Energie ist explosiv. Hier werden Visionen geboren, aber noch keine stabilen Strukturen gebaut. Wichtig: Den Schwung nutzen, um die Umgebung vorzubereiten.", val: [100, 20, 0] },
-    { n: "Widerstand", m: "Tag 11 - 30", d: "Die Phase der Ernüchterung. Der Körper und das Gehirn rebellieren gegen die Veränderung. Schmerz und Müdigkeit werden spürbar. Hier entscheidet sich, wer Systeme baut und wer nur Träume hat.", val: [30, 90, 10] },
-    { n: "Integration", m: "Tag 31 - 60", d: "Die Phase der Normalisierung. Die Anstrengung sinkt spürbar. Es fühlt sich nicht mehr wie ein Fremdkörper an. Das Gehirn beginnt, die neuen Bahnen zu bevorzugen. Erste messbare Erfolge werden sichtbar.", val: [20, 50, 60] },
-    { n: "Stabilität", m: "Tag 60+", d: "Die Phase der Meisterschaft. Die neue Handlung ist der Standard. Sie kostet keine Willenskraft mehr. Man muss sich eher überwinden, es NICHT zu tun. Die Identität hat sich erfolgreich transformiert.", val: [80, 10, 100] }
+    { n: "Aktivierung", m: "Tag 1 - 10", d: "Die Phase der Begeisterung. Alles ist neu, die Energie ist explosiv. Hier werden Visionen geboren, aber noch keine stabilen Strukturen gebaut. Wichtig: Den Schwung nutzen, um die Umgebung vorzubereiten.", val: { motivation: 100, discipline: 20, habit: 0 } },
+    { n: "Widerstand", m: "Tag 11 - 30", d: "Die Phase der Ernüchterung. Der Körper und das Gehirn rebellieren gegen die Veränderung. Schmerz und Müdigkeit werden spürbar. Hier entscheidet sich, wer Systeme baut und wer nur Träume hat.", val: { motivation: 30, discipline: 90, habit: 10 } },
+    { n: "Integration", m: "Tag 31 - 60", d: "Die Phase der Normalisierung. Die Anstrengung sinkt spürbar. Es fühlt sich nicht mehr wie ein Fremdkörper an. Das Gehirn beginnt, die neuen Bahnen zu bevorzugen. Erste messbare Erfolge werden sichtbar.", val: { motivation: 20, discipline: 50, habit: 60 } },
+    { n: "Stabilität", m: "Tag 60+", d: "Die Phase der Meisterschaft. Die neue Handlung ist der Standard. Sie kostet keine Willenskraft mehr. Man muss sich eher überwinden, es NICHT zu tun. Die Identität hat sich erfolgreich transformiert.", val: { motivation: 80, discipline: 10, habit: 100 } }
 ];
 
        const foundationData = [
@@ -1807,22 +1829,28 @@ function openPhaseSheet(index) {
   const safeTitle = (p.n) ? escapeHtml(String(p.n)) : '';
   const safeDesc = (p.d) ? escapeHtml(String(p.d)) : '';
   
-  // Rendere Verlauf-Liste aus val-Array
+  // Rendere Verlauf-Liste aus val-Objekt (mit stabilem Mapping)
   let verlaufHTML = '';
-  if (Array.isArray(p.val) && p.val.length > 0) {
-    const labels = ['Motivation', 'Disziplin', 'Gewohnheit'];
-    verlaufHTML = `
-      <ul style="list-style: none; padding: 0; margin: 0;">
-        ${p.val.map((val, idx) => {
-          const safeLabel = labels[idx] ? escapeHtml(String(labels[idx])) : `Wert ${idx + 1}`;
-          const safeVal = escapeHtml(String(val || 0));
-          return `<li style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-2) 0; border-bottom: 1px solid var(--border);">
-            <span class="text-secondary" style="font-size: 14px;">${safeLabel}</span>
-            <span class="text-primary" style="font-size: 14px; font-weight: 600;">${safeVal}</span>
-          </li>`;
-        }).join('')}
-      </ul>
-    `;
+  if (p.val && typeof p.val === 'object') {
+    const verlaufItems = CHART_DATASET_ORDER.map(key => {
+      const config = CHART_DATASET_CONFIG[key];
+      if (!config || p.val[key] === undefined) return '';
+      
+      const safeLabel = escapeHtml(String(config.label));
+      const safeVal = escapeHtml(String(p.val[key] || 0));
+      return `<li style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-2) 0; border-bottom: 1px solid var(--border);">
+        <span class="text-secondary" style="font-size: 14px;">${safeLabel}</span>
+        <span class="text-primary" style="font-size: 14px; font-weight: 600;">${safeVal}</span>
+      </li>`;
+    }).filter(item => item !== '').join('');
+    
+    if (verlaufItems) {
+      verlaufHTML = `
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          ${verlaufItems}
+        </ul>
+      `;
+    }
   }
   
   // Rendere Content in Bottom-Sheet
@@ -3229,37 +3257,34 @@ function initializeChartsNow() {
                 throw new Error('phasesData-Array ist leer oder nicht verfügbar.');
             }
 
-            // Validierung: Prüfe ob alle Phasen val-Arrays haben
-            const validPhases = phasesData.filter(p => p && Array.isArray(p.val) && p.val.length >= 3);
+            // Validierung: Prüfe ob alle Phasen val-Objekte haben
+            const validPhases = phasesData.filter(p => p && p.val && typeof p.val === 'object' && p.val.motivation !== undefined && p.val.discipline !== undefined && p.val.habit !== undefined);
             if (validPhases.length === 0) {
                 throw new Error('Keine gültigen Phasen-Daten gefunden.');
             }
+
+            // Erstelle Datasets basierend auf stabilem Mapping
+            const datasets = CHART_DATASET_ORDER.map(key => {
+                const config = CHART_DATASET_CONFIG[key];
+                if (!config) {
+                    console.warn(`Chart-Dataset-Config für Key "${key}" nicht gefunden.`);
+                    return null;
+                }
+                
+                return {
+                    label: config.label,
+                    data: validPhases.map(p => p.val[key] || 0),
+                    borderColor: config.borderColor,
+                    tension: 0.4,
+                    borderWidth: key === 'habit' ? 4 : undefined // Gewohnheit dicker
+                };
+            }).filter(dataset => dataset !== null); // Entferne null-Einträge
 
             window.energyChart = new Chart(ctxE, {
                 type: 'line',
                 data: {
                     labels: validPhases.map(p => (p && p.n) ? p.n : ''),
-                    datasets: [
-                        { 
-                            label: 'Motivation', 
-                            data: validPhases.map(p => p.val[0] || 0), 
-                            borderColor: '#f59e0b', 
-                            tension: 0.4 
-                        },
-                        { 
-                            label: 'Disziplin', 
-                            data: validPhases.map(p => p.val[1] || 0), 
-                            borderColor: '#ef4444', 
-                            tension: 0.4 
-                        },
-                        { 
-                            label: 'Gewohnheit', 
-                            data: validPhases.map(p => p.val[2] || 0), 
-                            borderColor: '#10b981', 
-                            tension: 0.4, 
-                            borderWidth: 4 
-                        }
-                    ]
+                    datasets: datasets
                 },
                 options: { 
                     maintainAspectRatio: false,
@@ -3488,6 +3513,18 @@ function initializeApp() {
         updateStep(0);
     } catch (error) {
         console.error('Fehler bei updateStep(0) Initialisierung:', error);
+    }
+    
+    // Initialisiere erste Phase als aktiv (Index 0) - NACH Chart-Initialisierung
+    try {
+        if (Array.isArray(phasesData) && phasesData.length > 0) {
+            // Warte kurz, damit Charts initialisiert sind
+            setTimeout(() => {
+                updatePhaseUI(0);
+            }, 100);
+        }
+    } catch (error) {
+        console.error('Fehler bei updatePhaseUI(0) Initialisierung:', error);
     }
     
     // Trap-View initialisieren (Mobile: Erfolgs-Spirale als Default)
@@ -4026,17 +4063,45 @@ function initDayflowCarousel() {
   renderDayFlow();
 }
 
+/**
+ * Initialize Dayflow Legend: Update summary text on toggle
+ */
+function initDayflowLegend() {
+  const legend = document.querySelector('.dayflow-legend');
+  if (!legend) return;
+  
+  const summaryText = legend.querySelector('.dayflow-legend__summary-text');
+  if (!summaryText) return;
+  
+  // Update text based on open state
+  function updateSummaryText() {
+    if (legend.hasAttribute('open')) {
+      summaryText.textContent = 'Legende verbergen';
+    } else {
+      summaryText.textContent = 'Legende anzeigen';
+    }
+  }
+  
+  // Listen for toggle events
+  legend.addEventListener('toggle', updateSummaryText);
+  
+  // Set initial text
+  updateSummaryText();
+}
+
 // Warte auf DOM-Content-Loaded, dann initialisiere
 // DOMContentLoaded ist besser als window.onload, da es früher feuert
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       initializeApp();
       initDayflowCarousel();
+      initDayflowLegend();
     });
 } else {
     // DOM ist bereits geladen, initialisiere sofort
     initializeApp();
     initDayflowCarousel();
+    initDayflowLegend();
 }
 
 (() => {

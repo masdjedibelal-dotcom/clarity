@@ -77,6 +77,25 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Force Light Theme - Override System/Browser Dark Mode */
+html {
+  color-scheme: light;
+}
+
+html,
+html[data-theme],
+html[data-color-scheme] {
+  color-scheme: light !important;
+}
+
+/* Override any prefers-color-scheme: dark media queries */
+@media (prefers-color-scheme: dark) {
+  html,
+body {
+    color-scheme: light !important;
+  }
+}
+
 /* ===================================================================
  * VISUALLY HIDDEN (for screen readers)
  * =================================================================== */
@@ -103,6 +122,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
 }
 
 /* ===================================================================
@@ -542,7 +562,7 @@ body {
   }
   
   #app-modal-content {
-    max-width: 700px;
+  max-width: 700px;
   }
 }
 
@@ -561,8 +581,8 @@ body {
     border-top-right-radius: var(--radius-2xl);
     border-top: 1px solid var(--border);
     box-shadow: var(--shadow-xl);
-    width: 100%;
-    max-height: 90vh;
+  width: 100%;
+  max-height: 90vh;
     position: relative;
     padding: var(--space-6);
     padding-top: var(--space-8);
@@ -681,13 +701,13 @@ body {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   z-index: 9999;
-  opacity: 0;
+      opacity: 0; 
   transition: opacity 150ms ease;
   pointer-events: none;
-}
+  }
 
 .bottom-sheet-backdrop.active {
-  opacity: 1;
+      opacity: 1; 
   pointer-events: auto;
 }
 
@@ -861,7 +881,7 @@ p, li {
 
 @supports (backdrop-filter: blur(8px)) {
   .learn-nav {
-    background: rgba(20, 20, 20, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
   }
 }
@@ -979,7 +999,7 @@ p, li {
 
 @supports (backdrop-filter: blur(8px)) {
   .stepbar-wrap {
-    background: rgba(20, 20, 20, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
   }
 }
@@ -1304,9 +1324,9 @@ section:has([data-acc-trigger][aria-expanded="true"]) [data-acc-body] {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
   }
 }
 
@@ -1604,6 +1624,109 @@ section:has([data-acc-trigger][aria-expanded="true"]) [data-acc-body] {
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-muted);
+}
+
+/* ===================================================================
+ * DAYFLOW LEGEND (Collapsible on Mobile)
+ * =================================================================== */
+
+.dayflow-legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* Summary: Button-ähnliches Styling */
+.dayflow-legend__summary {
+  list-style: none;
+  cursor: pointer;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-family);
+  font-size: var(--f-size-sm);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 150ms ease, border-color 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.dayflow-legend__summary::-webkit-details-marker {
+      display: none;
+  }
+
+.dayflow-legend__summary::marker {
+  display: none;
+}
+
+.dayflow-legend__summary::after {
+  content: '▼';
+  font-size: 10px;
+  color: var(--text-secondary);
+  transition: transform 150ms ease, color 150ms ease;
+  margin-left: var(--space-2);
+  flex-shrink: 0;
+}
+
+.dayflow-legend[open] .dayflow-legend__summary::after {
+  transform: rotate(180deg);
+}
+
+.dayflow-legend__summary:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-light);
+}
+
+.dayflow-legend__summary:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-lg);
+}
+
+.dayflow-legend__summary:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.dayflow-legend__content {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: var(--surface);
+}
+
+/* Desktop (>= 641px): Immer offen, kein Collapse */
+@media (min-width: 641px) {
+  .dayflow-legend {
+    display: block;
+  }
+  
+  .dayflow-legend__summary {
+    display: none;
+  }
+  
+  .dayflow-legend__content {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    margin-top: 0;
+  }
+}
+
+/* Mobile (<= 640px): Collapsed by default */
+@media (max-width: 640px) {
+  .dayflow-legend {
+    display: block;
+  }
+  
+  .dayflow-legend:not([open]) .dayflow-legend__content {
+    display: none;
+  }
 }
 
 /* ===================================================================
