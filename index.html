@@ -4,1676 +4,373 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <title>Erfolgs-Architektur & Methoden-Explorer</title>
+    <title>LOOP System – Erfolg durch Struktur, nicht Willenskraft</title>
     <meta name="description" content="Systematischer Ansatz für nachhaltigen Erfolg: Von Motivation über Disziplin bis zur Identität. Praktische Methoden für Load, Output, Off und Progress. Wissenschaftlich fundiert, praxisnah umsetzbar.">
     <link rel="canonical" href="https://example.com/">
+    <meta name="color-scheme" content="light">
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Erfolgs-Architektur & Methoden-Explorer",
-      "description": "Systematischer Ansatz für nachhaltigen Erfolg: Von Motivation über Disziplin bis zur Identität. Praktische Methoden für Load, Output, Off und Progress. Wissenschaftlich fundiert, praxisnah umsetzbar.",
-      "inLanguage": "de",
-      "about": {
-        "@type": "Thing",
-        "name": "Persönliche Entwicklung und nachhaltiger Erfolg",
-        "description": "Ein wissenschaftlich fundiertes System zur Entwicklung von Gewohnheiten, Identität und langfristigem Erfolg durch systematische Methoden in den Bereichen Energie, Output, Regeneration und Fortschritt."
-      }
-    }
+    {"@context":"https://schema.org","@type":"WebPage","name":"LOOP System – Erfolg durch Struktur, nicht Willenskraft","description":"Erfolg durch System, nicht Willenskraft. Das LOOP-Modell für Load, Output, Off und Progress.","inLanguage":"de","about":{"@type":"Thing","name":"Persönliche Entwicklung und nachhaltiger Erfolg"}}
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="antialiased">
+<body>
 
 <noscript>
-  <div style="padding: var(--space-4); background: var(--surface); border-bottom: 1px solid var(--border); text-align: center;">
-    <p style="margin: 0; color: var(--text); font-size: 14px; line-height: 1.6;">
-      Diese Anwendung benötigt JavaScript, um vollständig zu funktionieren. Bitte aktivieren Sie JavaScript in Ihren Browser-Einstellungen, um alle interaktiven Funktionen nutzen zu können.
-    </p>
+  <div style="padding: 16px; background: var(--bg2); border-bottom: 1px solid var(--br); text-align: center;">
+    <p style="margin: 0; color: var(--t); font-size: 14px; line-height: 1.6;">Diese Anwendung benötigt JavaScript. Bitte aktivieren Sie JavaScript in Ihren Browser-Einstellungen.</p>
   </div>
 </noscript>
 
- <!-- STICKY LERN-NAVIGATION -->
-<div class="learn-nav" style="background: var(--surface-card); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 12px 0; position: sticky; top: 0; z-index: 100;">
-  <div class="section-wrap">
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
-      <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
-        <span class="text-secondary" style="font-size: 12px; font-weight: 500; white-space: nowrap;">Du bist hier:</span>
-        <span class="learn-title text-primary" style="font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Warum dieses System</span>
-      </div>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <div class="learn-dots" style="display: flex; align-items: center; gap: 6px;"></div>
-        <button type="button" id="learn-next-btn" class="learn-next-btn" style="font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: var(--radius-main); background: var(--accent); color: #ffffff; border: none; cursor: pointer; transition: all var(--transition-fast); white-space: nowrap;" onmouseover="this.style.background='#f59e0b'" onmouseout="this.style.background='var(--accent)'">
-          Weiter →
-        </button>
-      </div>
+<nav class="nav">
+  <a href="#" class="nav-logo">LOOP<em>.</em>System</a>
+  <div class="nav-links">
+    <a href="#system">Das System</a>
+    <a href="#methoden">Methoden</a>
+    <a href="#produkte">Produkte</a>
+  </div>
+  <a href="#produkte" class="nav-cta">Jetzt entdecken →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <span class="ey">Erfolg durch System, nicht Willenskraft</span>
+    <h1>Du weißt es.<br><i>Mach es auch.</i></h1>
+    <p class="lead" style="margin-top:18px;">Motivation ist der schlechteste Plan den du haben kannst. Wer langfristig wächst, hat kein besseres Mindset – er hat ein besseres System.</p>
+    <div class="hero-acts">
+      <a href="#produkte" class="btn btn-dk">Produkte ansehen →</a>
+      <a href="#system" class="btn btn-gh">Das System verstehen</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hcl">Das LOOP-Modell</div>
+    <div class="li-list">
+      <div class="li-item"><div class="li-dot" style="background:var(--am)"></div><div><div class="li-t">Load – Energie &amp; Fokus</div><div class="li-s">Was dein System antreibt</div></div></div>
+      <div class="li-item"><div class="li-dot" style="background:var(--gn)"></div><div><div class="li-t">Output – Handlung &amp; Umsetzung</div><div class="li-s">Was du tatsächlich tust</div></div></div>
+      <div class="li-item"><div class="li-dot" style="background:var(--bl)"></div><div><div class="li-t">Off – Erholung &amp; Reset</div><div class="li-s">Was dich wieder leistungsfähig macht</div></div></div>
+      <div class="li-item"><div class="li-dot" style="background:var(--pu)"></div><div><div class="li-t">Progress – Wachstum &amp; Identität</div><div class="li-s">Was aus Gewohnheit Identität macht</div></div></div>
     </div>
   </div>
 </div>
 
-<!-- HORIZONTALER PROGRESS / STEP BAR -->
-<div class="stepbar-wrap">
-  <div class="section-wrap">
-    <div id="stepbar" class="process-stepper" role="tablist" aria-label="Kapitel">
-      <!-- STEP 1: Start -->
-      <button class="process-step active" data-step="start" role="tab" aria-selected="true">
-        <div class="process-step__icon">🚀</div>
-        <div class="process-step__number">1</div>
-        <div class="process-step__label">Start</div>
-      </button>
-      <div class="process-step__arrow">→</div>
-      
-      <!-- STEP 2: Innen -->
-      <button class="process-step" data-step="innen" role="tab" aria-selected="false">
-        <div class="process-step__icon">⚙️</div>
-        <div class="process-step__number">2</div>
-        <div class="process-step__label">Innen</div>
-      </button>
-      <div class="process-step__arrow">→</div>
-      
-      <!-- STEP 3: Identität -->
-      <button class="process-step" data-step="identitaet" role="tab" aria-selected="false">
-        <div class="process-step__icon">🎯</div>
-        <div class="process-step__number">3</div>
-        <div class="process-step__label">Identität</div>
-      </button>
-      <div class="process-step__arrow">→</div>
-      
-      <!-- STEP 4: System -->
-      <button class="process-step" data-step="system" role="tab" aria-selected="false">
-        <div class="process-step__icon">🔄</div>
-        <div class="process-step__number">4</div>
-        <div class="process-step__label">System</div>
-      </button>
-      <div class="process-step__arrow">→</div>
-      
-      <!-- STEP 5: Exkurs -->
-      <button class="process-step" data-step="exkurs" role="tab" aria-selected="false">
-        <div class="process-step__icon">📚</div>
-        <div class="process-step__number">5</div>
-        <div class="process-step__label">Exkurs</div>
-      </button>
-      <div class="process-step__arrow">→</div>
-      
-      <!-- STEP 6: Methoden -->
-      <button class="process-step" data-step="methoden" role="tab" aria-selected="false">
-        <div class="process-step__icon">🛠️</div>
-        <div class="process-step__number">6</div>
-        <div class="process-step__label">Methoden</div>
-      </button>
-      <div class="process-step__arrow">→</div>
-      
-      <!-- STEP 7: Wrap-Up -->
-      <button class="process-step" data-step="wrapup" role="tab" aria-selected="false">
-        <div class="process-step__icon">✅</div>
-        <div class="process-step__number">7</div>
-        <div class="process-step__label">Wrap-Up</div>
-      </button>
+<div class="dv"></div>
+
+<!-- PROBLEM -->
+<div class="prob-bg">
+  <div class="prob-in">
+    <span class="ey">Klingt das vertraut?</span>
+    <h2>Warum du schon alles weißt –<br>und es trotzdem nicht klappt</h2>
+    <div class="prob-grid">
+      <div class="pc"><div class="ic">🔋</div><h4>Energie fehlt</h4><p>Du startest motiviert, aber nach zwei Wochen ist der Schwung weg. Derselbe Loop, wieder.</p></div>
+      <div class="pc"><div class="ic">🗂️</div><h4>Methoden ohne Wirkung</h4><p>Pomodoro, Habit Tracker, Morning Routine – kurzfristig ja, langfristig nein.</p></div>
+      <div class="pc"><div class="ic">🎯</div><h4>Viele Ziele, kein Fokus</h4><p>Du weißt was du willst. Der Alltag holt dich ein – am Abend ist wieder nichts passiert.</p></div>
+      <div class="pc"><div class="ic">🧠</div><h4>Disziplin endet</h4><p>Willenskraft ist endlich. Wer darauf baut, verliert. Es braucht ein anderes Fundament.</p></div>
     </div>
   </div>
 </div>
 
-<main id="step-pages">
+<!-- THEORIE -->
+<div id="system"></div>
+<div class="sec">
+  <span class="ey">Das LOOP-System</span>
+  <h2 style="margin-bottom:12px;">Wie Veränderung wirklich entsteht</h2>
+  <p class="lead" style="margin-bottom:36px;">Drei Ebenen, die ineinandergreifen. Klapp auf – lies so viel oder wenig wie du möchtest.</p>
 
-<!-- START -->
-<section class="step-page" data-step-page="start">
-  <div class="app-shell app-shell--pad">
+  <!-- 01 Fundament -->
+  <details>
+    <summary><div class="sum-l"><span class="sum-n">01</span><div class="sum-hd"><h3>Inneres Fundament</h3><p>Werte, Stärken &amp; Antreiber – was du wirklich durchhältst.</p></div></div><span class="sum-arr">↓</span></summary>
+    <div class="det-body"><div class="det-in">
+      <p class="det-txt">Bevor irgendein System funktioniert, muss eine Frage beantwortet sein: <strong>Wer bist du, wenn niemand zuschaut?</strong> Dein inneres Fundament bestimmt, welche Routinen sich richtig anfühlen – und warum dieselben Methoden bei verschiedenen Menschen völlig unterschiedlich wirken.</p>
+      <div class="f-tabs">
+        <button class="f-tab active" onclick="switchTab(this,'fp-werte','f-tab')">Werte</button>
+        <button class="f-tab" onclick="switchTab(this,'fp-staerken','f-tab')">Stärken</button>
+        <button class="f-tab" onclick="switchTab(this,'fp-persoenlichkeit','f-tab')">Persönlichkeit</button>
+        <button class="f-tab" onclick="switchTab(this,'fp-antreiber','f-tab')">Antreiber</button>
+      </div>
+      <div id="fp-werte" class="f-panel active">
+        <h4>Werte</h4>
+        <p class="f-desc">Sie bestimmen, welche Entscheidungen sich richtig anfühlen, welche Kompromisse dich innerlich kosten und wann dein System langfristig stabil bleibt – oder kippt.</p>
+        <div class="f-meta">
+          <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Sie schaffen innere Kongruenz und ein klares Warum, das dich auch durch Motivationslöcher trägt.</p></div>
+          <div class="fmc"><span class="fml r">✗ Risiko</span><p>Sind Ziele nicht wertekongruent, entstehen innerer Stress und Selbstsabotage.</p></div>
+        </div>
+        <div class="fmc"><span class="fml a">Beispiel</span><p>Ist Verantwortung ein zentraler Wert, hältst du Zusagen an dich selbst eher ein – auch wenn die Motivation schwankt.</p></div>
+      </div>
+      <div id="fp-staerken" class="f-panel">
+        <h4>Stärken</h4>
+        <p class="f-desc">Stärken sind wiederkehrende Muster in deinem Denken, Fühlen oder Handeln, die dir leichtfallen und dir Energie geben. Sie zeigen, wo du natürlich wirksam bist.</p>
+        <div class="f-meta">
+          <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Wenn du aus deinen Stärken heraus handelst, kommst du schneller in den Flow und bleibst langfristig dran.</p></div>
+          <div class="fmc"><span class="fml r">✗ Risiko</span><p>Konzentrierst du dich hauptsächlich auf Schwächen, entsteht hohe Reibung – Fortschritt fühlt sich mühsam an.</p></div>
+        </div>
+        <div class="fmc"><span class="fml a">Beispiel</span><p>Hast du die Stärke Analytik, hilft dir ein einfaches Tracking deiner Gewohnheiten, um Fortschritte sichtbar zu machen.</p></div>
+      </div>
+      <div id="fp-persoenlichkeit" class="f-panel">
+        <h4>Persönlichkeit</h4>
+        <p class="f-desc">Deine Persönlichkeit beschreibt stabile Muster in deinem Denken, Fühlen und Handeln – warum manche Menschen Struktur brauchen, andere Freiheit.</p>
+        <div class="f-meta">
+          <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Wenn du deine Struktur kennst, kannst du Ziele und Gewohnheiten so aufbauen, dass sie wirklich zu dir passen.</p></div>
+          <div class="fmc"><span class="fml r">✗ Risiko</span><p>Ohne dieses Verständnis versuchst du Strategien, die für andere funktionieren, aber nicht für dich.</p></div>
+        </div>
+        <div class="fmc"><span class="fml a">Beispiel</span><p>Als eher introvertierte Person triffst du bessere Entscheidungen, wenn du dir vor wichtigen Gesprächen Vorbereitungszeit nimmst.</p></div>
+      </div>
+      <div id="fp-antreiber" class="f-panel">
+        <h4>Innere Antreiber</h4>
+        <p class="f-desc">Innere Antreiber sind meist unbewusste Glaubenssätze wie „Sei perfekt" oder „Mach es allen recht", die früh entstehen und unser Verhalten automatisch steuern.</p>
+        <div class="f-meta">
+          <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Bewusst eingesetzt erzeugen sie hohe Energie, Tempo und Qualitätsanspruch.</p></div>
+          <div class="fmc"><span class="fml r">✗ Risiko</span><p>Unreflektiert führen Antreiber zu Dauerstress, Erschöpfung oder Aufschieben aus Angst vor Fehlern.</p></div>
+        </div>
+        <div class="fmc"><span class="fml a">Beispiel</span><p>Der Antreiber „Beeil dich" hilft beim schnellen Starten. Wird er zu stark, brauchst du bewusst Pausen gegen Dauerstress.</p></div>
+      </div>
+    </div></div>
+  </details>
 
-    <!-- HERO / CONTENT CARD -->
-    <div class="card content-card">
-      <header class="content-card__header">
-        <h1 class="content-card__title">
-          Erfolg ist kein Ziel.
-          <span class="content-card__title-accent">Es ist ein System.</span>
-        </h1>
+  <!-- 02 Identität -->
+  <details>
+    <summary><div class="sum-l"><span class="sum-n">02</span><div class="sum-hd"><h3>Identität formt Verhalten</h3><p>Nicht was du tust – sondern wer du wirst, wenn du es wiederholst.</p></div></div><span class="sum-arr">↓</span></summary>
+    <div class="det-body"><div class="det-in">
+      <p class="det-txt">Identität ist kein Ziel – sie ist ein Zustand. Wer sich als Sportler sieht, überlegt nicht ob er trainiert. Er tut es einfach. <strong>Dieser Zustand lässt sich systematisch aufbauen.</strong></p>
+      <div class="id-grid">
+        <div class="id-c" style="background:var(--am-md)"><span class="badge" style="color:var(--am)">Be</span><h4>Wer willst du sein?</h4><p style="font-size:13px;color:var(--t2)">Haltung &amp; Selbstbild als innerer Filter.</p><em>„Ich bin jemand, der Verantwortung übernimmt."</em></div>
+        <div class="id-c" style="background:var(--bl-lt)"><span class="badge" style="color:var(--bl)">Act</span><h4>Was tust du regelmäßig?</h4><p style="font-size:13px;color:var(--t2)">Klare Regeln &amp; Routinen statt Willenskraft.</p><em>„Wenn X, dann Y."</em></div>
+        <div class="id-c" style="background:var(--gn-lt)"><span class="badge" style="color:var(--gn)">Become</span><h4>Wer wirst du automatisch?</h4><p style="font-size:13px;color:var(--t2)">Selbstwirksamkeit ersetzt Motivation dauerhaft.</p><em>„Ich bin einfach so."</em></div>
+      </div>
+      <div class="id-note"><p>Wenn Identität klar ist, braucht es kein Push mehr – sondern ein System, das sie täglich trägt.</p></div>
+    </div></div>
+  </details>
 
-        <p class="text-secondary content-card__lead">
-          Diese Seite zeigt <strong>keinen Ziel- oder Motivationsansatz</strong>,
-          sondern ein <strong>systemisches Modell</strong>, das inneres Fundament,
-          Identität und Alltag verbindet:
-        </p>
-      </header>
 
-      <div class="content-card__section">
-        <div class="section-label">Ressourcen</div>
-
-        <div class="stack">
-          <div class="resource-row">
-            <a
-              href="https://amzn.eu/d/0VMuCtQ"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-primary btn-block"
-            >
-              <span>Erfolgs-DNA</span>
-              <span class="btn-arrow">→</span>
-            </a>
-            <p class="helper-text">Verstehen: System & Psychologie</p>
+  <!-- 03 Phasen -->
+  <details>
+    <summary><div class="sum-l"><span class="sum-n">03</span><div class="sum-hd"><h3>Motivation → Disziplin → Gewohnheit → Identität</h3><p>Jede Veränderung durchläuft dieselben vier Phasen. Die meisten scheitern in Phase 2.</p></div></div><span class="sum-arr">↓</span></summary>
+    <div class="det-body"><div class="det-in">
+      <p class="det-txt">Fast jede Veränderung scheitert im <strong>Tal der Wiederholung</strong>: Motivation lässt nach, bevor das Verhalten zur Gewohnheit wurde. Wer diesen Mechanismus kennt, kann sich dagegen wappnen.</p>
+      <div class="phases">
+        <div class="ph-item">
+          <div class="ph-l"><div class="ph-dot" style="background:#d97706;outline-color:#d97706"></div><div class="ph-line"></div></div>
+          <div class="ph-r">
+            <span class="ph-tag" style="background:rgba(217,119,6,.12);color:#d97706">Aktivierung</span>
+            <div class="ph-time">Tag 1–10</div>
+            <h4>Aktivierung</h4>
+            <p>Die Phase der Begeisterung. Alles ist neu, die Energie ist explosiv.</p>
+            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Hier werden Visionen geboren, aber noch keine stabilen Strukturen. Den Schwung nutzen, um die Umgebung vorzubereiten.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:100%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">100%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:20%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">20%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:0%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">0%</span></div></div></div></details></div>
           </div>
-
-          <div class="resource-row">
-            <a
-              href="https://amzn.eu/d/7aRxLZl"
-              target="_blank"
-              rel="noopener"
-              class="btn btn-secondary btn-block"
-            >
-              <span>Mein Erfolgsplaner</span>
-              <span class="btn-arrow">→</span>
-            </a>
-            <p class="helper-text">Umsetzen: Struktur & Alltag</p>
+        </div>
+        <div class="ph-item">
+          <div class="ph-l"><div class="ph-dot" style="background:#ef4444;outline-color:#ef4444"></div><div class="ph-line"></div></div>
+          <div class="ph-r">
+            <span class="ph-tag" style="background:rgba(239,68,68,.12);color:#ef4444">Widerstand</span>
+            <div class="ph-time">Tag 11–30</div>
+            <h4>Widerstand</h4>
+            <p>Die Phase der Ernüchterung. Körper und Gehirn rebellieren gegen Veränderung.</p>
+            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Hier entscheidet sich, wer Systeme baut und wer nur Träume hat. 80% aller Versuche scheitern in dieser Phase.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:30%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">30%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:90%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">90%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:10%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">10%</span></div></div></div></details></div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="ph-l"><div class="ph-dot" style="background:#0284c7;outline-color:#0284c7"></div><div class="ph-line"></div></div>
+          <div class="ph-r">
+            <span class="ph-tag" style="background:rgba(2,132,199,.12);color:#0284c7">Integration</span>
+            <div class="ph-time">Tag 31–60</div>
+            <h4>Integration</h4>
+            <p>Die Phase der Normalisierung. Die Anstrengung sinkt spürbar.</p>
+            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Das Gehirn beginnt, die neuen Bahnen zu bevorzugen. Erste messbare Erfolge werden sichtbar.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:20%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">20%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:50%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">50%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:60%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">60%</span></div></div></div></details></div>
+          </div>
+        </div>
+        <div class="ph-item">
+          <div class="ph-l"><div class="ph-dot" style="background:#059669;outline-color:#059669"></div><div class="ph-line"></div></div>
+          <div class="ph-r">
+            <span class="ph-tag" style="background:rgba(5,150,105,.12);color:#059669">Stabilität</span>
+            <div class="ph-time">Tag 60+</div>
+            <h4>Stabilität</h4>
+            <p>Die Phase der Meisterschaft. Die neue Handlung ist der Standard.</p>
+            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Sie kostet keine Willenskraft mehr. Man muss sich eher überwinden, es NICHT zu tun. Die Identität hat sich transformiert.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:80%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">80%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:10%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">10%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:100%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">100%</span></div></div></div></details></div>
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
+  </details>
 
-    <!-- LOOP LAYER MODEL -->
-    <div class="card" style="margin-top: var(--space-8); margin-bottom: var(--space-6);">
-      <div class="badge-label" style="margin-bottom: var(--space-4);">
-        Das Modell hinter nachhaltigem Fortschritt
+  <!-- 04 LOOP -->
+  <details>
+    <summary><div class="sum-l"><span class="sum-n">04</span><div class="sum-hd"><h3>Die vier Wirkbereiche des LOOP</h3><p>Wenn ein Bereich kippt, spürst du es überall.</p></div></div><span class="sum-arr">↓</span></summary>
+    <div class="det-body"><div class="det-in">
+      <div class="lg">
+        <div class="lc lload"><div class="lc-bg">L</div><span class="lpill">Load</span><h3>Load – Energie &amp; Fokus</h3><p class="ld">Load beschreibt, wie viel Energie, Fokus und mentale Kapazität deinem System aktuell zur Verfügung steht.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Stabiler Load macht Output leichter: Du hast Klarheit, Energie und weniger Reibung beim Start.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Wenn Load fehlt, fühlt sich alles wie Disziplin an – obwohl das System eigentlich leer ist.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Check: „Wie leer bin ich gerade (0–10)?" – Bei 3 ist Output nicht die Lösung, sondern erst Load.</span></div></div></details></div>
+        <div class="lc lout"><div class="lc-bg">O</div><span class="lpill">Output</span><h3>Output – Handlung &amp; Umsetzung</h3><p class="ld">Output ist die Fähigkeit, Gedanken in Handlung zu übersetzen – mit möglichst wenig Reibung im Alltag.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Output erzeugt Selbstwirksamkeit: Du siehst, dass du liefern kannst – auch ohne perfekte Stimmung.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Zu viel Komplexität oder Perfektionismus führen dazu, dass du startest – aber nicht dranbleibst.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Fast Fix: Nur starten. Zeitbox 10 Minuten – kein Ergebnis-Ziel. Output beginnt mit Bewegung.</span></div></div></details></div>
+        <div class="lc loff"><div class="lc-bg">O</div><span class="lpill">Off</span><h3>Off – Erholung &amp; Reset</h3><p class="ld">Off ist die bewusste Phase für Erholung und Regulation des Nervensystems – damit dein System stabil bleibt.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Off senkt Stress und macht dich wieder steuerfähig: Fokus, Stimmung und Impulskontrolle werden besser.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Ohne Off bleibst du im Dauerstress: Gereiztheit, Unruhe, schlechter Schlaf – Output wird zäh.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Reset: 5 tiefe Atemzüge + 2 Minuten Reizpause (kein Screen). Off ist kein Luxus.</span></div></div></details></div>
+        <div class="lc lpro"><div class="lc-bg">P</div><span class="lpill">Progress</span><h3>Progress – Wachstum &amp; Identität</h3><p class="ld">Progress ist die Veränderung, die aus Wiederholung entsteht: Lernen, Anpassung – und langfristig Identität.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Progress formt dein Selbstbild: „Ich bin jemand, der dranbleibt." Stärker als jedes Mindset-Mantra.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Wenn du nicht misst oder wiederholst, fühlt sich alles nach Stillstand an – obwohl du Potenzial hast.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Regel: 1 Satz Fortschritt pro Tag (Journal). Wiederholung macht aus Verhalten Identität.</span></div></div></details></div>
       </div>
+    </div></div>
+  </details>
 
-      <div style="position: relative; padding-left: 40px;">
-        <div
-          style="position:absolute; left:16px; top:0; bottom:0; width:2px; background:var(--border);">
-        </div>
-
-        <div class="space-y-3">
-
-          <!-- Inneres Fundament -->
-          <div style="position: relative;">
-            <div style="position:absolute; left:-28px; top:20px; width:12px; height:12px; border-radius:50%; background:var(--accent);"></div>
-            <div class="card" style="padding: var(--space-4) var(--space-5);">
-              <div class="text-primary" style="font-weight:800; margin-bottom:var(--space-1);">
-                Inneres Fundament
-              </div>
-              <p class="text-secondary">
-                Werte, Stärken und Antreiber bestimmen, was du durchhältst.
-              </p>
-            </div>
-          </div>
-
-          <!-- Identität -->
-          <div style="position: relative;">
-            <div style="position:absolute; left:-28px; top:20px; width:12px; height:12px; border-radius:50%; background:#0ea5e9;"></div>
-            <div class="card" style="padding: var(--space-4) var(--space-5);">
-              <div class="text-primary" style="font-weight:800; margin-bottom:var(--space-1);">
-                Identität
-              </div>
-              <p class="text-secondary">
-                Nicht was du tust – sondern wer du wirst, wenn du es wiederholst.
-              </p>
-            </div>
-          </div>
-
-          <!-- System -->
-          <div style="position: relative;">
-            <div style="position:absolute; left:-28px; top:20px; width:12px; height:12px; border-radius:50%; background:var(--text-secondary);"></div>
-            <div class="card" style="padding: var(--space-4) var(--space-5);">
-              <div class="text-primary" style="font-weight:800; margin-bottom:var(--space-1);">
-                System
-              </div>
-              <p class="text-secondary">
-                Regeln, Gewohnheiten und Prinzipien schlagen Motivation.
-              </p>
-            </div>
-          </div>
-
-          <!-- LOOP -->
-          <div style="position: relative;">
-            <div style="position:absolute; left:-28px; top:20px; width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
-            <div class="card" style="padding: var(--space-4) var(--space-5);">
-              <div class="text-primary" style="font-weight:800; margin-bottom:var(--space-1);">
-                4 Wirkbereiche – LOOP
-              </div>
-              <p class="text-secondary">
-                (L) Energie · (O) Handlung · (O) Erholung · (P) Wachstum
-              </p>
-            </div>
-          </div>
-
-        </div>
+  <!-- 05 7 Stufen -->
+  <details>
+    <summary><div class="sum-l"><span class="sum-n">05</span><div class="sum-hd"><h3>Der 7-Stufen-Pfad zur Identität</h3><p>Motivation, Entscheidung, Disziplin, Gewohnheit, Innere Stärke, Selbstwirksamkeit, Identität.</p></div></div><span class="sum-arr">↓</span></summary>
+    <div class="det-body"><div class="det-in">
+      <p class="det-txt">Jede nachhaltige Veränderung durchläuft dieselben 7 Stufen. Die meisten kennen nur die erste. Wer alle kennt, kann sich gezielt auf der richtigen Stufe bewegen – statt blind von vorne anzufangen.</p>
+      <div class="step-list">
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#f59e0b">1</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Initiator</div><h4>Motivation</h4><div class="step-sub">Auslöser &amp; Bedürfnis</div><p>Sie entsteht intrinsisch (aus persönlichem Wunsch/Sinn) oder extrinsisch (Belohnung/Druck). Sie erzeugt den notwendigen Impuls, um überhaupt über Veränderung nachzudenken.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Dopamin-Spitzen entstehen bei der Vorstellung des Ziels, nicht während der harten Arbeit.</li><li>Push-Faktoren (Weg von Schmerz) sind oft kurzfristig stärker als Pull-Faktoren.</li><li>Motivation ist hoch-emotional und anfällig für Stress oder Schlafmangel.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#78716c">2</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Weichensteller</div><h4>Entscheidung</h4><div class="step-sub">Verbindlichkeit</div><p>Eine Entscheidung beendet das innere Abwägen und legt fest, welcher Weg verfolgt wird – und welche Alternativen bewusst ausgeschlossen werden.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Entscheidungen entstehen im Zusammenspiel von intuitivem und rationalem Denken.</li><li>Vorab getroffene Entscheidungen schützen vor Entscheidungsmüdigkeit.</li><li>Klare Festlegungen reduzieren Heuristiken und Bias.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#ef4444">3</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Motor</div><h4>Disziplin</h4><div class="step-sub">Willenskraft</div><p>Handeln gegen Widerstände. Wenn Motivation verfliegt, tritt Disziplin an ihre Stelle. In dieser Phase findet der härteste Kampf statt: Alt gegen Neu.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Willenskraft nimmt durch Decision Fatigue im Laufe des Tages ab.</li><li>Disziplin verbrennt Glukose im präfrontalen Cortex.</li><li>Hier scheitern 80% aller Neujahrsvorsätze.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#10b981">4</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Autopilot</div><h4>Gewohnheit</h4><div class="step-sub">Automatisierung</div><p>Sobald eine Handlung oft genug wiederholt wurde, verschiebt das Gehirn die Steuerung in die Basalganglien. Ab diesem Punkt wird kein aktives Denken mehr benötigt.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>The Habit Loop: Jede Gewohnheit braucht Auslöser, Routine und Belohnung.</li><li>Nach ca. 66 Tagen ist eine Handlung so verankert, dass ihr Fehlen Unbehagen auslöst.</li><li>Neuronale Myelinisierung verstärkt die Leitbahnen und minimiert die Reaktionszeit.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#8b5cf6">5</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Stabilisator</div><h4>Innere Stärke</h4><div class="step-sub">Resilienz &amp; Emotionsregulation</div><p>Psychologische Robustheit. Erfolg ist kein linearer Weg. Innere Stärke bedeutet, nach Rückschlägen nicht abzubrechen, sondern das System neu zu kalibrieren.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Growth Mindset: Fehler werden als Datenpunkte begriffen, nicht als Identitätsmangel.</li><li>Emotionsregulation verhindert, dass ein schlechter Tag zur Abbruch-Woche wird.</li><li>Selbstmitgefühl korreliert höher mit Disziplin als Selbststrenge.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#0284c7">6</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Katalysator</div><h4>Selbstwirksamkeit</h4><div class="step-sub">Vertrauen &amp; Bestätigung</div><p>Das tiefe Vertrauen in die eigene Handlungsfähigkeit. Durch das Meistern der vorherigen Phasen sammelt man Beweise für die eigene Kompetenz – eine positive Feedbackschleife entsteht.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Mastery Experiences sind der stärkste Treiber für echtes Selbstbewusstsein.</li><li>Hohe Selbstwirksamkeit reduziert Stress und erhöht Ausdauer bei komplexen Aufgaben.</li><li>Der Fokus verschiebt sich von „Kann ich das?" zu „Wie löse ich das?".</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#d97706">7</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Statischer Zustand</div><h4>Identität</h4><div class="step-sub">Ontologische Transformation</div><p>Der finale Zustand: Die Handlung ist eins mit dem Selbstbild. Man tut Dinge nicht mehr, um ein Ziel zu erreichen, sondern weil man dieser Mensch IST.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Identity-Based Habits: „Ich bin Nichtraucher" ist stärker als „Ich versuche aufzuhören".</li><li>Kognitive Dissonanz sorgt dafür, dass wir uns konsistent zum Selbstbild verhalten.</li><li>Werte und Handlungen in Resonanz erzeugen tiefe Zufriedenheit.</li></ul></details></div></div>
       </div>
+    </div></div>
+  </details>
+</div>
 
-      <p class="text-secondary" style="font-size:12px; margin-top:var(--space-4);">
-        Wenn ein Bereich dauerhaft überlastet oder vernachlässigt wird,
-        gerät der gesamte Kreislauf aus dem Gleichgewicht.
-      </p>
-    </div>
+<div class="dv"></div>
 
-    <!-- WARUM DIESES SYSTEM -->
-    <div class="card" style="margin-top: var(--space-6);">
-      <div class="badge-label" style="margin-bottom: var(--space-4);">
-        Warum dieses System
-      </div>
-
-      <h2 class="h2" style="margin-bottom: var(--space-4);">
-        Drei klare Vorteile
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <div class="space-y-4">
-          <div class="text-accent" style="font-size:24px; font-weight:800;">01</div>
-          <h4 class="text-primary" style="font-weight:700; font-size:12px; text-transform:uppercase;">
-            Klarheit statt Druck
-          </h4>
-          <p class="text-secondary">
-            Du erkennst, welcher Bereich dein System aktuell blockiert.
-          </p>
-        </div>
-
-        <div class="space-y-4">
-          <div class="text-accent" style="font-size:24px; font-weight:800;">02</div>
-          <h4 class="text-primary" style="font-weight:700; font-size:12px; text-transform:uppercase;">
-            Fokus statt Überforderung
-          </h4>
-          <p class="text-secondary">
-            Du arbeitest gezielt am einen Engpass mit Wirkung.
-          </p>
-        </div>
-
-        <div class="space-y-4">
-          <div class="text-accent" style="font-size:24px; font-weight:800;">03</div>
-          <h4 class="text-primary" style="font-weight:700; font-size:12px; text-transform:uppercase;">
-            Nachhaltige Umsetzung
-          </h4>
-          <p class="text-secondary">
-            Umsetzung wird zur Gewohnheit – nicht zur Willensprobe.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
+<!-- TAGESSTRUKTUR -->
+<div class="sec">
+  <span class="ey">Strukturierter Alltag</span>
+  <h2 style="margin-bottom:12px;">Der ideale Tagesablauf</h2>
+  <p class="lead" style="margin-bottom:28px;">Methoden wirken am stärksten, wenn sie an feste Zeitanker gebunden sind.</p>
+  <div class="df-tabs">
+    <button class="df-tab active" onclick="switchTab(this,'df-morgen','df-tab')">🌅 Morgen</button>
+    <button class="df-tab" onclick="switchTab(this,'df-vormittag','df-tab')">💼 Vormittag</button>
+    <button class="df-tab" onclick="switchTab(this,'df-mittag','df-tab')">🍽️ Mittag</button>
+    <button class="df-tab" onclick="switchTab(this,'df-nachmittag','df-tab')">💬 Nachmittag</button>
+    <button class="df-tab" onclick="switchTab(this,'df-sport','df-tab')">🏋️ Sport</button>
+    <button class="df-tab" onclick="switchTab(this,'df-abend','df-tab')">🍿 Abend</button>
   </div>
-</section>
-
-<!-- INNEN -->
-<section class="step-page" data-step-page="innen" hidden>
-  <div class="app-shell app-shell--pad">
-
-    <!-- CONTENT CARD (Phase 2) -->
-    <section
-      id="learn-2"
-      data-learn="2"
-      data-learn-card="2"
-      data-title="Inneres Fundament"
-      class="card content-card"
-    >
-      <header class="content-card__header">
-        <div class="badge-label">Phase 2</div>
-
-        <h2 class="content-card__title">Alles beginnt innen</h2>
-
-        <p class="text-secondary content-card__lead">
-          Werte, Stärken und Antreiber bilden das Fundament für nachhaltigen Fortschritt.
-        </p>
-
-        <p class="text-secondary">
-          Wiederholung stabilisiert Verhalten. Aber
-          <strong class="text-primary">ob ein System trägt</strong>,
-          entscheidet sich eine Ebene tiefer.
-        </p>
-
-        <button
-          type="button"
-          class="read-toggle js-read-toggle"
-          data-read-target="foundation-intro-expanded"
-          aria-expanded="false"
-        >
-          Mehr lesen…
-        </button>
-
-        <div id="foundation-intro-expanded" class="read-toggle__content" hidden>
-          <p class="text-secondary read-toggle__text">
-            Das innere Fundament bestimmt,
-            <strong class="text-primary">welche Routinen sich richtig anfühlen</strong>,
-            wo Widerstand entsteht – und warum identische Methoden bei Menschen
-            völlig unterschiedlich wirken.
-          </p>
-
-          <p class="text-secondary read-toggle__text read-toggle__text--spaced">
-            Erst wenn diese Ebene klar ist, lassen sich Systeme sinnvoll auswählen –
-            und stabil im Alltag verankern.
-          </p>
-        </div>
-      </header>
-
-      <!-- Tabs Section -->
-      <div class="content-card__section">
-        <div class="section-label">Dein Fundament</div>
-
-        <div
-          id="foundation-tabs"
-          class="pill"
-          role="tablist"
-          aria-label="Foundation Tabs"
-        ></div>
-
-        <div id="foundation-content" class="card"></div>
-      </div>
-    </section>
-
+  <div class="df-panels">
+    <div id="df-morgen" class="df-panel active"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🌅</span><div><h3>Morgen</h3><p>Energie hochfahren &amp; Richtung setzen</p></div></div><span class="df-time">08:00 – 09:00</span></div><div class="df-note">Don't: Nicht sofort Mails, News oder Scroll nach dem Aufstehen – das setzt dein Nervensystem auf Reaktion und klaut Fokus.</div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Hydration &amp; Tageslicht (5–15 Min nach dem Aufstehen)</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Journaling &amp; Daily Outcome definieren</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Mobility oder Walk (10–15 Min)</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Protein-Frühstück (25–35g), kein Snacking</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Bei hohem Stresslevel: 1× physiologischer Seufzer</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
+    <div id="df-vormittag" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">💼</span><div><h3>Arbeit – Vormittag</h3><p>Fokuszeit für echten Fortschritt</p></div></div><span class="df-time">09:00 – 13:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Tagesplanung (1–3–5, Eat the Frog)</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Sprint: Pomodoro oder Deep Work Block</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Output-first: Ergebnis skizzieren, dann arbeiten</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Definition of Done (1 Satz) vor jedem Task-Start</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Pause zwischen Sprints: 5–10 Min Walk (kein Screen)</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Bei Stress: 4-7-8 Atemübung</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
+    <div id="df-mittag" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🍽️</span><div><h3>Mittag &amp; Reset</h3><p>Runterfahren, neu ausrichten</p></div></div><span class="df-time">12:00 – 13:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Protein-first, blutzucker-freundlich essen</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Chrono-Nutrition: mittags größer, abends leichter</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Walk after Meal (10–15 Min)</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Midday NSDR oder Powernap (10–20 Min)</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
+    <div id="df-nachmittag" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">💬</span><div><h3>Arbeit – Nachmittag</h3><p>Kommunikation &amp; Abschluss</p></div></div><span class="df-time">13:00 – 16:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Batching: Mails, Orga, Calls gebündelt abarbeiten</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Mini-Reset: aufstehen, Schultern lösen</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Closure: Nächsten Schritt notieren (60 Sek)</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Bei Energie-Loch: Koffein + 20-Min-Nap (vor 15 Uhr)</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
+    <div id="df-sport" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🏋️</span><div><h3>Sport</h3><p>Körperliche Aktivierung</p></div></div><span class="df-time">17:00 – 19:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Pre-Snack klein (wenn nötig), Wasser ready</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Training nach Plan – nicht nach Gefühl</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Cool-down + lockeres Ausatmen</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Wenn-Dann: Bei Ankunft sofort 5 Min Warm-up starten</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
+    <div id="df-abend" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🍿</span><div><h3>Freizeit &amp; Abend</h3><p>Entspannung, Soziales &amp; Runterfahren</p></div></div><span class="df-time">20:00 – 22:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Kein Input-Overload (Low Dopamine Evening)</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Kleine Reflexion: Was war heute gut?</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Screen Curfew 60–90 Min vor dem Schlafen</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Licht dimmen als biologisches Shutdown-Signal</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Gleiche Schlafenszeit als biologischer Anker</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
   </div>
-</section>
+</div>
 
- <!-- IDENTITÄT -->
-<section class="step-page" data-step-page="identitaet" hidden>
-  <div class="app-shell app-shell--pad">
 
-    <!-- CONTENT CARD: Phase 3 -->
-    <section
-      id="learn-3"
-      data-learn="3"
-      data-learn-card="3"
-      data-title="Identität"
-      class="card content-card"
-      style="margin-bottom: var(--space-6);"
-    >
-      <!-- Header -->
-      <header class="content-card__header">
-        <div class="badge-label">Phase 3</div>
-        <h2 class="content-card__title">Identität formt Verhalten</h2>
-        <p class="text-secondary content-card__lead">
-          Nicht was du tust – sondern wer du wirst, wenn du es wiederholst.
-        </p>
+<div class="dv"></div>
 
-        <!-- Intro (kurz) -->
-        <p class="text-secondary" style="line-height: 1.7; margin-top: var(--space-3); max-width: 60ch;">
-          Identität beschreibt nicht, was du erreichen willst,
-          sondern <strong class="text-primary">wer du im Alltag sein willst</strong> –
-          unter Druck, bei Unsicherheit und ohne Motivation.
-        </p>
-
-        <!-- Read more trigger (GLOBAL SYSTEM) -->
-        <button
-          type="button"
-          class="read-toggle js-read-toggle"
-          data-read-target="identity-intro-expanded"
-          aria-expanded="false"
-          style="margin-top: var(--space-3);"
-        >
-          Mehr lesen…
-        </button>
-
-        <!-- Expanded content -->
-        <div id="identity-intro-expanded" hidden style="margin-top: var(--space-3); max-width: 60ch;">
-          <p class="text-secondary" style="line-height: 1.7; margin: 0;">
-            Sie wirkt wie ein innerer Rahmen: Entscheidungen, Gewohnheiten und Systeme funktionieren nur dann stabil,
-            wenn sie zu diesem Selbstbild passen.
-          </p>
-        </div>
-      </header>
-
-      <!-- BE → ACT → BECOME cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="margin-top: var(--space-6);">
-        <!-- BE -->
-        <div class="card" style="display: flex; flex-direction: column;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <span class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800;">Be</span>
-            <span style="padding: 4px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800; background: rgba(251, 191, 36, 0.2); color: var(--accent);">
-              Identität
-            </span>
-          </div>
-          <h3 class="text-primary" style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Wer willst du sein?</h3>
-          <p class="text-secondary" style="font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
-            Haltung & Selbstbild als Entscheidungsfilter.
-          </p>
-          <div style="margin-top: auto; padding-top: 12px; font-size: 12px; font-style: italic; color: var(--text-secondary);">
-            „Ich bin jemand, der Verantwortung übernimmt."
-          </div>
-        </div>
-
-        <!-- ACT -->
-        <div class="card" style="display: flex; flex-direction: column;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <span class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800;">Act</span>
-            <span style="padding: 4px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800; background: rgba(14, 165, 233, 0.2); color: #0ea5e9;">
-              Verhalten
-            </span>
-          </div>
-          <h3 class="text-primary" style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Was tust du regelmäßig?</h3>
-          <p class="text-secondary" style="font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
-            Klare Regeln & Routinen statt Willenskraft.
-          </p>
-          <div style="margin-top: auto; padding-top: 12px; font-size: 12px; font-style: italic; color: var(--text-secondary);">
-            „Wenn X, dann Y."
-          </div>
-        </div>
-
-        <!-- BECOME -->
-        <div class="card" style="display: flex; flex-direction: column;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <span class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800;">Become</span>
-            <span style="padding: 4px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800; background: rgba(16, 185, 129, 0.2); color: #10b981;">
-              Stabilität
-            </span>
-          </div>
-          <h3 class="text-primary" style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Wer wirst du automatisch?</h3>
-          <p class="text-secondary" style="font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
-            Selbstwirksamkeit ersetzt Motivation.
-          </p>
-          <div style="margin-top: auto; padding-top: 12px; font-size: 12px; font-style: italic; color: var(--text-secondary);">
-            „Ich bin so."
-          </div>
-        </div>
-      </div>
-
-      <!-- Bridge line -->
-      <p class="text-secondary" style="text-align: left; font-style: italic; margin-top: var(--space-6); font-size: 14px; max-width: 60ch;">
-        Wenn Identität klar ist, braucht es kein Push – sondern ein System, das sie täglich trägt.
-      </p>
-    </section>
-
-    <!-- CONTENT CARD: Leitbild / Vision -->
-    <section class="card content-card" style="margin-top: var(--space-6);">
-      <header class="content-card__header">
-        <div class="badge-label">Persönliches Leitbild</div>
-        <h3 class="content-card__title">Dein innerer Nordstern</h3>
-
-        <p class="text-secondary content-card__lead" style="max-width: 60ch;">
-          Kein Ziel, kein Plan – sondern eine innere Ausrichtung,
-          <strong class="text-primary">wie du entscheiden, handeln und reagieren willst</strong>,
-          besonders dann, wenn es schwierig wird.
-        </p>
-
-        <!-- Read more trigger (GLOBAL SYSTEM) -->
-        <button
-          type="button"
-          class="read-toggle js-read-toggle"
-          data-read-target="leitbild-intro-expanded"
-          aria-expanded="false"
-          style="margin-top: var(--space-3);"
-        >
-          Mehr lesen…
-        </button>
-
-        <div id="leitbild-intro-expanded" hidden style="margin-top: var(--space-3); max-width: 60ch;">
-          <p class="text-secondary" style="line-height: 1.7; margin: 0;">
-            Ein Leitbild gibt dir keine Checkliste, sondern eine innere Kompassnadel.
-            Wenn Druck entsteht oder Motivation nachlässt, hilft es dir, den nächsten stimmigen Schritt zu erkennen –
-            nicht durch äußere Regeln, sondern durch deine eigene innere Ausrichtung.
-          </p>
-        </div>
-      </header>
-
-      <!-- Leitbild Statement (Inset) -->
-      <div class="card" style="margin-top: var(--space-6); border-left: 4px solid var(--accent); background: rgba(251, 191, 36, 0.1); padding: var(--space-6);">
-        <p class="text-primary" style="font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; font-style: italic; line-height: 1.6; text-align: left; max-width: 60ch; margin: 0 auto;">
-          „Ich handle klar, verantwortungsvoll und mit Energie –<br>
-          auch wenn es unbequem wird."
-        </p>
-      </div>
-
-    </section>
-
+<!-- METHODEN -->
+<div class="sec" id="methoden">
+  <span class="ey">Methoden-Bibliothek</span>
+  <h2 style="margin-bottom:12px;">Konkrete Werkzeuge für jeden Bereich</h2>
+  <p class="lead" style="margin-bottom:28px;">Wähle einen Bereich und such dir 1–2 Methoden als Standard.</p>
+  <div class="meth-tabs">
+    <button class="meth-tab active" data-meth="load" onclick="switchTab(this,'mp-load','meth-tab')">Load – Energie</button>
+    <button class="meth-tab" data-meth="output" onclick="switchTab(this,'mp-output','meth-tab')">Output – Handlung</button>
+    <button class="meth-tab" data-meth="off" onclick="switchTab(this,'mp-off','meth-tab')">Off – Erholung</button>
+    <button class="meth-tab" data-meth="progress" onclick="switchTab(this,'mp-progress','meth-tab')">Progress – Identität</button>
   </div>
-</section>
+  <div id="mp-load" class="meth-panel active"><div class="meth-grid">
+    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Energie / Gesundheit</div><h4>Ernährung &amp; Essensstruktur</h4><p class="meth-val">Stabilisiert Blutzucker und verhindert Energieeinbrüche.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Einfach halten, nicht optimieren.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Hoher Hebel mit wenig Komplexität</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu schnell zu streng werden</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Zeitlich begrenztes Essen (TRE): Mahlzeiten innerhalb eines 8–10-Stunden-Fensters.</li><li>Protein-First-Prinzip: Jede Mahlzeit mit einer Proteinquelle beginnen.</li><li>Blutzucker-freundliche Reihenfolge: Erst Gemüse, dann Protein, dann Fett.</li><li>Low-Variance Meals: Werktags einfache, wiederkehrende Mahlzeiten nutzen.</li><li>80/20-Regel: Überwiegend funktional essen, Raum für Genuss lassen.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Leistung</div><h4>Energiehaushalt &amp; Belastungssteuerung</h4><p class="meth-val">Verhindert Überlastung und ineffektives Durchziehen.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Arbeite mit Energie, nicht gegen sie.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Mehr Output ohne mehr Arbeit</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Pausen werden ignoriert</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Front-Load Fokusarbeit: Anspruchsvollste Aufgaben in die erste Tageshälfte legen.</li><li>Ultradian-Rhythmus: In 60–90-Minuten-Fokusblöcken arbeiten.</li><li>Decision Batching: Entscheidungen bündeln statt über den Tag verteilen.</li><li>Active Recovery Breaks: Pausen aktiv nutzen (Gehen, Dehnen statt Scrollen).</li><li>No-Zero-Energy-Tage: An Low-Energy-Tagen Mindestversionen statt Komplettausfall.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Fokus</div><h4>Chronotyp &amp; Tages-Timing</h4><p class="meth-val">Reduziert innere Reibung und Energieverschwendung.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Plane nach Biologie, nicht nach Kalender.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Spürbare Entlastung im Alltag</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Fremde Rhythmen kopieren</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Chronotyp-Mapping: Eigene Hoch- und Tiefphasen über 1–2 Wochen beobachten.</li><li>Peak-Time-Regel: Denk- und Entscheidungsarbeit nur in Hochenergiezeiten.</li><li>Low-Energy-Zonen schützen: In Tiefphasen nur Routinen oder einfache Aufgaben.</li><li>Fixe Startzeiten: Feste Aufstehzeit als biologischen Anker nutzen.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Schlaf / Fokus</div><h4>Licht &amp; zirkadianer Rhythmus</h4><p class="meth-val">Verbessert Schlafqualität, Stimmung und Tagesenergie.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Licht steuert Energie stärker als Disziplin.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Großer Effekt auf Schlaf</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Abendlicht wird unterschätzt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Morning Light Exposure: Morgens 5–15 Minuten Tageslicht nach dem Aufstehen.</li><li>Hell-dunkel-Kontrast: Tagsüber helles Licht, abends konsequent dimmen.</li><li>Screen Curfew: 60–90 Minuten vor dem Schlafen keine grellen Bildschirme.</li><li>Schlafumgebung optimieren: Schlafzimmer möglichst dunkel, kühl und ruhig.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Energie / Stoffwechsel</div><h4>Bewegung &amp; NEAT</h4><p class="meth-val">Erhöht Energie ohne zusätzliches Training.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Bewegung in den Alltag integrieren.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Niedrige Hürde, hoher Nutzen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird nicht als relevant wahrgenommen</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Walk-after-Meals: Nach größeren Mahlzeiten 10–20 Minuten gehen.</li><li>Stündliche Bewegungsregel: Mindestens einmal pro Stunde aufstehen.</li><li>Step Anchors: Telefonate bewusst im Gehen erledigen.</li><li>Movement Stacking: Bewegung an bestehende Routinen koppeln.</li></ul></div></details></div>
+  </div></div>
+  <div id="mp-output" class="meth-panel"><div class="meth-grid">
+    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Produktivität</h4><p class="meth-val">Mehr Fokus, weniger Reibung, sichtbarer Fortschritt.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Wähle 1–2 Methoden als Default, nicht alles.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr alltagstauglich + skalierbar</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu viele Methoden gleichzeitig verwässern den Effekt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Pomodoro: Feste Arbeitsintervalle mit geplanten Pausen.</li><li>Eat the Frog: Die schwierigste Aufgabe zuerst erledigen.</li><li>Timeboxing: Aufgaben mit fixer Zeit bearbeiten.</li><li>2-Minuten-Regel: Alles unter 2 Minuten sofort erledigen.</li><li>Ivy-Lee-Methode: Abends die 6 wichtigsten Aufgaben für morgen festlegen.</li><li>Single-Tasking: Immer nur an einer Aufgabe gleichzeitig.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Entscheidung</h4><p class="meth-val">Schneller entscheiden, weniger Grübeln.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Eine Methode pro Entscheidung reicht völlig.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr klar und wirkungsvoll</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Überanalyse ersetzt manchmal einfaches Tun</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>WOOP: Wunsch, Outcome, Obstacle, Plan definieren.</li><li>Regret-Minimization: Aus Sicht des 80-jährigen Selbst entscheiden.</li><li>Good-Enough Rule (70%): Bei ausreichender Klarheit entscheiden.</li><li>Decision Deadline: Feste Frist setzen, um Aufschub zu vermeiden.</li><li>Pre-Mortem: Vorab mögliche Gründe für Scheitern analysieren.</li><li>10-10-10-Modell: Auswirkungen in 10 Min, 10 Monaten, 10 Jahren.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Ziele</h4><p class="meth-val">Ziele werden klar, messbar und handlungsleitend.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Wenige Ziele, sauber formuliert.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Hohe Klarheit und Umsetzbarkeit</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu viele parallele Ziele erzeugen Stress</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>SMART-Ziele: Spezifisch, messbar, attraktiv, realistisch, terminiert.</li><li>Backcasting: Vom Endzustand rückwärts die Schritte ableiten.</li><li>Milestone-Logik: Große Ziele in klar definierte Zwischenetappen.</li><li>Anti-Goals: Klar definieren, was du bewusst nicht mehr tust.</li><li>Identity-Linked Goals: Ziele als Ausdruck der gewünschten Identität.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Umsetzung &amp; Disziplin</h4><p class="meth-val">Umsetzung auch bei Widerstand und niedriger Motivation.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Disziplin entsteht durch Struktur, nicht durch Härte.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr systemisch und nachhaltig</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu hohe Standards brechen Konsistenz</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Reibungsdesign: Umgebung so gestalten, dass gutes Verhalten leicht wird.</li><li>Wenn–Dann-Regeln: Klare Auslöser definieren, die Verhalten starten.</li><li>5-Minuten-Regel: Aufgabe 5 Minuten beginnen, danach entscheiden.</li><li>Minimum-Standard: Kleinste Version definieren, die auch an schlechten Tagen gilt.</li><li>Friction for Bad Habits: Schlechte Gewohnheiten bewusst umständlich machen.</li></ul></div></details></div>
+  </div></div>
+  <div id="mp-off" class="meth-panel"><div class="meth-grid">
+    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Nervensystemregulation</h4><p class="meth-val">Vom Leistungs- in den Erholungsmodus wechseln.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Abends Struktur statt Disziplin. Gleiche Signale täglich.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Stärkster Hebel für Schlaf &amp; Erholung</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Abendliche Reizüberflutung sabotiert Wirkung</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Abend-Routine: Fester Ablauf (Licht runter, ruhige Tätigkeiten, gleiche Uhrzeit).</li><li>Digital Curfew: Bildschirme 60–90 Minuten vor dem Schlafen beenden.</li><li>Physiologischer Seufzer: Zwei kurze Nasenatemzüge + langer Ausatem.</li><li>Consistent Sleep Window: Feste Schlaf- und Aufstehzeit statt variabler Einschlafversuche.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Regeneration</h4><p class="meth-val">Energie wieder aufladen ohne neue Belastung.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Low Intensity, kein Leistungsanspruch.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sofort spürbar + langfristig stabilisierend</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird oft mit Faulheit verwechselt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Aktive Erholung: Lockere Bewegung ohne Ziel (Spaziergang, Mobility).</li><li>NSDR / Powernap: 10–20 Minuten Tiefenentspannung oder kurzer Schlaf.</li><li>Passive Recovery Slots: Bewusst nichts tun – kein Input, kein Scrollen.</li><li>Deload-Woche: Alle 4–6 Wochen Volumen und Intensität reduzieren.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Resilienz</h4><p class="meth-val">Belastbar bleiben, ohne härter zu werden.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Erst Sicherheit herstellen, dann fordern.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr starker Schutz vor Erschöpfung</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Ego verwechselt Resilienz mit Härte</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Grenzen setzen (Nein sagen): Klare Regeln zum Schutz von Energie definieren.</li><li>Selbstmitgefühl: In Stressmomenten bewusst freundlich mit sich sprechen.</li><li>Bounce-Back-Ritual: Nach Rückschlägen zur kleinsten stabilen Routine zurückkehren.</li><li>Stress dosieren: Kleine, kontrollierte Belastungen statt Dauerstress.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Achtsamkeit &amp; Reflexion</h4><p class="meth-val">Mentale Weite, Präsenz und emotionale Stabilität.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Kurz, regelmäßig, ohne Leistungsanspruch.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr zugänglich, große Wirkung</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird im Stress zuerst gestrichen</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Naturmoment: 10–20 Minuten draußen ohne Handy oder Musik.</li><li>Gratitude Journal: Täglich 3 Dinge notieren und kurz fühlen.</li><li>Emotion Labeling: Gefühle benennen ohne sie zu bewerten.</li><li>Evening Reflection: 1 Frage am Abend: „Was darf heute enden?".</li></ul></div></details></div>
+  </div></div>
+  <div id="mp-progress" class="meth-panel"><div class="meth-grid">
+    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Klarheit &amp; mentale Ordnung</h4><p class="meth-val">Weniger Grübeln, mehr Klarheit – du steuerst den Tag statt ihn zu erleiden.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Wähle 1–2 Methoden. Effekt kommt durch Wiederholung.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sofort spürbar: weniger mentaler Lärm</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu viele Methoden – keine wird Routine</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Brain Dump: 2–5 Minuten alles ungefiltert aufschreiben, dann 1 Punkt markieren.</li><li>Daily Outcome Definition: Morgens 1 Ergebnis definieren, das den Tag erfolgreich macht.</li><li>Reflection Loop: Abends 3 Fragen (Win / schwer / Lernpunkt).</li><li>Top-3-Filter: Alles prüfen: „Zahlt das auf meine Top 3 ein?".</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Identität &amp; Selbstwirksamkeit</h4><p class="meth-val">Du baust Vertrauen in dich über Beweise – nicht über Motivation.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Mach es klein und täglich. Identität entsteht durch Beweise.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr starker Hebel für Disziplin und Selbstvertrauen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu groß planen – du nimmst dir die Beweise wieder weg</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Selbstwirksamkeits-Log: Abends 1–3 Beweise notieren, dass du geliefert hast.</li><li>Identity-Based Tracking: „Ich bin jemand, der …" + Beweis aus dem Tag.</li><li>No-Zero-Days: Jeden Tag mindestens 1 Mini-Handlung.</li><li>Bounce-Back-Rule: Nach Rückschlägen sofort zur kleinsten stabilen Routine zurückkehren.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Wachstum &amp; Komfortzone</h4><p class="meth-val">Angst wird zu Handlung – du trainierst Mut wie einen Muskel.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Skaliere klein. 1 Mini-Challenge pro Woche reicht.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr starker Hebel für Selbstvertrauen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu groß starten – Vermeidung wird stärker</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Mutliste: 10 Mut-Aktionen sammeln und wöchentlich eine umsetzen.</li><li>Rejection Practice: Situationen mit möglicher Ablehnung bewusst suchen.</li><li>Failure Normalization: Fehlversuche neutral dokumentieren (Test → Ergebnis → Lernpunkt).</li><li>Progressive Exposure: Schwierigkeit schrittweise erhöhen statt zu springen.</li></ul></div></details></div>
+    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Sinn &amp; langfristige Ausrichtung</h4><p class="meth-val">Du bleibst auf Kurs – auch wenn Motivation schwankt.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Baue eine Wochenroutine. Sinn entsteht durch Rückblick.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr stark für Fokus und Durchhaltevermögen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird als „zu langsam" unterschätzt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Weekly Reflection &amp; Planning: Woche reflektieren und 1–3 Prioritäten setzen.</li><li>Effort–Meaning Link: Schwierige Aufgaben mit einem größeren Warum verknüpfen.</li><li>Values Check-in: Prüfen, ob Handeln mit eigenen Werten übereinstimmt.</li><li>North-Star Question: Regelmäßig fragen „Wozu zahlt das langfristig ein?".</li></ul></div></details></div>
+  </div></div>
+</div>
 
+<div class="dv"></div>
 
-  <!-- SYSTEM -->
-  <section class="step-page" data-step-page="system" hidden>
-    <div class="app-shell app-shell--pad">
-
-      <!-- CONTENT CARD (Phase 4) -->
-      <section
-        id="learn-4"
-        data-learn="4"
-        data-learn-card="4"
-        data-title="Das System"
-        class="card content-card"
-      >
-        <header class="content-card__header">
-          <div class="badge-label">Phase 4</div>
-
-          <h2 class="content-card__title">Das System, das dich trägt</h2>
-
-          <p class="text-secondary content-card__lead">
-            Dieser Kreislauf beschreibt den eigentlichen Motor hinter Veränderung.
-            Nicht als Zielprozess – sondern als dynamisches Zusammenspiel aus Impuls,
-            Handlung, Wiederholung und innerer Verankerung.
-          </p>
-
-          <button
-            type="button"
-            class="read-toggle js-read-toggle"
-            data-read-target="system-intro-expanded"
-            aria-expanded="false"
-          >
-            Mehr lesen…
-          </button>
-
-          <div id="system-intro-expanded" class="read-toggle__content" hidden>
-            <p class="text-secondary read-toggle__text">
-              Ob Ernährung, Training, Arbeit oder persönliche Entwicklung:
-              Fortschritt scheitert selten am Ziel selbst,
-              sondern an einer instabilen Abfolge im Alltag.
-              Wenn Motivation verpufft, Umsetzung stockt oder Wiederholung zu viel Kraft kostet,
-              fühlt sich Entwicklung trotz Einsatz dauerhaft schwer an.
-            </p>
-          </div>
-        </header>
-
-        <!-- LOOP BRIDGE – Visual + Box -->
-        <div style="margin-top: 40px;">
-          <div id="evolution-card" class="app-card" style="background: var(--surface-element); min-height: 400px; position: relative; overflow: hidden; transition: all var(--transition-base); display: flex; flex-direction: column;">
-            <span id="step-num" class="text-accent" style="font-size: 72px; font-weight: 800; opacity: 0.1; position: absolute; top: 16px; right: 32px;">01</span>
-
-            <h3 id="step-title" class="text-primary" style="font-size: 36px; font-weight: 700; margin-bottom: 24px; position: relative;">Motivation</h3>
-
-            <!-- Chart-Container direkt unter dem Titel -->
-            <div class="app-card evolution-chart">
-              <canvas id="evolutionCircle" role="img" aria-label="Kreisdiagramm: Entwicklung von Motivation über Disziplin und Gewohnheit bis zur Identität"></canvas>
-            </div>
-
-            <p class="text-secondary" style="text-align: center; font-size: 14px; margin: 0;">
-              Tippe auf eine Phase, um Details zu sehen.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ARISTOTELES ZITAT -->
-      <div style="margin-top: var(--space-6);">
-        <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 32px;">
-          <div style="width: 64px; height: 1px; background: rgba(255,255,255,0.2);"></div>
-          <div style="margin: 0 16px; color: var(--accent);">
-            <svg style="width: 24px; height: 24px;" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H13.017V21H14.017ZM6.017 21L6.017 18C6.017 16.8954 6.91243 16 8.017 16H11.017C11.5693 16 12.017 15.5523 12.017 15V9C12.017 8.44772 11.5693 8 11.017 8H8.017C7.46472 8 7.017 8.44772 7.017 9V12C7.017 12.5523 6.56929 13 6.017 13H5.017V21H6.017Z" /></svg>
-          </div>
-          <div style="width: 64px; height: 1px; background: rgba(255,255,255,0.2);"></div>
-        </div>
-        <blockquote class="text-primary" style="font-size: clamp(24px, 4vw, 32px); font-style: italic; line-height: 1.5; padding: 0 24px; margin-bottom: 16px; text-align: left;">"Wir sind, was wir wiederholt tun."</blockquote>
-        <cite class="text-accent" style="display: block; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 12px; font-style: normal; text-align: left;">— Aristoteles</cite>
-      </div>
-
-      <!-- 2. DIAGRAMM: PHASEN-DYNAMIK -->
-      <section id="learn-5" data-learn="5" data-learn-card="5" data-title="Tal der Wiederholung" class="app-card space-y-8" style="margin-top: 32px;">
-        <!-- Standardisierter Header -->
-        <div>
-          <div class="badge-label">Phase 5</div>
-          <h2 class="h2">Das Tal der Wiederholung</h2>
-        </div>
-
-        <div style="max-width: 700px; margin: 0;">
-          <p class="text-secondary" style="font-style: italic; line-height: 1.6; margin-bottom: 32px; text-align: left; max-width: 60ch; font-size: 14px;">
-            Fast jede Veränderung scheitert an genau diesem Punkt.
-            Motivation lässt nach, bevor Verhalten zur Gewohnheit wird.
-            In dieser Phase entscheidet sich, ob Disziplin die Lücke schließt –
-            oder ob das System abbricht.
-          </p>
-        </div>
-
-        <!-- Phase Buttons (kompakt) -->
-        <div id="phase-container" class="pill pill--sm"></div>
-
-        <div class="app-card" id="energy-chart-container" style="padding: 20px; min-height: 350px; display: flex; align-items: center; justify-content: center;">
-          <canvas id="energyChart" role="img" aria-label="Energiediagramm: Verlauf von Motivation, Disziplin und Gewohnheit über die Zeit"></canvas>
-        </div>
-      </section>
+<!-- PRODUKTE -->
+<div class="sec" id="produkte">
+  <span class="ey">Das System in der Praxis</span>
+  <h2 style="margin-bottom:12px;">Drei Wege. Ein Ziel.</h2>
+  <p class="lead" style="margin-bottom:40px;">Ob du zuerst verstehen, umsetzen oder täglich anwenden willst – hier ist dein Einstieg.</p>
+  <div class="prods">
+    <div class="prod">
+      <div class="prod-ico">📖</div>
+      <div class="prod-type">Buch</div>
+      <h3>Erfolgs-DNA</h3>
+      <p>Verstehe das vollständige System. Von der Neurologie der Gewohnheit bis zur praktischen Identitätsarbeit.</p>
+      <ul class="pf">
+        <li>Das LOOP-Modell vollständig erklärt</li>
+        <li>Psychologie &amp; Neurowissenschaft</li>
+        <li>Mit konkreten Übungen</li>
+      </ul>
+      <a href="https://amzn.eu/d/0VMuCtQ" target="_blank" rel="noopener" class="btn btn-dk" style="width:100%;justify-content:center;margin-top:auto;">Auf Amazon ansehen →</a>
     </div>
-  </section>
-
-<!-- EXKURS -->
-<section class="step-page" data-step-page="exkurs" hidden>
-  <div class="app-shell" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
-
-    <!-- TOP CONTENT CARD -->
-    <section id="learn-6" data-learn="6" data-learn-card="6" data-title="Erfolg vs. Stagnation"
-             class="card content-card">
-
-      <header class="content-card__header">
-        <div class="badge-label">Exkurs</div>
-        <h2 class="h2">Erfolg vs. Stagnation</h2>
-
-        <p class="text-secondary" style="line-height: 1.6; text-align: left; max-width: 60ch; font-size: 14px; margin-top: var(--space-2);">
-          Der fundamentale Unterschied liegt nicht im Talent, sondern im <strong class="text-primary">Umgang mit Zeit und Systemen</strong>.
-          Während die meisten Menschen an Zielen scheitern, triumphieren Erfolgreiche durch ihre Systeme.
-        </p>
-      </header>
-
-      <!-- 3 Vorteile (stacked, not 3 cards) -->
-      <div class="content-card__section" style="margin-top: var(--space-6);">
-
-        <!-- Item 1 -->
-        <div style="display:flex; gap: var(--space-4); align-items:flex-start;">
-          <div style="width: 36px; height: 36px; background: rgba(251, 191, 36, 0.2); border-radius: 50%;
-                      display:flex; align-items:center; justify-content:center; color: var(--accent); font-weight: 700; flex: 0 0 auto;">
-            1
-          </div>
-          <div style="flex:1;">
-            <h4 class="text-primary" style="font-size: 18px; font-weight: 700; margin-bottom: var(--space-2);">Der Antrieb</h4>
-            <p class="text-secondary" style="font-size: 14px; line-height: 1.6; font-style: italic; margin-bottom: var(--space-3);">
-              "Erfolg beginnt im Kopf, aber er überlebt nur durch Struktur."
-            </p>
-            <p class="text-primary" style="font-size: 14px; line-height: 1.6; margin: 0;">
-              Stagnierende Menschen warten auf den <strong>"richtigen Moment"</strong> (Motivation). Erfolgreiche Menschen erschaffen den Moment durch <strong>Entscheidung</strong>.
-              Der Antrieb wechselt von "Ich will das Ergebnis" zu "Ich will diese Person sein".
-            </p>
-          </div>
-        </div>
-
-        <div class="sheet-divider"></div>
-
-        <!-- Item 2 -->
-        <div style="display:flex; gap: var(--space-4); align-items:flex-start;">
-          <div style="width: 36px; height: 36px; background: rgba(251, 191, 36, 0.2); border-radius: 50%;
-                      display:flex; align-items:center; justify-content:center; color: var(--accent); font-weight: 700; flex: 0 0 auto;">
-            2
-          </div>
-          <div style="flex:1;">
-            <h4 class="text-primary" style="font-size: 18px; font-weight: 700; margin-bottom: var(--space-2);">Ziele vs. Systeme</h4>
-            <p class="text-secondary" style="font-size: 14px; line-height: 1.6; font-style: italic; margin-bottom: var(--space-3);">
-              "Du fällst nicht auf die Ebene deiner Ziele, sondern auf die Ebene deiner Systeme."
-            </p>
-            <p class="text-primary" style="font-size: 14px; line-height: 1.6; margin: 0;">
-              Ziele definieren die Richtung, aber <strong>Systeme</strong> bestimmen den Fortschritt. Ein Ziel ist es, einen Marathon zu laufen.
-              Das System ist der Trainingsplan, der jeden Dienstag um 6 Uhr stattfindet – egal wie man sich fühlt.
-            </p>
-          </div>
-        </div>
-
-        <div class="sheet-divider"></div>
-
-        <!-- Item 3 -->
-        <div style="display:flex; gap: var(--space-4); align-items:flex-start;">
-          <div style="width: 36px; height: 36px; background: rgba(251, 191, 36, 0.2); border-radius: 50%;
-                      display:flex; align-items:center; justify-content:center; color: var(--accent); font-weight: 700; flex: 0 0 auto;">
-            3
-          </div>
-          <div style="flex:1;">
-            <h4 class="text-primary" style="font-size: 18px; font-weight: 700; margin-bottom: var(--space-2);">Die Identität</h4>
-            <p class="text-secondary" style="font-size: 14px; line-height: 1.6; font-style: italic; margin-bottom: var(--space-3);">
-              "Jede Handlung ist eine Stimme für die Person, die du werden willst."
-            </p>
-            <p class="text-primary" style="font-size: 14px; line-height: 1.6; margin: 0;">
-              Erfolg ist eine Nebenwirkung von Identität. Wer sich als "Sportler" sieht, muss nicht überlegen, ob er trainiert.
-              Es ist einfach das, was er tut. Stagnation ist das Ergebnis einer Identität, die an alten Ausreden festhält.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TABS CARD (separat) -->
-    <div class="card" style="margin-top: var(--space-6);">
-
-      <!-- Mobile Toggle Switch -->
-      <div class="segmented-control" id="trap-toggle" role="tablist" aria-label="Fallen Toggle"
-           style="margin-bottom: 24px; display: none;">
-        <button type="button" onclick="setTrapView('success')" data-trap-view="success" class="active"
-                role="tab" aria-selected="true" tabindex="0"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setTrapView('success')}">
-          Erfolgs-Spirale
-        </button>
-        <button type="button" onclick="setTrapView('stagnation')" data-trap-view="stagnation"
-                role="tab" aria-selected="false" tabindex="0"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setTrapView('stagnation')}">
-          Stagnations-Falle
-        </button>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="trap-container">
-        <!-- Erfolgreiche Seite -->
-        <div id="trap-success" class="app-card space-y-8" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); padding: 40px;">
-          <h3 class="text-primary" style="font-size: clamp(20px, 3vw, 28px); font-weight: 700; display: flex; align-items: center; gap: 16px;">
-            <span style="width: 40px; height: 40px; background: #10b981; border-radius: var(--radius-main); color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">↑</span>
-            Die Erfolgs-Spirale
-          </h3>
-
-          <div class="space-y-6">
-            <div class="space-y-2">
-              <span style="color: #10b981; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Das System</span>
-              <p class="text-primary" style="line-height: 1.6;"><strong>Prozessorientierung:</strong> Sie verlieben sich in die tägliche Arbeit, nicht nur in den Pokal am Ende. Das macht sie resilient gegen Plateaus.</p>
-            </div>
-            <div class="space-y-2">
-              <span style="color: #10b981; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Die Psychologie</span>
-              <p class="text-primary" style="line-height: 1.6;"><strong>Delayed Gratification:</strong> Sie verstehen, dass echter Wert Zeit braucht. Sie tauschen kurzfristigen Komfort gegen langfristige Freiheit.</p>
-            </div>
-            <div class="space-y-2">
-              <span style="color: #10b981; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Der Zinseszins</span>
-              <p class="text-primary" style="line-height: 1.6;"><strong>Aggregation of Marginal Gains:</strong> 1% besser jeden Tag führt zu einer exponentiellen Kurve. Sie wissen: Beständigkeit schlägt Intensität.</p>
-            </div>
-          </div>
-
-          <div style="padding-top: 24px; border-top: 1px solid rgba(16, 185, 129, 0.3);">
-            <p style="font-size: 14px; font-style: italic; color: #10b981; font-weight: 500;">"Ich bin ein Mensch, der keine Trainingseinheit verpasst."</p>
-          </div>
-        </div>
-
-        <!-- Stagnierende Seite -->
-        <div id="trap-stagnation" class="app-card space-y-8" style="background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.3); padding: 40px;">
-          <h3 class="text-primary" style="font-size: clamp(20px, 3vw, 28px); font-weight: 700; display: flex; align-items: center; gap: 16px;">
-            <span style="width: 40px; height: 40px; background: #f43f5e; border-radius: var(--radius-main); color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">↓</span>
-            Die Stagnations-Falle
-          </h3>
-
-          <div class="space-y-6">
-            <div class="space-y-2">
-              <span style="color: #f43f5e; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Der Fehler</span>
-              <p class="text-primary" style="line-height: 1.6;"><strong>Ergebnisorientierung:</strong> Wenn das Ziel (z.B. -10kg) nicht sofort erreicht wird, bricht das System zusammen. Frustration führt zum Abbruch.</p>
-            </div>
-            <div class="space-y-2">
-              <span style="color: #f43f5e; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Die Psychologie</span>
-              <p class="text-primary" style="line-height: 1.6;"><strong>Instant Gratification:</strong> Das Gehirn sucht den schnellsten Dopamin-Kick (Social Media, Junk Food). Das tötet die Fähigkeit zur tiefen Arbeit.</p>
-            </div>
-            <div class="space-y-2">
-              <span style="color: #f43f5e; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Der Teufelskreis</span>
-              <p class="text-primary" style="line-height: 1.6;"><strong>Reaktive Lebensweise:</strong> Sie reagieren nur auf Notfälle oder fremde Erwartungen. Sie steuern ihr Leben nicht, sie verwalten nur den Verfall.</p>
-            </div>
-          </div>
-
-          <div style="padding-top: 24px; border-top: 1px solid rgba(244, 63, 94, 0.3);">
-            <p style="font-size: 14px; font-style: italic; color: #f43f5e; font-weight: 500;">"Ich schaue mal, ob ich mich morgen danach fühle."</p>
-          </div>
-        </div>
-      </div>
-
+    <div class="prod feat">
+      <div class="prod-badge">Empfohlen</div>
+      <div class="prod-ico">📓</div>
+      <div class="prod-type">Journal</div>
+      <h3>Mein Erfolgsplaner</h3>
+      <p>Bringt das LOOP-System in deinen Alltag. Tagesplanung, Wochenstruktur und Reflexion nach dem Modell.</p>
+      <ul class="pf">
+        <li>Tagesplanung mit Zeitankern</li>
+        <li>Wöchentliche System-Reviews</li>
+        <li>Baseline, Rotation &amp; Interventionen</li>
+      </ul>
+      <a href="https://amzn.eu/d/7aRxLZl" target="_blank" rel="noopener" class="btn btn-am" style="width:100%;justify-content:center;margin-top:auto;">Auf Amazon ansehen →</a>
     </div>
-  </div>
-</section>
-
-
-  <!-- METHODEN -->
-  <section class="step-page" data-step-page="methoden" hidden>
-    <div class="app-shell" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
-      <!-- TAB NAVIGATION -->
-      <div class="pill" role="tablist" aria-label="Methoden Tabs" style="margin-bottom: var(--space-6);">
-        <button
-          type="button"
-          data-methods-tab="methods"
-          onclick="setMethodsTab('methods')"
-          role="tab"
-          aria-selected="true"
-          tabindex="0"
-          class="active"
-          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setMethodsTab('methods')}"
-        >
-          Methoden
-        </button>
-        <button
-          type="button"
-          data-methods-tab="plan"
-          onclick="setMethodsTab('plan')"
-          role="tab"
-          aria-selected="false"
-          tabindex="0"
-          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setMethodsTab('plan')}"
-        >
-          Plan
-        </button>
-      </div>
-
-      <!-- METHODS TAB CONTENT -->
-      <div id="methods-tab-methods">
-        <!-- INTRO CONTENT CARD -->
-        <section id="learn-7" data-learn="7" data-learn-card="7" data-title="Methoden für dein System" class="card content-card">
-          <header class="content-card__header">
-            <div class="badge-label">Methoden</div>
-
-            <h2 class="content-card__title">Jetzt wird es konkret: Methoden für dein System</h2>
-
-            <p class="text-secondary content-card__lead">
-              Bis hierhin ging es darum zu verstehen, <strong class="text-primary">warum Fortschritt oft abbricht</strong> –
-              nicht wegen fehlender Motivation, sondern wegen eines instabilen Systems.
-            </p>
-
-            <p class="text-secondary">
-              Die Methoden sind entlang dieser vier Wirkbereiche organisiert.
-              Sie greifen dort ein, wo Energie fehlt, Handlung stockt,
-              Erholung zu kurz kommt oder Entwicklung stagniert.
-            </p>
-
-            <button
-              type="button"
-              class="read-toggle js-read-toggle"
-              data-read-target="methods-intro-expanded"
-              aria-expanded="false"
-            >
-              Mehr lesen…
-            </button>
-
-            <div id="methods-intro-expanded" class="read-toggle__content" hidden>
-              <!-- Badges -->
-              <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3);">
-                <span style="padding: 6px 12px; border-radius: 9999px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(251, 191, 36, 0.2); color: var(--accent);">Load</span>
-                <span style="padding: 6px 12px; border-radius: 9999px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(14, 165, 233, 0.2); color: #0ea5e9;">Output</span>
-                <span style="padding: 6px 12px; border-radius: 9999px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(255,255,255,0.1); color: var(--text-secondary);">Off</span>
-                <span style="padding: 6px 12px; border-radius: 9999px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(16, 185, 129, 0.2); color: #10b981;">Progress</span>
-              </div>
-
-              <p class="text-secondary read-toggle__text read-toggle__text--spaced" style="font-size: 14px; font-style: italic; border-left: 4px solid var(--border); padding-left: var(--space-4);">
-                Hinweis: Jeder Wirkbereich hat einen <strong class="text-primary">inneren</strong> und einen
-                <strong class="text-primary">äußeren</strong> Hebel.  
-                Deshalb wirken manche Methoden bewusst auf mehrere Loop-Teile –
-                nicht als Fehler, sondern als Systemprinzip.
-              </p>
-            </div>
-          </header>
-        </section>
-        <!-- ======= GEMEINSAME CARD FÜR GESAMTE METHODEN-SEITE ======= -->
-        <div class="app-card space-y-8" style="margin-top: var(--space-6);">
-
-
-
-          <!-- SELF-CHECK -->
-          <div class="card content-card" style="margin-top: var(--space-6);">
-            <header class="content-card__header">
-              <h3 class="content-card__title" style="font-size: clamp(24px, 4vw, 32px);">
-                Was bremst deinen Loop gerade aus?
-              </h3>
-              <p class="text-secondary content-card__lead">
-                Wähle den Satz, der heute am ehesten zutrifft – dann weißt du, wo du startest.
-              </p>
-            </header>
-
-            <div class="content-card__section" style="margin-top: var(--space-5);">
-              <!-- Auswahl: bleibt per JS gefüllt -->
-              <div id="self-check-grid" style="display: flex; flex-direction: column; gap: var(--space-3);">
-                <!-- wird per JS gefüllt -->
-                <!-- Optionaler Fallback (falls JS mal nicht lädt) -->
-                <div class="app-card" style="background: rgba(255,255,255,0.05); padding: 20px;">
-                  <div class="text-primary" style="font-weight: 800; margin-bottom: 4px;">Energie & Fokus</div>
-                  <p style="font-size: 14px; color: var(--accent); opacity: 0.9;">Mir fehlt Energie, Klarheit oder mentale Präsenz.</p>
-                </div>
-                <div class="app-card" style="background: rgba(255,255,255,0.05); padding: 20px;">
-                  <div class="text-primary" style="font-weight: 800; margin-bottom: 4px;">Umsetzung</div>
-                  <p style="font-size: 14px; color: var(--accent); opacity: 0.9;">Ich komme zu selten ins konsequente Handeln.</p>
-                </div>
-                <div class="app-card" style="background: rgba(255,255,255,0.05); padding: 20px;">
-                  <div class="text-primary" style="font-weight: 800; margin-bottom: 4px;">Regeneration</div>
-                  <p style="font-size: 14px; color: var(--accent); opacity: 0.9;">Ich funktioniere, erhole mich aber zu wenig.</p>
-                </div>
-                <div class="app-card" style="background: rgba(255,255,255,0.05); padding: 20px;">
-                  <div class="text-primary" style="font-weight: 800; margin-bottom: 4px;">Entwicklung</div>
-                  <p style="font-size: 14px; color: var(--accent); opacity: 0.9;">Ich arbeite viel, entwickle mich aber kaum.</p>
-                </div>
-              </div>
-
-              <!-- Ergebnis -->
-              <div id="self-check-result" class="app-card hidden" style="background: var(--surface-card); margin-top: var(--space-6);"></div>
-            </div>
-          </div>
-
-          <!-- 4 WIRKBEREICHE -->
-          <section id="learn-8" data-learn="8" data-learn-card="8" data-title="Die 4 Wirkbereiche" class="card content-card" style="margin-top: var(--space-6);">
-            <header class="content-card__header">
-              <div class="badge-label">4 Wirkbereiche</div>
-              <h2 class="content-card__title">Die 4 Wirkbereiche des LOOP-Systems</h2>
-              <p class="text-secondary content-card__lead">
-                Klicke einen Bereich – und du siehst sofort passende Methoden.
-                Starte dort, wo dein Engpass liegt.
-              </p>
-            </header>
-
-            <div class="content-card__section" style="margin-top: var(--space-5);">
-              <!-- TAB NAVIGATION -->
-              <div id="loop-tabs" class="pill" role="tablist" aria-label="Loop Tabs"></div>
-
-              <!-- TAB CONTENT -->
-              <div id="loop-content" style="margin-top: var(--space-6);"></div>
-            </div>
-          </section>
-
-        </div>
-      </div>
-
-      <!-- PLAN TAB CONTENT -->
-      <div id="methods-tab-plan" hidden>
-        <!-- =========================
-         METHODS → SYSTEM (Dark Principles + Day Timeline)
-        ========================= -->
-
-        <!-- PLAN CONTENT CARD -->
-        <section class="card content-card" style="margin-top: var(--space-6);">
-          <header class="content-card__header">
-            <div class="badge-label">Plan</div>
-            <h2 class="content-card__title">
-              Methoden sind Bausteine – der Plan macht sie automatisch
-            </h2>
-            <p class="text-secondary content-card__lead">
-              Du bindest Methoden an <strong class="text-primary">Zeitanker</strong> und planst <strong class="text-primary">wöchentlich</strong>,
-              damit der Tag keine Willenskraft verbrennt – sondern einfach läuft.
-            </p>
-          </header>
-
-          <!-- 3 Prinzipien -->
-          <div class="content-card__section" style="margin-top: var(--space-6);">
-              <div class="section-label" style="margin-bottom: var(--space-4);">3 Prinzipien</div>
-              
-              <!-- Prinzip 1 -->
-              <div style="padding-bottom: var(--space-5); border-bottom: 1px solid var(--border);">
-                <div class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: var(--space-2);">Prinzip 1</div>
-                <h4 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: var(--space-3);">Wochenplan statt Willenskraft</h4>
-                <p class="text-primary" style="font-size: 14px; line-height: 1.6;">
-                  Du entscheidest <strong class="text-primary">einmal</strong> pro Woche, was „immer gilt" –
-                  und führst dann aus. Der Tag wird Ausführung, nicht Verhandlung.
-                  <span class="text-secondary" style="display: block; margin-top: var(--space-2);">
-                    <strong class="text-accent" style="font-weight: 800;">Merksatz:</strong> Entscheiden ist teuer – Ausführen ist billig.
-                  </span>
-                </p>
-              </div>
-
-              <!-- Prinzip 2 -->
-              <div style="padding-top: var(--space-5); padding-bottom: var(--space-5); border-bottom: 1px solid var(--border);">
-                <div class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: var(--space-2);">Prinzip 2</div>
-                <h4 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: var(--space-3);">Zeitanker aktivieren Methoden</h4>
-                <p class="text-primary" style="font-size: 14px; line-height: 1.6;">
-                  Methoden hängen an festen Momenten (<strong class="text-primary">Morgen</strong>,
-                  <strong class="text-primary">Arbeitsstart</strong>, <strong class="text-primary">Übergang</strong>,
-                  <strong class="text-primary">Abend</strong>) – nicht an Motivation.
-                  <span class="text-secondary" style="display: block; margin-top: var(--space-2);">
-                    <strong class="text-accent" style="font-weight: 800;">Merksatz:</strong> Abruf statt Entscheidung.
-                  </span>
-                </p>
-              </div>
-
-              <!-- Prinzip 3 -->
-              <div style="padding-top: var(--space-5);">
-                <div class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: var(--space-2);">Prinzip 3</div>
-                <h4 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: var(--space-3);">Gewohnheitsklassen</h4>
-                <p class="text-primary" style="font-size: 14px; line-height: 1.6;">
-                  <strong class="text-primary">Baseline</strong> stabilisiert täglich.
-                  <strong class="text-primary">Rotation</strong> entwickelt 1–2×/Woche.
-                  <strong class="text-primary">Intervention</strong> rettet schlechte Tage.
-                </p>
-              </div>
-          </div>
-        </section>
-
-        <!-- Tagesstruktur als Flow -->
-        <section id="learn-9" data-learn="9" data-learn-card="9" data-title="Tagesstruktur" class="card content-card" style="margin-top: var(--space-6);">
-          <header class="content-card__header">
-            <!-- TITLE + INTRO -->
-            <h2 class="content-card__title">
-              Tagesstruktur als Flow
-            </h2>
-            <p class="text-secondary content-card__lead">
-              Ein Tag ist kein To-do-Zettel, sondern ein Prozess: Energie aufbauen, fokussiert arbeiten,
-              gezielt pausieren und sauber abschließen.
-            </p>
-          </header>
-
-          <div class="content-card__section" style="margin-top: var(--space-6);">
-
-            <!-- PRINZIPIEN – DO / DON'T TABS -->
-            <div>
-                <div id="day-tabs" class="pill" role="tablist" aria-label="Day Tabs" style="margin-bottom: var(--space-5);">
-                  <button
-                    type="button"
-                    data-day-tab="do"
-                    onclick="setDayTab('do')"
-                    role="tab"
-                    aria-selected="true"
-                    tabindex="0"
-                    class="active"
-                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setDayTab('do')}"
-                  >
-                    Do
-                  </button>
-                  <button
-                    type="button"
-                    data-day-tab="dont"
-                    onclick="setDayTab('dont')"
-                    role="tab"
-                    aria-selected="false"
-                    tabindex="-1"
-                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();setDayTab('dont')}"
-                  >
-                    Don't
-                  </button>
-                </div>
-
-                <!-- DO CONTENT -->
-                <div id="day-tab-do" class="card" style="padding: var(--space-5);">
-                  <ul class="space-y-2" style="list-style: none; padding: 0; margin: 0;">
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #10b981; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;"><strong>In Blöcken denken</strong> statt in Einzelaufgaben</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #10b981; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;"><strong>Output vor Input</strong> – erst liefern, dann konsumieren</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #10b981; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;"><strong>Sprints mit Off-Phasen</strong> kombinieren</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #10b981; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;"><strong>Plan → Execute → Close</strong> pro Arbeitsblock</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #10b981; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;"><strong>Baseline zuerst</strong>, Rotation bewusst einsetzen</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- DON'T CONTENT -->
-                <div id="day-tab-dont" class="card" style="padding: var(--space-5);" hidden>
-                  <ul class="space-y-2" style="list-style: none; padding: 0; margin: 0;">
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #f43f5e; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;">Den Tag als endlose <strong>To-Do-Liste</strong> behandeln</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #f43f5e; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;">Mit <strong>Mails & Input</strong> in den Fokus starten</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #f43f5e; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;"><strong>Pausen überspringen</strong> oder nebenbei konsumieren</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #f43f5e; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;">Blöcke <strong>ohne Abschluss</strong> stehen lassen</span>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;">
-                      <span style="color: #f43f5e; margin-top: 4px;">•</span>
-                      <span class="text-primary" style="font-size: 14px; line-height: 1.6;">Interventionen als <strong>Dauerzustand</strong> nutzen</span>
-                    </li>
-                  </ul>
-                </div>
-            </div>
-
-            <!-- LEGEND -->
-            <details class="dayflow-legend" style="margin-top: var(--space-6);">
-                <summary class="dayflow-legend__summary">
-                    <span class="dayflow-legend__summary-text">Legende anzeigen</span>
-                </summary>
-                <div class="dayflow-legend__content" style="margin-top: var(--space-4);">
-                    <div style="display: flex; flex-direction: column; gap: var(--space-5);">
-                      <!-- Gruppe 1: Wirkbereiche -->
-                      <div>
-                        <div class="text-secondary" style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-3);">
-                          Wirkbereiche
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="width: 12px; height: 12px; background: #0ea5e9; border-radius: 50%; flex-shrink: 0;"></span>
-                            <span class="text-primary">LOAD</span>
-                          </div>
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; flex-shrink: 0;"></span>
-                            <span class="text-primary">OUTPUT</span>
-                          </div>
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="width: 12px; height: 12px; background: var(--text-secondary); border-radius: 50%; flex-shrink: 0;"></span>
-                            <span class="text-primary">OFF</span>
-                          </div>
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="width: 12px; height: 12px; background: #a855f7; border-radius: 50%; flex-shrink: 0;"></span>
-                            <span class="text-primary">PROGRESS</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Gruppe 2: Gewohnheitsklassen -->
-                      <div>
-                        <div class="text-secondary" style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-3);">
-                          Gewohnheitsklassen
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">B</span>
-                            <span class="text-primary">Baseline</span>
-                          </div>
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">R</span>
-                            <span class="text-primary">Rotation</span>
-                          </div>
-                          <div style="display: flex; align-items: center; gap: var(--space-2); font-size: 12px;">
-                            <span style="padding: 4px 8px; border-radius: 9999px; border: 1px solid var(--border); flex-shrink: 0; font-size: 11px; font-weight: 600;">I</span>
-                            <span class="text-primary">Intervention</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </details>
-
-            <p class="text-secondary" style="font-size: 14px; max-width: 800px; line-height: 1.6; margin-top: var(--space-6);">
-              Jeder Block folgt derselben Logik:
-              <strong class="text-primary">Ausrichten → Umsetzen → kurz abschließen</strong>.
-              So bleibt der Tag klar, steuerbar und endet nicht im Dauerstress.
-            </p>
-
-            <!-- DAYFLOW CAROUSEL -->
-            <div class="dayflow-carousel" style="margin-top: var(--space-6); position: relative;">
-              <!-- CAROUSEL CONTROLS -->
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
-                <button type="button" class="btn btn-ghost dayflow-prev" aria-label="Vorheriger Block" style="padding: var(--space-2) var(--space-3);">
-                  ←
-                </button>
-                <span class="dayflow-counter text-secondary" style="font-size: 12px; font-weight: 600;">1 / 7</span>
-                <button type="button" class="btn btn-ghost dayflow-next" aria-label="Nächster Block" style="padding: var(--space-2) var(--space-3);">
-                  →
-                </button>
-              </div>
-
-              <!-- BLOCK 1: Morgen -->
-              <div class="dayflow-slide is-active">
-                <section class="app-card" style="background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.3); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">🌅 Morgen</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Energie hochfahren & Richtung setzen</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; white-space: nowrap;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary);">
-                        08:00–09:00
-                      </span>
-                      <span style="font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 9999px; background: #10b981; color: white;">
-                        KEY MOMENT
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #0ea5e9; border-radius: 50%;"></span>
-                        <span class="text-primary">Hydration & Tageslicht</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Journaling & Daily Outcome</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #0ea5e9; border-radius: 50%;"></span>
-                        <span class="text-primary">Mobility / Walk</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">R</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #0ea5e9; border-radius: 50%;"></span>
-                        <span class="text-primary">Protein-Frühstück (25–35g), kein Snacking</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Wenn Kopf/Stress hoch: 1× physiologischer Seufzer</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">I</span>
-                      </li>
-                    </ol>
-
-                    <!-- MORGEN: DON'T + WARUM -->
-                    <div class="app-card" style="margin-top: 16px; background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.3); padding: 12px 16px;">
-                      <div style="display: flex; align-items: flex-start; gap: 8px;">
-                        <div style="width: 20px; height: 20px; border-radius: 50%; background: #f43f5e; color: white; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0;">
-                          ✕
-                        </div>
-                        <div>
-                          <div style="font-size: 11px; font-weight: 700; color: #f43f5e; margin-bottom: 4px;">Don't direkt nach dem Aufstehen</div>
-                          <div class="text-secondary" style="font-size: 12px; line-height: 1.5;">
-                            Nicht sofort <strong class="text-primary">Mails/News/Scroll</strong>. Das setzt dein Nervensystem auf Reaktion und klaut Fokus,
-                            bevor du Richtung und Output definierst.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-
-              <!-- BLOCK 2: Arbeit – Vormittag -->
-              <div class="dayflow-slide" style="padding-bottom: 24px;">
-                <section class="app-card" style="background: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.3); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">💼 Arbeit – Vormittag</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Fokuszeit für echten Fortschritt</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary);">
-                        09:00–13:00
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Tagesplanung (1–3–5, Eat the Frog)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></span>
-                        <span class="text-primary">Sprint: Pomodoro / Deep Work</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></span>
-                        <span class="text-primary">Output-first: Ergebnis skizzieren → dann arbeiten</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Definition of Done (1 Satz) vor Start</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Pause zwischen Sprints: 5–10 Min Walk / Dehnen (kein Input)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Wenn Stress: Reset-Satz („Stopp. Neu starten.")</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">I</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Wenn Widerstand: 5-Minuten-Regel („starten, dann neu entscheiden")</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">I</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Entscheidungen parken → Decision Batch später</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">R</span>
-                      </li>
-                    </ol>
-                  </div>
-                </section>
-              </div>
-
-              <!-- BLOCK 3: Mittag & Reset -->
-              <div class="dayflow-slide" style="padding-bottom: 24px;">
-                <section class="app-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">🍽️ Mittag & Reset</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Runterfahren, neu ausrichten</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary);">
-                        12:00–13:00
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #0ea5e9; border-radius: 50%;"></span>
-                        <span class="text-primary">Protein-first + blutzucker-freundlich</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #0ea5e9; border-radius: 50%;"></span>
-                        <span class="text-primary">Chrono-Nutrition: mittags größer, abends leichter</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Walk after Meal (10–15 Min)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">R</span>
-                      </li>
-                    </ol>
-                  </div>
-                </section>
-              </div>
-
-              <!-- BLOCK 4: Arbeit – Nachmittag -->
-              <div class="dayflow-slide" style="padding-bottom: 24px;">
-                <section class="app-card" style="background: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.3); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">💬 Arbeit – Nachmittag</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Kommunikation & Abschluss</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary);">
-                        13:00–16:00
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></span>
-                        <span class="text-primary">Batching (Mails/Orga/Calls)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Mini-Reset in Pausen: aufstehen, Schultern lösen</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Closure: Nächster Schritt notieren (60 Sek)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">I</span>
-                      </li>
-                    </ol>
-                  </div>
-                </section>
-              </div>
-
-              <!-- BLOCK 5: Sport -->
-              <div class="dayflow-slide" style="padding-bottom: 24px;">
-                <section class="app-card" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">🏋️ Sport</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Körperliche Aktivierung</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary);">
-                        17:00–19:00
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #0ea5e9; border-radius: 50%;"></span>
-                        <span class="text-primary">Pre-Snack klein (wenn nötig), Wasser ready</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></span>
-                        <span class="text-primary">Training nach Plan (nicht „nach Gefühl")</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Cool-down kurz + lockeres Ausatmen</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">R</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Wenn–Dann: „Wenn ich ankomme, dann 5 Min Warm-up starten"</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">I</span>
-                      </li>
-                    </ol>
-                  </div>
-                </section>
-              </div>
-
-              <!-- BLOCK 6: Freizeit -->
-              <div class="dayflow-slide" style="padding-bottom: 24px;" hidden>
-                <section class="app-card" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">🍿 Freizeit</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Entspannung & soziale Zeit</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary);">
-                        20:00–22:00
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Kein Input-Overload (Low Dopamine)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">R</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Kleine Reflexion: Was war heute gut?</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary);">R</span>
-                      </li>
-                    </ol>
-                  </div>
-                </section>
-              </div>
-
-              <!-- BLOCK 7: Abend & Schlaf -->
-              <div class="dayflow-slide" hidden>
-                <section class="app-card" style="background: var(--surface-element); overflow: hidden;">
-                  <!-- HEADER -->
-                  <div style="padding: 20px 20px 16px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;">
-                    <div>
-                      <h5 class="text-primary" style="font-weight: 800; font-size: 18px; margin-bottom: 4px;">🌙 Abend & Schlaf</h5>
-                      <p class="text-secondary" style="font-size: 11px; margin-top: 4px;">Runterfahren & Regeneration</p>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
-                      <span style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 9999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary);">
-                        22:00–23:00
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- CONTENT -->
-                  <div style="padding: 0 20px 20px;">
-                    <ol style="margin-top: 4px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Digital Curfew + Licht dimmen</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: var(--text-secondary); border-radius: 50%;"></span>
-                        <span class="text-primary">Schlaf-Fenster fix (± 30 Min)</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Journaling: Selbstwirksamkeit/Dankbarkeit, Reflexion</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-secondary);">B</span>
-                      </li>
-                      <li style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 10px; height: 10px; background: #a855f7; border-radius: 50%;"></span>
-                        <span class="text-primary">Wenn Kopf laut: Brain Dump (2 Min) + Abschluss-Satz</span>
-                        <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-secondary);">I</span>
-                      </li>
-                    </ol>
-
-                    <!-- ABEND: DON'T + WARUM -->
-                    <div class="app-card" style="margin-top: 16px; background: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.3); padding: 12px 16px;">
-                      <div style="display: flex; align-items: flex-start; gap: 8px;">
-                        <div style="width: 20px; height: 20px; border-radius: 50%; background: #f43f5e; color: white; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0;">
-                          ✕
-                        </div>
-                        <div>
-                          <div style="font-size: 11px; font-weight: 700; color: #f43f5e; margin-bottom: 4px;">Don't vor dem Schlafen</div>
-                          <div class="text-secondary" style="font-size: 12px; line-height: 1.5;">
-                            Kein <strong class="text-primary">helles Licht + schwerer Input</strong> (Drama, Arbeit, Social). Das hält dein Gehirn "online",
-                            erhöht Stresslevel und verschlechtert Regeneration & Schlafqualität.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-
-            <!-- Bottom line -->
-            <div style="margin-top: var(--space-6); display: flex; align-items: center; gap: var(--space-2); font-size: 12px; color: var(--text-secondary); padding-top: var(--space-4); border-top: 1px solid var(--border);">
-              <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface-hover); font-weight: 800;">
-                ↺
-              </span>
-              <span class="text-secondary" style="line-height: 1.5;">
-                Zyklus: <strong class="text-primary">Ausrichten</strong> → <strong class="text-primary">Fokussieren</strong> → <strong class="text-primary">Abschließen</strong> → <strong class="text-primary">Lernen</strong>.
-              </span>
-            </div>
-          </div>
-        </section>
-
-      </div>
-      <!-- END methods-tab-plan -->
-
-    </div>
-    <!-- END app-shell -->
-
-  </section>
-  <!-- END step-page methoden -->
-
-  <!-- WRAPUP -->
-  <section class="step-page" data-step-page="wrapup" hidden>
-    <div class="app-shell app-shell--pad">
-      <!-- WRAP UP / SYSTEM SUMMARY -->
-      <section id="learn-10" data-learn="10" data-learn-card="10" data-title="Zusammenfassung" class="card content-card" style="margin-top: var(--space-6);">
-        <header class="content-card__header">
-          <h2 class="content-card__title text-primary">Wrap-up</h2>
-        </header>
-
-        <div class="content-card__section" style="margin-top: var(--space-5);">
-          <div class="divider-list">
-            <div class="divider-item">
-              <div class="divider-kicker">01</div>
-              <h3 class="divider-title">Inneres Fundament</h3>
-              <p class="divider-text">Werte, Stärken und Persönlichkeit bestimmen, welche Systeme für dich funktionieren.</p>
-            </div>
-            <div class="divider-item">
-              <div class="divider-kicker">02</div>
-              <h3 class="divider-title">Identität</h3>
-              <p class="divider-text">Wer du sein willst, entscheidet, was du tust und dauerhaft durchziehst.</p>
-            </div>
-            <div class="divider-item">
-              <div class="divider-kicker">03</div>
-              <h3 class="divider-title">4 Wirkbereiche (LOOP)</h3>
-              <p class="divider-text">Load, Output, Off und Progress greifen ineinander und stabilisieren dein System.</p>
-            </div>
-            <div class="divider-item">
-              <div class="divider-kicker">04</div>
-              <h3 class="divider-title">Methoden & Plan</h3>
-              <p class="divider-text">Bausteine werden durch Zeitanker und wöchentliche Planung automatisch aktiviert.</p>
-            </div>
-          </div>
-
-          <!-- Nächster Schritt -->
-          <div style="margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--border);">
-            <div class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: var(--space-2);">
-              Nächster Schritt
-            </div>
-            <p class="text-primary" style="font-size: 14px; line-height: 1.6;">
-              Du musst nicht alles gleichzeitig optimieren. <strong class="text-accent">Finde den Engpass</strong> – und arbeite dort.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
-
-</main>
-
-    </div>
-
-    <script src="app.js"></script>
-<!-- ================= METHOD MODAL (SCROLL FIX) ================= -->
-
-<div class="bottom-sheet-backdrop" aria-hidden="true"></div>
-
-<div id="method-modal"
-     class="bottom-sheet"
-     aria-hidden="true">
-
-  <!-- DRAG HANDLE -->
-  <div class="bottom-sheet__handle"></div>
-
-  <!-- BOTTOM SHEET CONTENT -->
-  <div class="bottom-sheet__content">
-    <!-- HEADER -->
-    <div class="space-y-1">
-      <span id="modal-category"
-            class="text-secondary" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;"></span>
-
-      <h3 id="modal-title"
-          class="text-primary" style="font-size: 24px; font-weight: 800; margin-top: 8px;"></h3>
-
-      <p id="modal-desc"
-         class="text-secondary" style="margin-top: 4px;"></p>
-    </div>
-
-    <button type="button"
-            onclick="closeModal()"
-            style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: var(--surface-element); color: var(--text-primary); font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-      ✕
-    </button>
-
-    <!-- BODY (scrollable) -->
-    <div class="space-y-6" style="margin-top: 32px;">
-
-      <div>
-        <span class="text-secondary" style="display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: 8px;">
-          Warum das wirkt
-        </span>
-        <p id="modal-how" class="text-primary" style="font-size: 14px; line-height: 1.6;"></p>
-      </div>
-
-      <div>
-        <span class="text-accent" style="display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: 8px;">
-          Nutzen
-        </span>
-        <p id="modal-pro" class="text-primary" style="font-size: 14px; line-height: 1.6;"></p>
-      </div>
-
-      <div>
-        <span class="text-secondary" style="display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: 8px; color: #f43f5e;">
-          Typischer Fehler
-        </span>
-        <p id="modal-contra" class="text-primary" style="font-size: 14px; line-height: 1.6;"></p>
-      </div>
-
-      <div>
-        <span class="text-secondary" style="display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; margin-bottom: 8px;">
-          Praxis
-        </span>
-        <p id="modal-example" class="text-primary" style="font-size: 14px; line-height: 1.6;"></p>
-      </div>
-
+    <div class="prod">
+      <div class="prod-ico">📱</div>
+      <div class="prod-type">App</div>
+      <h3>LOOP App</h3>
+      <p>Das komplette System digital. Geführter Self-Check, alle Methoden interaktiv – immer dabei.</p>
+      <ul class="pf">
+        <li>Geführter Onboarding-Prozess</li>
+        <li>Tägliche Check-ins &amp; Impulse</li>
+        <li>Bald verfügbar</li>
+      </ul>
+      <span class="btn btn-off" style="width:100%;justify-content:center;margin-top:auto;">Bald verfügbar</span>
     </div>
   </div>
 </div>
 
-<!-- ================= END METHOD MODAL ================= -->
+<!-- QUOTE -->
+<div class="qt">
+  <blockquote>„Wir sind, was wir <strong>wiederholt</strong> tun.<br>Exzellenz ist keine Handlung – sie ist eine Gewohnheit."</blockquote>
+  <cite>— Aristoteles</cite>
+</div>
 
-<!-- ================= DETAIL MODAL ================= -->
-<div id="detail-modal" class="modal-full" aria-hidden="true" data-modal-backdrop>
-  <button type="button"
-          onclick="closeDetailModal()"
-          aria-label="Schließen">
-    ✕
-  </button>
-  <div id="detail-modal-content">
-    <div class="badge-label" id="detail-category" style="margin-bottom: var(--space-2);"></div>
-    <h2 id="detail-title" class="h2" style="margin-bottom: var(--space-4);"></h2>
-    <div class="sheet-divider" style="margin-bottom: var(--space-6);"></div>
-    <div id="detail-content" style="line-height: 1.6; color: var(--text);"></div>
+<!-- FINAL CTA -->
+<div class="final">
+  <span class="ey">Bereit anzufangen?</span>
+  <h2>Hör auf zu warten.<br>Bau dein System.</h2>
+  <p class="lead">Das Buch erklärt das Warum. Das Journal gibt dir die Struktur für jeden Tag.</p>
+  <div class="fa" style="margin-top:32px;">
+    <a href="https://amzn.eu/d/0VMuCtQ" target="_blank" rel="noopener" class="btn btn-dk btn-sm">Erfolgs-DNA – Buch →</a>
+    <a href="https://amzn.eu/d/7aRxLZl" target="_blank" rel="noopener" class="btn btn-am btn-sm">Mein Erfolgsplaner →</a>
   </div>
 </div>
 
-<!-- ================= APP MODAL (Deep Dive) ================= -->
-<div id="app-modal" class="modal-full" aria-hidden="true">
-  <button type="button"
-          onclick="closeAppModal()"
-          aria-label="Schließen">
-    ✕
-  </button>
-  <div id="app-modal-content">
-    <h2 id="app-modal-title" class="h2" style="margin-bottom: var(--space-4);"></h2>
-    <div class="sheet-divider" style="margin-bottom: var(--space-6);"></div>
-    <div id="app-modal-body" style="line-height: 1.6; color: var(--text); font-size: var(--f-size-lg);"></div>
-  </div>
-</div>
-    
+<div class="dv"></div>
+<footer class="ft">
+  <div class="ft-logo">LOOP<em>.</em>System</div>
+  <p>Nachhaltiger Fortschritt durch Identität, System &amp; Struktur</p>
+</footer>
+
+<script>
+function switchTab(btn, panelId, tabClass) {
+  if (!btn || !panelId) return;
+  const parent = btn.closest('div, section, details');
+  if (parent) parent.querySelectorAll('.' + tabClass).forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const container = document.getElementById(panelId)?.parentElement;
+  if (container) container.querySelectorAll('[id^="' + panelId.split('-')[0] + '-"]').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById(panelId);
+  if (panel) panel.classList.add('active');
+}
+</script>
+
 </body>
 </html>
