@@ -1,34 +1,316 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light">
-    <title>LOOP System – Erfolg durch Struktur, nicht Willenskraft</title>
-    <meta name="description" content="Systematischer Ansatz für nachhaltigen Erfolg: Von Motivation über Disziplin bis zur Identität. Praktische Methoden für Load, Output, Off und Progress. Wissenschaftlich fundiert, praxisnah umsetzbar.">
-    <link rel="canonical" href="https://example.com/">
-    <meta name="color-scheme" content="light">
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebPage","name":"LOOP System – Erfolg durch Struktur, nicht Willenskraft","description":"Erfolg durch System, nicht Willenskraft. Das LOOP-Modell für Load, Output, Off und Progress.","inLanguage":"de","about":{"@type":"Thing","name":"Persönliche Entwicklung und nachhaltiger Erfolg"}}
-    </script>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOOP System – Erfolg durch Struktur, nicht Willenskraft</title>
+<meta name="description" content="Systematischer Ansatz für nachhaltigen Erfolg: Von Motivation über Disziplin bis zur Identität. Praktische Methoden für Load, Output, Off und Progress.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────── */
+:root{
+  --bg:#f7f4ef; --bg2:#ede9e2; --bg3:#e2ddd6;
+  --w:#fdfcfa; --t:#1c1915; --t2:#6b6560; --t3:#a8a39d;
+  --am:#c8860a; --am-mid:#e8a838; --am-lt:#fdf3e0; --am-bg:rgba(200,134,10,.09);
+  --gn:#1a7a4a; --gn-lt:#e8f5ee;
+  --bl:#0e5fa0; --bl-lt:#e8f0fb;
+  --pu:#6d3fc0; --pu-lt:#f0ebfb;
+  --rd:#c0392b;
+  --br:rgba(0,0,0,.07); --br2:rgba(0,0,0,.12);
+  --sh:0 2px 16px rgba(0,0,0,.06),0 1px 4px rgba(0,0,0,.03);
+  --sh-lg:0 8px 48px rgba(0,0,0,.1),0 2px 8px rgba(0,0,0,.05);
+  --r:12px; --r-lg:18px; --r-xl:24px;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mw:1080px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}
+
+/* ── NAV ─────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(247,244,239,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--br);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,4vw,60px);height:58px;
+}
+.nav-logo{font-family:var(--serif);font-size:20px;letter-spacing:-.02em}
+.nav-logo em{font-style:italic;color:var(--am)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--t2);transition:.15s}
+.nav-links a:hover{color:var(--t)}
+.nav-cta{background:var(--am-mid);color:#fff;font-size:13px;font-weight:600;padding:8px 18px;border-radius:100px;transition:.15s}
+.nav-cta:hover{background:var(--am)}
+@media(max-width:600px){.nav-links{display:none}}
+
+/* ── UTILS ───────────────────────────────── */
+.wrap{max-width:var(--mw);margin:0 auto;padding:0 clamp(20px,4vw,60px)}
+.sec{padding:76px 0}
+.dv{border-top:1px solid var(--br);max-width:var(--mw);margin:0 auto}
+.ey{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--am);margin-bottom:14px}
+h2{font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.lead{font-size:16px;color:var(--t2);line-height:1.7}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:100px;font-size:14px;font-weight:600;transition:.15s;cursor:pointer;border:none;font-family:var(--sans)}
+.btn-dk{background:var(--t);color:var(--bg)}.btn-dk:hover{background:#333}
+.btn-gh{background:transparent;color:var(--t);border:1.5px solid var(--br2)}.btn-gh:hover{background:var(--bg2)}
+.btn-am{background:var(--am-mid);color:#fff}.btn-am:hover{background:var(--am)}
+.btn-off{background:var(--bg3);color:var(--t3);cursor:default}
+
+/* ── HERO ────────────────────────────────── */
+.hero{
+  max-width:var(--mw);margin:0 auto;
+  padding:80px clamp(20px,4vw,60px) 76px;
+  display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:center;
+}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,5.5vw,64px);letter-spacing:-.03em;line-height:1.08;margin-bottom:6px}
+.hero h1 i{font-style:italic;color:var(--am)}
+.hero-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-card{background:var(--w);border:1px solid var(--br);border-radius:var(--r-xl);padding:28px;box-shadow:var(--sh-lg)}
+.hcl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:18px}
+.li-list{display:flex;flex-direction:column;gap:14px}
+.li-item{display:flex;align-items:flex-start;gap:12px}
+.li-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.li-t{font-size:14px;font-weight:600;margin-bottom:2px}
+.li-s{font-size:12px;color:var(--t3)}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero-card{display:none}}
+
+/* ── PROBLEM ─────────────────────────────── */
+.prob-bg{background:var(--t)}
+.prob-bg .ey{color:var(--am-mid)}
+.prob-bg h2{color:#fff;margin-bottom:40px}
+.prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.pc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:24px}
+.ic{font-size:26px;margin-bottom:12px}
+.pc h4{color:#fff;font-size:15px;font-weight:700;margin-bottom:6px}
+.pc p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
+
+/* ── ACCORDIONS ──────────────────────────── */
+details{border:1px solid var(--br);border-radius:var(--r-lg);background:var(--w);margin-bottom:10px;overflow:hidden;box-shadow:var(--sh)}
+details[open]{box-shadow:var(--sh-lg)}
+summary{display:flex;align-items:center;justify-content:space-between;padding:22px 26px;cursor:pointer;list-style:none;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:rgba(0,0,0,.015)}
+.sum-l{display:flex;align-items:center;gap:16px;flex:1}
+.sum-n{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--am);background:var(--am-lt);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sum-hd h3{font-size:16px;font-weight:700;margin-bottom:2px}
+.sum-hd p{font-size:13px;color:var(--t2)}
+.sum-arr{color:var(--t3);font-size:18px;transition:.2s;flex-shrink:0}
+details[open] .sum-arr{transform:rotate(180deg);color:var(--am)}
+.det-body{border-top:1px solid var(--br)}
+.det-in{padding:28px 26px;display:flex;flex-direction:column;gap:20px}
+.det-txt{font-size:15px;color:var(--t2);line-height:1.7}
+.det-txt strong{color:var(--t)}
+
+/* Foundation tabs */
+.f-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.f-tab{padding:7px 16px;border-radius:100px;border:1.5px solid var(--br2);font-size:13px;font-weight:500;color:var(--t2);cursor:pointer;background:transparent;font-family:var(--sans);transition:.12s}
+.f-tab:hover{background:var(--bg2)}
+.f-tab.active{background:var(--am-lt);color:var(--am);border-color:rgba(200,134,10,.2);font-weight:600}
+.f-panel{display:none}.f-panel.active{display:flex;flex-direction:column;gap:14px;animation:fadeUp .2s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.f-panel h4{font-size:16px;font-weight:700}
+.f-desc{font-size:14px;color:var(--t2);line-height:1.7}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.f-grid{grid-template-columns:1fr}}
+.fmc{background:var(--bg);border-radius:var(--r);padding:14px 16px}
+.fml{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:6px;letter-spacing:.04em}
+.fml.g{background:var(--gn-lt);color:var(--gn)}
+.fml.r{background:rgba(192,57,43,.1);color:var(--rd)}
+.fml.a{background:var(--am-lt);color:var(--am)}
+.fmc p{font-size:13px;color:var(--t2);line-height:1.6}
+
+/* Identity */
+.id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:600px){.id-grid{grid-template-columns:1fr}}
+.id-c{border-radius:var(--r-lg);padding:20px;border:1px solid var(--br)}
+.badge{display:inline-block;font-size:11px;font-weight:800;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.6);margin-bottom:10px;letter-spacing:.04em}
+.id-c h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.id-c em{font-size:12px;color:var(--t2);display:block;margin-top:8px;line-height:1.5}
+.id-note{background:var(--bg);border-left:3px solid var(--am-mid);padding:14px 18px;border-radius:0 var(--r) var(--r) 0}
+.id-note p{font-size:14px;color:var(--t2);line-height:1.65}
+
+/* Phases */
+.phases{display:flex;flex-direction:column}
+.ph-item{display:flex;gap:16px}
+.ph-l{display:flex;flex-direction:column;align-items:center;width:28px;flex-shrink:0}
+.ph-dot{width:14px;height:14px;border-radius:50%;border:3px solid currentColor;flex-shrink:0;z-index:1}
+.ph-line{width:2px;flex:1;background:var(--br2);margin:4px 0}
+.ph-item:last-child .ph-line{display:none}
+.ph-r{padding-bottom:22px;flex:1}
+.ph-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;margin-bottom:5px;letter-spacing:.04em}
+.ph-time{font-size:11px;color:var(--t3);margin-bottom:3px}
+.ph-r h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.ph-r>p{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:6px}
+.ph-more details{border:none;background:none;box-shadow:none;border-radius:0;margin:0}
+.ph-more details summary{padding:4px 0;font-size:13px;color:var(--am);font-weight:600;background:none;border:none;box-shadow:none}
+.ph-extra{background:var(--bg);border-radius:var(--r);padding:12px 14px;margin-top:6px;display:flex;flex-direction:column;gap:10px}
+.bars{display:flex;flex-direction:column;gap:7px}
+.br-row{display:flex;align-items:center;gap:10px}
+.br-lbl{font-size:12px;color:var(--t2);width:80px;flex-shrink:0}
+.br-tr{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.br-fi{height:100%;border-radius:3px}
+
+/* LOOP grid */
+.lg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:600px){.lg{grid-template-columns:1fr}}
+.lc{border:1px solid var(--br);border-radius:var(--r-lg);padding:22px;position:relative;overflow:hidden}
+.lload{background:rgba(232,168,56,.05)} .lout{background:rgba(26,122,74,.05)}
+.loff{background:rgba(14,95,160,.05)}   .lpro{background:rgba(109,63,192,.05)}
+.lc-bg{position:absolute;right:-8px;top:-8px;font-size:72px;font-family:var(--serif);opacity:.04;line-height:1;pointer-events:none}
+.lpill{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;letter-spacing:.05em}
+.lload .lpill{background:var(--am-lt);color:var(--am)} .lout .lpill{background:var(--gn-lt);color:var(--gn)}
+.loff .lpill{background:var(--bl-lt);color:var(--bl)}  .lpro .lpill{background:var(--pu-lt);color:var(--pu)}
+.lc h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.ld{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:10px}
+.lc details{border:none;background:none;box-shadow:none;border-radius:0;margin:0}
+.lc details summary{padding:5px 0;font-size:13px;font-weight:600;background:none;border:none;box-shadow:none}
+.lload details summary{color:var(--am)} .lout details summary{color:var(--gn)}
+.loff details summary{color:var(--bl)}  .lpro details summary{color:var(--pu)}
+.lx{background:rgba(0,0,0,.03);border-radius:var(--r);padding:12px;margin-top:8px;display:flex;flex-direction:column;gap:8px}
+.lxr{display:flex;gap:8px}
+.lxl{font-size:11px;font-weight:700;letter-spacing:.05em;min-width:46px;color:var(--t3);flex-shrink:0;padding-top:1px}
+.lxv{font-size:13px;color:var(--t2);line-height:1.5}
+
+/* 7 Steps */
+.step-list{display:flex;flex-direction:column}
+.step-item{display:flex;gap:16px}
+.step-l{display:flex;flex-direction:column;align-items:center;width:40px;flex-shrink:0}
+.step-circle{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;z-index:1}
+.step-vline{width:2px;flex:1;background:var(--br2);margin:4px 0}
+.step-item:last-child .step-vline{display:none}
+.step-r{padding-bottom:22px;flex:1}
+.step-role{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:3px}
+.step-r h4{font-size:15px;font-weight:700;margin-bottom:2px}
+.step-sub{font-size:12px;color:var(--t3);margin-bottom:5px}
+.step-r>p{font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:6px}
+.step-r details{border:none;background:none;box-shadow:none;border-radius:0;margin:0}
+.step-r details summary{padding:4px 0;font-size:13px;color:var(--am);font-weight:600;background:none;border:none;box-shadow:none}
+.step-research{margin-top:6px;padding:10px 14px;background:var(--bg);border-radius:var(--r);display:flex;flex-direction:column;gap:5px}
+.step-research li{font-size:12px;color:var(--t2);line-height:1.5;padding-left:13px;position:relative}
+.step-research li::before{content:'→';position:absolute;left:0;color:var(--am);font-size:11px}
+
+/* ── APP SECTION ─────────────────────────── */
+.app-sec{
+  background:var(--t);
+  padding:80px 0;
+}
+.app-sec .ey{color:var(--am-mid)}
+.app-sec h2{color:#fff;margin-bottom:10px}
+.app-sec .lead{color:rgba(255,255,255,.5);margin-bottom:40px;max-width:480px}
+.app-grid{display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:start}
+@media(max-width:860px){.app-grid{grid-template-columns:1fr}}
+
+/* Feature rows */
+.app-features{display:flex;flex-direction:column;gap:0}
+.app-feat{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 0;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.app-feat:last-child{border-bottom:none}
+.app-feat-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.app-feat-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
+.app-feat-sub{font-size:13px;color:rgba(255,255,255,.45);line-height:1.55}
+
+/* Mockup */
+.app-mockup{
+  background:var(--bg);
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.4);
+  position:sticky;top:80px;
+}
+.mock-header{
+  padding:18px 20px 14px;
+  border-bottom:1px solid var(--br);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.mock-logo{font-family:var(--serif);font-size:18px}
+.mock-logo em{font-style:italic;color:var(--am)}
+.mock-av{width:28px;height:28px;border-radius:50%;background:var(--am-lt);color:var(--am);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.mock-body{padding:16px 20px}
+.mock-date{font-size:12px;color:var(--t3);margin-bottom:4px}
+.mock-headline{font-family:var(--serif);font-size:18px;letter-spacing:-.01em;margin-bottom:16px}
+.mock-headline em{font-style:italic;color:var(--am)}
+
+/* Timeline mock */
+.mock-timeline{position:relative;display:flex;flex-direction:column;gap:0}
+.mock-timeline::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:1px;background:var(--br2)}
+.mock-tl-row{display:flex;gap:12px;align-items:flex-start;padding-bottom:10px}
+.mock-tl-dot{width:12px;height:12px;border-radius:50%;border:2px solid currentColor;background:var(--bg);flex-shrink:0;margin-top:4px;z-index:1}
+.mock-tl-card{flex:1;background:var(--w);border:1px solid var(--br);border-radius:var(--r);padding:10px 12px;box-shadow:var(--sh)}
+.mock-tl-title{font-size:13px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
+.mock-tl-time{font-size:11px;color:var(--t3);font-weight:400}
+.mock-method-row{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--t2);margin-bottom:4px}
+.mock-method-row:last-child{margin-bottom:0}
+.mock-check{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--br2);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.mock-check.on{background:var(--gn);border-color:var(--gn)}
+.mock-check.on::after{content:'';width:5px;height:5px;border-radius:50%;background:#fff}
+.mock-appt{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--bl);background:var(--bl-lt);padding:6px 10px;border-radius:7px;margin:4px 0}
+.mock-appt-dot{width:7px;height:7px;border-radius:2px;background:var(--bl);flex-shrink:0}
+.mock-tl-add{font-size:11px;color:var(--am);font-weight:600;cursor:pointer;margin-top:6px;padding-top:6px;border-top:1px dashed var(--br2)}
+
+.mock-nav{display:flex;border-top:1px solid var(--br);padding:10px 0 4px}
+.mock-nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:var(--t3)}
+.mock-nav-item.on{color:var(--am)}
+.mock-nav-icon{font-size:17px}
+
+/* CTA row */
+.app-cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+
+/* ── PRODUKTE ────────────────────────────── */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+@media(max-width:780px){.prods{grid-template-columns:1fr}}
+.prod{background:var(--w);border:1px solid var(--br);border-radius:var(--r-xl);padding:28px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh);position:relative}
+.prod.feat{border-color:var(--am-mid);box-shadow:0 0 0 1px var(--am-mid),var(--sh-lg)}
+.prod-badge{position:absolute;top:-11px;left:24px;background:var(--am-mid);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:100px;letter-spacing:.04em}
+.prod-ico{font-size:30px}
+.prod-type{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+.prod h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.prod p{font-size:13px;color:var(--t2);line-height:1.65}
+.pf{display:flex;flex-direction:column;gap:7px;flex:1}
+.pf li{font-size:13px;color:var(--t2);display:flex;align-items:flex-start;gap:7px}
+.pf li::before{content:'✓';color:var(--gn);font-weight:700;flex-shrink:0}
+
+/* ── QUOTE + FINAL ───────────────────────── */
+.qt{text-align:center;padding:64px clamp(20px,4vw,60px);max-width:680px;margin:0 auto}
+.qt blockquote{font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);line-height:1.5;color:var(--t);font-style:italic;margin-bottom:12px}
+.qt cite{font-size:13px;color:var(--t3)}
+.final-bg{background:var(--t);padding:80px clamp(20px,4vw,60px)}
+.final-bg .ey{color:var(--am-mid)}
+.final-bg h2{color:#fff;margin-bottom:12px}
+.final-bg .lead{color:rgba(255,255,255,.5);margin:0 auto}
+.fa{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.final-bg .btn-dk{background:var(--bg);color:var(--t)}.final-bg .btn-dk:hover{background:#ddd}
+.footer{background:var(--t);border-top:1px solid rgba(255,255,255,.06);padding:24px clamp(20px,4vw,60px);text-align:center}
+.footer-logo{font-family:var(--serif);font-size:18px;color:#fff;margin-bottom:5px}
+.footer-logo em{font-style:italic;color:var(--am-mid)}
+.footer p{font-size:13px;color:rgba(255,255,255,.28)}
+</style>
 </head>
 <body>
 
-<noscript>
-  <div style="padding: 16px; background: var(--bg2); border-bottom: 1px solid var(--br); text-align: center;">
-    <p style="margin: 0; color: var(--t); font-size: 14px; line-height: 1.6;">Diese Anwendung benötigt JavaScript. Bitte aktivieren Sie JavaScript in Ihren Browser-Einstellungen.</p>
-  </div>
-</noscript>
-
+<!-- NAV -->
 <nav class="nav">
   <a href="#" class="nav-logo">LOOP<em>.</em>System</a>
   <div class="nav-links">
     <a href="#system">Das System</a>
-    <a href="#methoden">Methoden</a>
+    <a href="#app">Die App</a>
     <a href="#produkte">Produkte</a>
   </div>
-  <a href="#produkte" class="nav-cta">Jetzt entdecken →</a>
+  <a href="clarity-app.html" class="nav-cta">App starten →</a>
 </nav>
 
 <!-- HERO -->
@@ -36,7 +318,7 @@
   <div>
     <span class="ey">Erfolg durch System, nicht Willenskraft</span>
     <h1>Du weißt es.<br><i>Mach es auch.</i></h1>
-    <p class="lead" style="margin-top:18px;">Motivation ist der schlechteste Plan den du haben kannst. Wer langfristig wächst, hat kein besseres Mindset – er hat ein besseres System.</p>
+    <p class="lead" style="margin-top:18px">Motivation ist der schlechteste Plan den du haben kannst. Wer langfristig wächst, hat kein besseres Mindset – er hat ein besseres System.</p>
     <div class="hero-acts">
       <a href="#produkte" class="btn btn-dk">Produkte ansehen →</a>
       <a href="#system" class="btn btn-gh">Das System verstehen</a>
@@ -45,7 +327,7 @@
   <div class="hero-card">
     <div class="hcl">Das LOOP-Modell</div>
     <div class="li-list">
-      <div class="li-item"><div class="li-dot" style="background:var(--am)"></div><div><div class="li-t">Load – Energie &amp; Fokus</div><div class="li-s">Was dein System antreibt</div></div></div>
+      <div class="li-item"><div class="li-dot" style="background:var(--am-mid)"></div><div><div class="li-t">Load – Energie &amp; Fokus</div><div class="li-s">Was dein System antreibt</div></div></div>
       <div class="li-item"><div class="li-dot" style="background:var(--gn)"></div><div><div class="li-t">Output – Handlung &amp; Umsetzung</div><div class="li-s">Was du tatsächlich tust</div></div></div>
       <div class="li-item"><div class="li-dot" style="background:var(--bl)"></div><div><div class="li-t">Off – Erholung &amp; Reset</div><div class="li-s">Was dich wieder leistungsfähig macht</div></div></div>
       <div class="li-item"><div class="li-dot" style="background:var(--pu)"></div><div><div class="li-t">Progress – Wachstum &amp; Identität</div><div class="li-s">Was aus Gewohnheit Identität macht</div></div></div>
@@ -57,7 +339,7 @@
 
 <!-- PROBLEM -->
 <div class="prob-bg">
-  <div class="prob-in">
+  <div class="wrap sec">
     <span class="ey">Klingt das vertraut?</span>
     <h2>Warum du schon alles weißt –<br>und es trotzdem nicht klappt</h2>
     <div class="prob-grid">
@@ -69,14 +351,14 @@
   </div>
 </div>
 
-<!-- THEORIE -->
+<!-- SYSTEM ACCORDIONS -->
 <div id="system"></div>
-<div class="sec">
+<div class="wrap sec">
   <span class="ey">Das LOOP-System</span>
-  <h2 style="margin-bottom:12px;">Wie Veränderung wirklich entsteht</h2>
-  <p class="lead" style="margin-bottom:36px;">Drei Ebenen, die ineinandergreifen. Klapp auf – lies so viel oder wenig wie du möchtest.</p>
+  <h2 style="margin-bottom:12px">Wie Veränderung wirklich entsteht</h2>
+  <p class="lead" style="margin-bottom:32px;max-width:520px">Drei Ebenen, die ineinandergreifen. Klapp auf – lies so viel oder wenig wie du möchtest.</p>
 
-  <!-- 01 Fundament -->
+  <!-- 01 -->
   <details>
     <summary><div class="sum-l"><span class="sum-n">01</span><div class="sum-hd"><h3>Inneres Fundament</h3><p>Werte, Stärken &amp; Antreiber – was du wirklich durchhältst.</p></div></div><span class="sum-arr">↓</span></summary>
     <div class="det-body"><div class="det-in">
@@ -90,7 +372,7 @@
       <div id="fp-werte" class="f-panel active">
         <h4>Werte</h4>
         <p class="f-desc">Sie bestimmen, welche Entscheidungen sich richtig anfühlen, welche Kompromisse dich innerlich kosten und wann dein System langfristig stabil bleibt – oder kippt.</p>
-        <div class="f-meta">
+        <div class="f-grid">
           <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Sie schaffen innere Kongruenz und ein klares Warum, das dich auch durch Motivationslöcher trägt.</p></div>
           <div class="fmc"><span class="fml r">✗ Risiko</span><p>Sind Ziele nicht wertekongruent, entstehen innerer Stress und Selbstsabotage.</p></div>
         </div>
@@ -99,7 +381,7 @@
       <div id="fp-staerken" class="f-panel">
         <h4>Stärken</h4>
         <p class="f-desc">Stärken sind wiederkehrende Muster in deinem Denken, Fühlen oder Handeln, die dir leichtfallen und dir Energie geben. Sie zeigen, wo du natürlich wirksam bist.</p>
-        <div class="f-meta">
+        <div class="f-grid">
           <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Wenn du aus deinen Stärken heraus handelst, kommst du schneller in den Flow und bleibst langfristig dran.</p></div>
           <div class="fmc"><span class="fml r">✗ Risiko</span><p>Konzentrierst du dich hauptsächlich auf Schwächen, entsteht hohe Reibung – Fortschritt fühlt sich mühsam an.</p></div>
         </div>
@@ -108,16 +390,16 @@
       <div id="fp-persoenlichkeit" class="f-panel">
         <h4>Persönlichkeit</h4>
         <p class="f-desc">Deine Persönlichkeit beschreibt stabile Muster in deinem Denken, Fühlen und Handeln – warum manche Menschen Struktur brauchen, andere Freiheit.</p>
-        <div class="f-meta">
+        <div class="f-grid">
           <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Wenn du deine Struktur kennst, kannst du Ziele und Gewohnheiten so aufbauen, dass sie wirklich zu dir passen.</p></div>
           <div class="fmc"><span class="fml r">✗ Risiko</span><p>Ohne dieses Verständnis versuchst du Strategien, die für andere funktionieren, aber nicht für dich.</p></div>
         </div>
-        <div class="fmc"><span class="fml a">Beispiel</span><p>Als eher introvertierte Person triffst du bessere Entscheidungen, wenn du dir vor wichtigen Gesprächen Vorbereitungszeit nimmst.</p></div>
+        <div class="fmc"><span class="fml a">Beispiel</span><p>Als introvertierte Person triffst du bessere Entscheidungen, wenn du dir vor wichtigen Gesprächen Vorbereitungszeit nimmst.</p></div>
       </div>
       <div id="fp-antreiber" class="f-panel">
         <h4>Innere Antreiber</h4>
         <p class="f-desc">Innere Antreiber sind meist unbewusste Glaubenssätze wie „Sei perfekt" oder „Mach es allen recht", die früh entstehen und unser Verhalten automatisch steuern.</p>
-        <div class="f-meta">
+        <div class="f-grid">
           <div class="fmc"><span class="fml g">✓ Nutzen</span><p>Bewusst eingesetzt erzeugen sie hohe Energie, Tempo und Qualitätsanspruch.</p></div>
           <div class="fmc"><span class="fml r">✗ Risiko</span><p>Unreflektiert führen Antreiber zu Dauerstress, Erschöpfung oder Aufschieben aus Angst vor Fehlern.</p></div>
         </div>
@@ -126,97 +408,60 @@
     </div></div>
   </details>
 
-  <!-- 02 Identität -->
+  <!-- 02 -->
   <details>
     <summary><div class="sum-l"><span class="sum-n">02</span><div class="sum-hd"><h3>Identität formt Verhalten</h3><p>Nicht was du tust – sondern wer du wirst, wenn du es wiederholst.</p></div></div><span class="sum-arr">↓</span></summary>
     <div class="det-body"><div class="det-in">
       <p class="det-txt">Identität ist kein Ziel – sie ist ein Zustand. Wer sich als Sportler sieht, überlegt nicht ob er trainiert. Er tut es einfach. <strong>Dieser Zustand lässt sich systematisch aufbauen.</strong></p>
       <div class="id-grid">
-        <div class="id-c" style="background:var(--am-md)"><span class="badge" style="color:var(--am)">Be</span><h4>Wer willst du sein?</h4><p style="font-size:13px;color:var(--t2)">Haltung &amp; Selbstbild als innerer Filter.</p><em>„Ich bin jemand, der Verantwortung übernimmt."</em></div>
-        <div class="id-c" style="background:var(--bl-lt)"><span class="badge" style="color:var(--bl)">Act</span><h4>Was tust du regelmäßig?</h4><p style="font-size:13px;color:var(--t2)">Klare Regeln &amp; Routinen statt Willenskraft.</p><em>„Wenn X, dann Y."</em></div>
-        <div class="id-c" style="background:var(--gn-lt)"><span class="badge" style="color:var(--gn)">Become</span><h4>Wer wirst du automatisch?</h4><p style="font-size:13px;color:var(--t2)">Selbstwirksamkeit ersetzt Motivation dauerhaft.</p><em>„Ich bin einfach so."</em></div>
+        <div class="id-c" style="background:var(--am-lt);border-color:rgba(200,134,10,.15)"><span class="badge" style="color:var(--am)">Be</span><h4>Wer willst du sein?</h4><p style="font-size:13px;color:var(--t2)">Haltung &amp; Selbstbild als innerer Filter.</p><em>„Ich bin jemand, der Verantwortung übernimmt."</em></div>
+        <div class="id-c" style="background:var(--bl-lt);border-color:rgba(14,95,160,.12)"><span class="badge" style="color:var(--bl)">Act</span><h4>Was tust du regelmäßig?</h4><p style="font-size:13px;color:var(--t2)">Klare Regeln &amp; Routinen statt Willenskraft.</p><em>„Wenn X, dann Y."</em></div>
+        <div class="id-c" style="background:var(--gn-lt);border-color:rgba(26,122,74,.12)"><span class="badge" style="color:var(--gn)">Become</span><h4>Wer wirst du automatisch?</h4><p style="font-size:13px;color:var(--t2)">Selbstwirksamkeit ersetzt Motivation dauerhaft.</p><em>„Ich bin einfach so."</em></div>
       </div>
       <div class="id-note"><p>Wenn Identität klar ist, braucht es kein Push mehr – sondern ein System, das sie täglich trägt.</p></div>
     </div></div>
   </details>
 
-
-  <!-- 03 Phasen -->
+  <!-- 03 -->
   <details>
     <summary><div class="sum-l"><span class="sum-n">03</span><div class="sum-hd"><h3>Motivation → Disziplin → Gewohnheit → Identität</h3><p>Jede Veränderung durchläuft dieselben vier Phasen. Die meisten scheitern in Phase 2.</p></div></div><span class="sum-arr">↓</span></summary>
     <div class="det-body"><div class="det-in">
       <p class="det-txt">Fast jede Veränderung scheitert im <strong>Tal der Wiederholung</strong>: Motivation lässt nach, bevor das Verhalten zur Gewohnheit wurde. Wer diesen Mechanismus kennt, kann sich dagegen wappnen.</p>
       <div class="phases">
-        <div class="ph-item">
-          <div class="ph-l"><div class="ph-dot" style="background:#d97706;outline-color:#d97706"></div><div class="ph-line"></div></div>
-          <div class="ph-r">
-            <span class="ph-tag" style="background:rgba(217,119,6,.12);color:#d97706">Aktivierung</span>
-            <div class="ph-time">Tag 1–10</div>
-            <h4>Aktivierung</h4>
-            <p>Die Phase der Begeisterung. Alles ist neu, die Energie ist explosiv.</p>
-            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Hier werden Visionen geboren, aber noch keine stabilen Strukturen. Den Schwung nutzen, um die Umgebung vorzubereiten.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:100%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">100%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:20%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">20%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:0%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">0%</span></div></div></div></details></div>
-          </div>
-        </div>
-        <div class="ph-item">
-          <div class="ph-l"><div class="ph-dot" style="background:#ef4444;outline-color:#ef4444"></div><div class="ph-line"></div></div>
-          <div class="ph-r">
-            <span class="ph-tag" style="background:rgba(239,68,68,.12);color:#ef4444">Widerstand</span>
-            <div class="ph-time">Tag 11–30</div>
-            <h4>Widerstand</h4>
-            <p>Die Phase der Ernüchterung. Körper und Gehirn rebellieren gegen Veränderung.</p>
-            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Hier entscheidet sich, wer Systeme baut und wer nur Träume hat. 80% aller Versuche scheitern in dieser Phase.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:30%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">30%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:90%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">90%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:10%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">10%</span></div></div></div></details></div>
-          </div>
-        </div>
-        <div class="ph-item">
-          <div class="ph-l"><div class="ph-dot" style="background:#0284c7;outline-color:#0284c7"></div><div class="ph-line"></div></div>
-          <div class="ph-r">
-            <span class="ph-tag" style="background:rgba(2,132,199,.12);color:#0284c7">Integration</span>
-            <div class="ph-time">Tag 31–60</div>
-            <h4>Integration</h4>
-            <p>Die Phase der Normalisierung. Die Anstrengung sinkt spürbar.</p>
-            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Das Gehirn beginnt, die neuen Bahnen zu bevorzugen. Erste messbare Erfolge werden sichtbar.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:20%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">20%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:50%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">50%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:60%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">60%</span></div></div></div></details></div>
-          </div>
-        </div>
-        <div class="ph-item">
-          <div class="ph-l"><div class="ph-dot" style="background:#059669;outline-color:#059669"></div><div class="ph-line"></div></div>
-          <div class="ph-r">
-            <span class="ph-tag" style="background:rgba(5,150,105,.12);color:#059669">Stabilität</span>
-            <div class="ph-time">Tag 60+</div>
-            <h4>Stabilität</h4>
-            <p>Die Phase der Meisterschaft. Die neue Handlung ist der Standard.</p>
-            <div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p>Sie kostet keine Willenskraft mehr. Man muss sich eher überwinden, es NICHT zu tun. Die Identität hat sich transformiert.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:80%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">80%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:10%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">10%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:100%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:30px;text-align:right">100%</span></div></div></div></details></div>
-          </div>
-        </div>
+        <div class="ph-item"><div class="ph-l"><div class="ph-dot" style="color:#d97706"></div><div class="ph-line"></div></div><div class="ph-r"><span class="ph-tag" style="background:rgba(217,119,6,.12);color:#d97706">Aktivierung</span><div class="ph-time">Tag 1–10</div><h4>Aktivierung</h4><p>Die Phase der Begeisterung. Alles ist neu, die Energie ist explosiv.</p><div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p style="font-size:13px;color:var(--t2)">Hier werden Visionen geboren, aber noch keine stabilen Strukturen. Den Schwung nutzen, um die Umgebung vorzubereiten.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:100%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">100%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:20%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">20%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:0%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">0%</span></div></div></div></details></div></div></div>
+        <div class="ph-item"><div class="ph-l"><div class="ph-dot" style="color:#ef4444"></div><div class="ph-line"></div></div><div class="ph-r"><span class="ph-tag" style="background:rgba(239,68,68,.12);color:#ef4444">Widerstand</span><div class="ph-time">Tag 11–30</div><h4>Widerstand</h4><p>Die Phase der Ernüchterung. Körper und Gehirn rebellieren gegen Veränderung.</p><div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p style="font-size:13px;color:var(--t2)">Hier entscheidet sich, wer Systeme baut und wer nur Träume hat. 80% aller Versuche scheitern in dieser Phase.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:30%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">30%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:90%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">90%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:10%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">10%</span></div></div></div></details></div></div></div>
+        <div class="ph-item"><div class="ph-l"><div class="ph-dot" style="color:#0284c7"></div><div class="ph-line"></div></div><div class="ph-r"><span class="ph-tag" style="background:rgba(2,132,199,.12);color:#0284c7">Integration</span><div class="ph-time">Tag 31–60</div><h4>Integration</h4><p>Die Phase der Normalisierung. Die Anstrengung sinkt spürbar.</p><div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p style="font-size:13px;color:var(--t2)">Das Gehirn beginnt, die neuen Bahnen zu bevorzugen. Erste messbare Erfolge werden sichtbar.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:20%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">20%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:50%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">50%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:60%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">60%</span></div></div></div></details></div></div></div>
+        <div class="ph-item"><div class="ph-l"><div class="ph-dot" style="color:#059669"></div></div><div class="ph-r"><span class="ph-tag" style="background:rgba(5,150,105,.12);color:#059669">Stabilität</span><div class="ph-time">Tag 60+</div><h4>Stabilität</h4><p>Die Phase der Meisterschaft. Die neue Handlung ist der Standard – sie kostet keine Willenskraft mehr.</p><div class="ph-more"><details><summary>Mehr erfahren</summary><div class="ph-extra"><p style="font-size:13px;color:var(--t2)">Man muss sich eher überwinden, es NICHT zu tun. Die Identität hat sich transformiert.</p><div class="bars"><div class="br-row"><span class="br-lbl">Motivation</span><div class="br-tr"><div class="br-fi" style="width:80%;background:#d97706"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">80%</span></div><div class="br-row"><span class="br-lbl">Disziplin</span><div class="br-tr"><div class="br-fi" style="width:10%;background:#ef4444"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">10%</span></div><div class="br-row"><span class="br-lbl">Gewohnheit</span><div class="br-tr"><div class="br-fi" style="width:100%;background:#10b981"></div></div><span style="font-size:12px;color:var(--t3);min-width:28px;text-align:right">100%</span></div></div></div></details></div></div></div>
       </div>
     </div></div>
   </details>
 
-  <!-- 04 LOOP -->
+  <!-- 04 -->
   <details>
     <summary><div class="sum-l"><span class="sum-n">04</span><div class="sum-hd"><h3>Die vier Wirkbereiche des LOOP</h3><p>Wenn ein Bereich kippt, spürst du es überall.</p></div></div><span class="sum-arr">↓</span></summary>
     <div class="det-body"><div class="det-in">
       <div class="lg">
-        <div class="lc lload"><div class="lc-bg">L</div><span class="lpill">Load</span><h3>Load – Energie &amp; Fokus</h3><p class="ld">Load beschreibt, wie viel Energie, Fokus und mentale Kapazität deinem System aktuell zur Verfügung steht.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Stabiler Load macht Output leichter: Du hast Klarheit, Energie und weniger Reibung beim Start.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Wenn Load fehlt, fühlt sich alles wie Disziplin an – obwohl das System eigentlich leer ist.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Check: „Wie leer bin ich gerade (0–10)?" – Bei 3 ist Output nicht die Lösung, sondern erst Load.</span></div></div></details></div>
-        <div class="lc lout"><div class="lc-bg">O</div><span class="lpill">Output</span><h3>Output – Handlung &amp; Umsetzung</h3><p class="ld">Output ist die Fähigkeit, Gedanken in Handlung zu übersetzen – mit möglichst wenig Reibung im Alltag.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Output erzeugt Selbstwirksamkeit: Du siehst, dass du liefern kannst – auch ohne perfekte Stimmung.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Zu viel Komplexität oder Perfektionismus führen dazu, dass du startest – aber nicht dranbleibst.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Fast Fix: Nur starten. Zeitbox 10 Minuten – kein Ergebnis-Ziel. Output beginnt mit Bewegung.</span></div></div></details></div>
-        <div class="lc loff"><div class="lc-bg">O</div><span class="lpill">Off</span><h3>Off – Erholung &amp; Reset</h3><p class="ld">Off ist die bewusste Phase für Erholung und Regulation des Nervensystems – damit dein System stabil bleibt.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Off senkt Stress und macht dich wieder steuerfähig: Fokus, Stimmung und Impulskontrolle werden besser.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Ohne Off bleibst du im Dauerstress: Gereiztheit, Unruhe, schlechter Schlaf – Output wird zäh.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Reset: 5 tiefe Atemzüge + 2 Minuten Reizpause (kein Screen). Off ist kein Luxus.</span></div></div></details></div>
-        <div class="lc lpro"><div class="lc-bg">P</div><span class="lpill">Progress</span><h3>Progress – Wachstum &amp; Identität</h3><p class="ld">Progress ist die Veränderung, die aus Wiederholung entsteht: Lernen, Anpassung – und langfristig Identität.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Progress formt dein Selbstbild: „Ich bin jemand, der dranbleibt." Stärker als jedes Mindset-Mantra.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Wenn du nicht misst oder wiederholst, fühlt sich alles nach Stillstand an – obwohl du Potenzial hast.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Regel: 1 Satz Fortschritt pro Tag (Journal). Wiederholung macht aus Verhalten Identität.</span></div></div></details></div>
+        <div class="lc lload"><div class="lc-bg">L</div><span class="lpill">Load</span><h3>Load – Energie &amp; Fokus</h3><p class="ld">Load beschreibt, wie viel Energie, Fokus und mentale Kapazität deinem System aktuell zur Verfügung steht.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Stabiler Load macht Output leichter: Du hast Klarheit, Energie und weniger Reibung beim Start.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Wenn Load fehlt, fühlt sich alles wie Disziplin an – obwohl das System eigentlich leer ist.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Check: „Wie leer bin ich gerade (0–10)?" – Bei 3 ist Output nicht die Lösung.</span></div></div></details></div>
+        <div class="lc lout"><div class="lc-bg">O</div><span class="lpill">Output</span><h3>Output – Handlung &amp; Umsetzung</h3><p class="ld">Output ist die Fähigkeit, Gedanken in Handlung zu übersetzen – mit möglichst wenig Reibung im Alltag.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Output erzeugt Selbstwirksamkeit: Du siehst, dass du liefern kannst – auch ohne perfekte Stimmung.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Zu viel Komplexität führt dazu, dass du startest – aber nicht dranbleibst.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Fast Fix: Nur starten. Zeitbox 10 Minuten – kein Ergebnis-Ziel.</span></div></div></details></div>
+        <div class="lc loff"><div class="lc-bg">O</div><span class="lpill">Off</span><h3>Off – Erholung &amp; Reset</h3><p class="ld">Off ist die bewusste Phase für Erholung und Regulation des Nervensystems – damit dein System stabil bleibt.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Off senkt Stress und macht dich wieder steuerfähig: Fokus, Stimmung und Impulskontrolle besser.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Ohne Off bleibst du im Dauerstress: Gereiztheit, Unruhe, schlechter Schlaf.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">Mini-Reset: 5 tiefe Atemzüge + 2 Minuten Reizpause. Off ist kein Luxus.</span></div></div></details></div>
+        <div class="lc lpro"><div class="lc-bg">P</div><span class="lpill">Progress</span><h3>Progress – Wachstum &amp; Identität</h3><p class="ld">Progress ist die Veränderung, die aus Wiederholung entsteht: Lernen, Anpassung – und langfristig Identität.</p><details><summary>Details anzeigen</summary><div class="lx"><div class="lxr"><span class="lxl">Nutzen</span><span class="lxv">Progress formt dein Selbstbild: „Ich bin jemand, der dranbleibt." Stärker als jedes Mindset-Mantra.</span></div><div class="lxr"><span class="lxl">Risiko</span><span class="lxv">Wenn du nicht misst oder wiederholst, fühlt sich alles nach Stillstand an.</span></div><div class="lxr"><span class="lxl">Praxis</span><span class="lxv">1 Satz Fortschritt pro Tag (Journal). Wiederholung macht aus Verhalten Identität.</span></div></div></details></div>
       </div>
     </div></div>
   </details>
 
-  <!-- 05 7 Stufen -->
+  <!-- 05 -->
   <details>
     <summary><div class="sum-l"><span class="sum-n">05</span><div class="sum-hd"><h3>Der 7-Stufen-Pfad zur Identität</h3><p>Motivation, Entscheidung, Disziplin, Gewohnheit, Innere Stärke, Selbstwirksamkeit, Identität.</p></div></div><span class="sum-arr">↓</span></summary>
     <div class="det-body"><div class="det-in">
       <p class="det-txt">Jede nachhaltige Veränderung durchläuft dieselben 7 Stufen. Die meisten kennen nur die erste. Wer alle kennt, kann sich gezielt auf der richtigen Stufe bewegen – statt blind von vorne anzufangen.</p>
       <div class="step-list">
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#f59e0b">1</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Initiator</div><h4>Motivation</h4><div class="step-sub">Auslöser &amp; Bedürfnis</div><p>Sie entsteht intrinsisch (aus persönlichem Wunsch/Sinn) oder extrinsisch (Belohnung/Druck). Sie erzeugt den notwendigen Impuls, um überhaupt über Veränderung nachzudenken.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Dopamin-Spitzen entstehen bei der Vorstellung des Ziels, nicht während der harten Arbeit.</li><li>Push-Faktoren (Weg von Schmerz) sind oft kurzfristig stärker als Pull-Faktoren.</li><li>Motivation ist hoch-emotional und anfällig für Stress oder Schlafmangel.</li></ul></details></div></div>
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#78716c">2</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Weichensteller</div><h4>Entscheidung</h4><div class="step-sub">Verbindlichkeit</div><p>Eine Entscheidung beendet das innere Abwägen und legt fest, welcher Weg verfolgt wird – und welche Alternativen bewusst ausgeschlossen werden.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Entscheidungen entstehen im Zusammenspiel von intuitivem und rationalem Denken.</li><li>Vorab getroffene Entscheidungen schützen vor Entscheidungsmüdigkeit.</li><li>Klare Festlegungen reduzieren Heuristiken und Bias.</li></ul></details></div></div>
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#ef4444">3</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Motor</div><h4>Disziplin</h4><div class="step-sub">Willenskraft</div><p>Handeln gegen Widerstände. Wenn Motivation verfliegt, tritt Disziplin an ihre Stelle. In dieser Phase findet der härteste Kampf statt: Alt gegen Neu.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Willenskraft nimmt durch Decision Fatigue im Laufe des Tages ab.</li><li>Disziplin verbrennt Glukose im präfrontalen Cortex.</li><li>Hier scheitern 80% aller Neujahrsvorsätze.</li></ul></details></div></div>
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#10b981">4</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Autopilot</div><h4>Gewohnheit</h4><div class="step-sub">Automatisierung</div><p>Sobald eine Handlung oft genug wiederholt wurde, verschiebt das Gehirn die Steuerung in die Basalganglien. Ab diesem Punkt wird kein aktives Denken mehr benötigt.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>The Habit Loop: Jede Gewohnheit braucht Auslöser, Routine und Belohnung.</li><li>Nach ca. 66 Tagen ist eine Handlung so verankert, dass ihr Fehlen Unbehagen auslöst.</li><li>Neuronale Myelinisierung verstärkt die Leitbahnen und minimiert die Reaktionszeit.</li></ul></details></div></div>
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#8b5cf6">5</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Stabilisator</div><h4>Innere Stärke</h4><div class="step-sub">Resilienz &amp; Emotionsregulation</div><p>Psychologische Robustheit. Erfolg ist kein linearer Weg. Innere Stärke bedeutet, nach Rückschlägen nicht abzubrechen, sondern das System neu zu kalibrieren.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Growth Mindset: Fehler werden als Datenpunkte begriffen, nicht als Identitätsmangel.</li><li>Emotionsregulation verhindert, dass ein schlechter Tag zur Abbruch-Woche wird.</li><li>Selbstmitgefühl korreliert höher mit Disziplin als Selbststrenge.</li></ul></details></div></div>
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#0284c7">6</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Katalysator</div><h4>Selbstwirksamkeit</h4><div class="step-sub">Vertrauen &amp; Bestätigung</div><p>Das tiefe Vertrauen in die eigene Handlungsfähigkeit. Durch das Meistern der vorherigen Phasen sammelt man Beweise für die eigene Kompetenz – eine positive Feedbackschleife entsteht.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Mastery Experiences sind der stärkste Treiber für echtes Selbstbewusstsein.</li><li>Hohe Selbstwirksamkeit reduziert Stress und erhöht Ausdauer bei komplexen Aufgaben.</li><li>Der Fokus verschiebt sich von „Kann ich das?" zu „Wie löse ich das?".</li></ul></details></div></div>
-        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#d97706">7</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Statischer Zustand</div><h4>Identität</h4><div class="step-sub">Ontologische Transformation</div><p>Der finale Zustand: Die Handlung ist eins mit dem Selbstbild. Man tut Dinge nicht mehr, um ein Ziel zu erreichen, sondern weil man dieser Mensch IST.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Identity-Based Habits: „Ich bin Nichtraucher" ist stärker als „Ich versuche aufzuhören".</li><li>Kognitive Dissonanz sorgt dafür, dass wir uns konsistent zum Selbstbild verhalten.</li><li>Werte und Handlungen in Resonanz erzeugen tiefe Zufriedenheit.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#f59e0b">1</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Initiator</div><h4>Motivation</h4><div class="step-sub">Auslöser &amp; Bedürfnis</div><p>Sie erzeugt den notwendigen Impuls, um überhaupt über Veränderung nachzudenken.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Dopamin-Spitzen entstehen bei der Vorstellung des Ziels, nicht während der harten Arbeit.</li><li>Push-Faktoren (Weg von Schmerz) sind oft kurzfristig stärker als Pull-Faktoren.</li><li>Motivation ist anfällig für Stress oder Schlafmangel.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#78716c">2</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Weichensteller</div><h4>Entscheidung</h4><div class="step-sub">Verbindlichkeit</div><p>Eine Entscheidung beendet das innere Abwägen und schließt Alternativen bewusst aus.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Vorab getroffene Entscheidungen schützen vor Entscheidungsmüdigkeit.</li><li>Klare Festlegungen reduzieren Heuristiken und Bias.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#ef4444">3</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Motor</div><h4>Disziplin</h4><div class="step-sub">Willenskraft</div><p>Handeln gegen Widerstände. In dieser Phase findet der härteste Kampf statt: Alt gegen Neu.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Willenskraft nimmt durch Decision Fatigue im Laufe des Tages ab.</li><li>Hier scheitern 80% aller Neujahrsvorsätze.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#10b981">4</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Autopilot</div><h4>Gewohnheit</h4><div class="step-sub">Automatisierung</div><p>Das Gehirn verschiebt die Steuerung in die Basalganglien. Kein aktives Denken mehr nötig.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>The Habit Loop: Jede Gewohnheit braucht Auslöser, Routine und Belohnung.</li><li>Nach ca. 66 Tagen ist eine Handlung so verankert, dass ihr Fehlen Unbehagen auslöst.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#8b5cf6">5</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Stabilisator</div><h4>Innere Stärke</h4><div class="step-sub">Resilienz &amp; Emotionsregulation</div><p>Nach Rückschlägen nicht abbrechen, sondern das System neu kalibrieren.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Growth Mindset: Fehler werden als Datenpunkte begriffen, nicht als Identitätsmangel.</li><li>Selbstmitgefühl korreliert höher mit Disziplin als Selbststrenge.</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#0284c7">6</div><div class="step-vline"></div></div><div class="step-r"><div class="step-role">Katalysator</div><h4>Selbstwirksamkeit</h4><div class="step-sub">Vertrauen &amp; Bestätigung</div><p>Durch das Meistern der vorherigen Phasen entstehen Beweise für die eigene Kompetenz.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Mastery Experiences sind der stärkste Treiber für echtes Selbstbewusstsein.</li><li>Der Fokus verschiebt sich von „Kann ich das?" zu „Wie löse ich das?".</li></ul></details></div></div>
+        <div class="step-item"><div class="step-l"><div class="step-circle" style="background:#d97706">7</div></div><div class="step-r"><div class="step-role">Statischer Zustand</div><h4>Identität</h4><div class="step-sub">Ontologische Transformation</div><p>Die Handlung ist eins mit dem Selbstbild. Man tut Dinge nicht mehr um ein Ziel zu erreichen, sondern weil man dieser Mensch IST.</p><details><summary>Forschungshintergrund</summary><ul class="step-research"><li>Identity-Based Habits: „Ich bin Nichtraucher" ist stärker als „Ich versuche aufzuhören".</li><li>Kognitive Dissonanz sorgt dafür, dass wir uns konsistent zum Selbstbild verhalten.</li></ul></details></div></div>
       </div>
     </div></div>
   </details>
@@ -224,77 +469,115 @@
 
 <div class="dv"></div>
 
-<!-- TAGESSTRUKTUR -->
-<div class="sec">
-  <span class="ey">Strukturierter Alltag</span>
-  <h2 style="margin-bottom:12px;">Der ideale Tagesablauf</h2>
-  <p class="lead" style="margin-bottom:28px;">Methoden wirken am stärksten, wenn sie an feste Zeitanker gebunden sind.</p>
-  <div class="df-tabs">
-    <button class="df-tab active" onclick="switchTab(this,'df-morgen','df-tab')">🌅 Morgen</button>
-    <button class="df-tab" onclick="switchTab(this,'df-vormittag','df-tab')">💼 Vormittag</button>
-    <button class="df-tab" onclick="switchTab(this,'df-mittag','df-tab')">🍽️ Mittag</button>
-    <button class="df-tab" onclick="switchTab(this,'df-nachmittag','df-tab')">💬 Nachmittag</button>
-    <button class="df-tab" onclick="switchTab(this,'df-sport','df-tab')">🏋️ Sport</button>
-    <button class="df-tab" onclick="switchTab(this,'df-abend','df-tab')">🍿 Abend</button>
-  </div>
-  <div class="df-panels">
-    <div id="df-morgen" class="df-panel active"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🌅</span><div><h3>Morgen</h3><p>Energie hochfahren &amp; Richtung setzen</p></div></div><span class="df-time">08:00 – 09:00</span></div><div class="df-note">Don't: Nicht sofort Mails, News oder Scroll nach dem Aufstehen – das setzt dein Nervensystem auf Reaktion und klaut Fokus.</div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Hydration &amp; Tageslicht (5–15 Min nach dem Aufstehen)</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Journaling &amp; Daily Outcome definieren</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Mobility oder Walk (10–15 Min)</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Protein-Frühstück (25–35g), kein Snacking</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Bei hohem Stresslevel: 1× physiologischer Seufzer</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
-    <div id="df-vormittag" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">💼</span><div><h3>Arbeit – Vormittag</h3><p>Fokuszeit für echten Fortschritt</p></div></div><span class="df-time">09:00 – 13:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Tagesplanung (1–3–5, Eat the Frog)</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Sprint: Pomodoro oder Deep Work Block</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Output-first: Ergebnis skizzieren, dann arbeiten</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Definition of Done (1 Satz) vor jedem Task-Start</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Pause zwischen Sprints: 5–10 Min Walk (kein Screen)</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Bei Stress: 4-7-8 Atemübung</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
-    <div id="df-mittag" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🍽️</span><div><h3>Mittag &amp; Reset</h3><p>Runterfahren, neu ausrichten</p></div></div><span class="df-time">12:00 – 13:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Protein-first, blutzucker-freundlich essen</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Chrono-Nutrition: mittags größer, abends leichter</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Walk after Meal (10–15 Min)</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Midday NSDR oder Powernap (10–20 Min)</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
-    <div id="df-nachmittag" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">💬</span><div><h3>Arbeit – Nachmittag</h3><p>Kommunikation &amp; Abschluss</p></div></div><span class="df-time">13:00 – 16:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Batching: Mails, Orga, Calls gebündelt abarbeiten</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Mini-Reset: aufstehen, Schultern lösen</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Closure: Nächsten Schritt notieren (60 Sek)</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Bei Energie-Loch: Koffein + 20-Min-Nap (vor 15 Uhr)</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
-    <div id="df-sport" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🏋️</span><div><h3>Sport</h3><p>Körperliche Aktivierung</p></div></div><span class="df-time">17:00 – 19:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Pre-Snack klein (wenn nötig), Wasser ready</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Training nach Plan – nicht nach Gefühl</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Cool-down + lockeres Ausatmen</span></div><div class="df-item"><span class="df-badge iv">I</span><span class="df-item-text">Wenn-Dann: Bei Ankunft sofort 5 Min Warm-up starten</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
-    <div id="df-abend" class="df-panel"><div class="df-card"><div class="df-header"><div class="df-title"><span class="df-emoji">🍿</span><div><h3>Freizeit &amp; Abend</h3><p>Entspannung, Soziales &amp; Runterfahren</p></div></div><span class="df-time">20:00 – 22:00</span></div><div class="df-items"><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Kein Input-Overload (Low Dopamine Evening)</span></div><div class="df-item"><span class="df-badge r">R</span><span class="df-item-text">Kleine Reflexion: Was war heute gut?</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Screen Curfew 60–90 Min vor dem Schlafen</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Licht dimmen als biologisches Shutdown-Signal</span></div><div class="df-item"><span class="df-badge b">B</span><span class="df-item-text">Gleiche Schlafenszeit als biologischer Anker</span></div></div><div class="df-legend"><span><strong style="color:var(--am)">B</strong> = Baseline · täglich</span><span><strong style="color:var(--gn)">R</strong> = Rotation · 1–2×/Woche</span><span><strong style="color:var(--bl)">I</strong> = Intervention · bei Bedarf</span></div></div></div>
+<!-- APP SECTION -->
+<div id="app" class="app-sec">
+  <div class="wrap">
+    <div class="app-grid">
+      <div>
+        <span class="ey">Clarity App</span>
+        <h2>Das System.<br>Täglich gelebt.</h2>
+        <p class="lead">Dein Tag in Blöcken – mit Methoden, Habits und Terminen. Kein Chaos, kein leeres Notizbuch. Ein System das mitdenkt.</p>
+        <div class="app-features">
+          <div class="app-feat">
+            <div class="app-feat-icon">▦</div>
+            <div>
+              <div class="app-feat-title">Tagesblöcke mit Methoden &amp; Habits</div>
+              <div class="app-feat-sub">Strukturiere deinen Tag in feste Blöcke – Morning Reset, Deep Work, Off. Pro Block wählst du Methoden und Habits, Termine fügst du dazwischen ein.</div>
+            </div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon">◎</div>
+            <div>
+              <div class="app-feat-title">Inneres Fundament aufbauen</div>
+              <div class="app-feat-sub">Werte, Stärken, Antreiber und Persönlichkeit aus dem LOOP-System – direkt in der App auswählen und als Basis nutzen.</div>
+            </div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon">✦</div>
+            <div>
+              <div class="app-feat-title">Persönliches Leitbild generieren</div>
+              <div class="app-feat-sub">Aus deiner Innen-Auswahl wird automatisch ein Leitbild erstellt – dein persönlicher Nordstern für jeden Tag.</div>
+            </div>
+          </div>
+          <div class="app-feat">
+            <div class="app-feat-icon">◈</div>
+            <div>
+              <div class="app-feat-title">Wissenssnacks &amp; Methoden-Bibliothek</div>
+              <div class="app-feat-sub">Kompakte Inputs direkt aus dem LOOP-System. Lesen, speichern, sofort anwenden.</div>
+            </div>
+          </div>
+        </div>
+        <div class="app-cta-row">
+          <a href="clarity-app.html" class="btn btn-am" style="font-size:15px;padding:13px 28px">App kostenlos starten →</a>
+          <span style="font-size:13px;color:rgba(255,255,255,.35);align-self:center">Kein Account nötig zum Testen</span>
+        </div>
+      </div>
+
+      <!-- MOCKUP -->
+      <div class="app-mockup">
+        <div class="mock-header">
+          <div class="mock-logo">Clar<em>ity</em></div>
+          <div class="mock-av">M</div>
+        </div>
+        <div class="mock-body">
+          <div class="mock-date">Di, 3. März 2026</div>
+          <div class="mock-headline">Dein Tag,<br><em>klar strukturiert.</em></div>
+          <div class="mock-timeline">
+            <!-- Block 1 -->
+            <div class="mock-tl-row">
+              <div class="mock-tl-dot" style="color:var(--am-mid)"></div>
+              <div class="mock-tl-card">
+                <div class="mock-tl-title">🌅 Nach dem Aufstehen <span class="mock-tl-time">08:00–09:00</span></div>
+                <div class="mock-method-row"><div class="mock-check on"></div>Hydration &amp; Tageslicht</div>
+                <div class="mock-method-row"><div class="mock-check on"></div>Journaling</div>
+                <div class="mock-method-row"><div class="mock-check"></div>Tag planen</div>
+                <div class="mock-tl-add">+ Habit hinzufügen</div>
+              </div>
+            </div>
+            <!-- Termin between blocks -->
+            <div class="mock-tl-row" style="padding-left:24px">
+              <div class="mock-appt"><div class="mock-appt-dot"></div>10:00 · Team Meeting</div>
+            </div>
+            <!-- Block 2 -->
+            <div class="mock-tl-row">
+              <div class="mock-tl-dot" style="color:var(--gn)"></div>
+              <div class="mock-tl-card">
+                <div class="mock-tl-title">🎯 Deep Work <span class="mock-tl-time">09:00–12:00</span></div>
+                <div class="mock-method-row"><div class="mock-check"></div>Pomodoro Sprint</div>
+                <div class="mock-method-row"><div class="mock-check"></div>Wichtigste Aufgabe zuerst</div>
+                <div class="mock-tl-add">+ To-Do / Methode hinzufügen</div>
+              </div>
+            </div>
+            <!-- Block 3 faded -->
+            <div class="mock-tl-row" style="opacity:.5">
+              <div class="mock-tl-dot" style="color:var(--bl)"></div>
+              <div class="mock-tl-card">
+                <div class="mock-tl-title">🍽️ Mittag Reset <span class="mock-tl-time">12:00–13:00</span></div>
+                <div class="mock-method-row"><div class="mock-check"></div>Walk after Meal</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-nav">
+          <div class="mock-nav-item"><div class="mock-nav-icon">⌂</div>Home</div>
+          <div class="mock-nav-item on"><div class="mock-nav-icon">▦</div>Tag</div>
+          <div class="mock-nav-item"><div class="mock-nav-icon">◈</div>Wissen</div>
+          <div class="mock-nav-item"><div class="mock-nav-icon">◎</div>Innen</div>
+          <div class="mock-nav-item"><div class="mock-nav-icon">◇</div>Identität</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
-
-<div class="dv"></div>
-
-<!-- METHODEN -->
-<div class="sec" id="methoden">
-  <span class="ey">Methoden-Bibliothek</span>
-  <h2 style="margin-bottom:12px;">Konkrete Werkzeuge für jeden Bereich</h2>
-  <p class="lead" style="margin-bottom:28px;">Wähle einen Bereich und such dir 1–2 Methoden als Standard.</p>
-  <div class="meth-tabs">
-    <button class="meth-tab active" data-meth="load" onclick="switchTab(this,'mp-load','meth-tab')">Load – Energie</button>
-    <button class="meth-tab" data-meth="output" onclick="switchTab(this,'mp-output','meth-tab')">Output – Handlung</button>
-    <button class="meth-tab" data-meth="off" onclick="switchTab(this,'mp-off','meth-tab')">Off – Erholung</button>
-    <button class="meth-tab" data-meth="progress" onclick="switchTab(this,'mp-progress','meth-tab')">Progress – Identität</button>
-  </div>
-  <div id="mp-load" class="meth-panel active"><div class="meth-grid">
-    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Energie / Gesundheit</div><h4>Ernährung &amp; Essensstruktur</h4><p class="meth-val">Stabilisiert Blutzucker und verhindert Energieeinbrüche.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Einfach halten, nicht optimieren.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Hoher Hebel mit wenig Komplexität</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu schnell zu streng werden</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Zeitlich begrenztes Essen (TRE): Mahlzeiten innerhalb eines 8–10-Stunden-Fensters.</li><li>Protein-First-Prinzip: Jede Mahlzeit mit einer Proteinquelle beginnen.</li><li>Blutzucker-freundliche Reihenfolge: Erst Gemüse, dann Protein, dann Fett.</li><li>Low-Variance Meals: Werktags einfache, wiederkehrende Mahlzeiten nutzen.</li><li>80/20-Regel: Überwiegend funktional essen, Raum für Genuss lassen.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Leistung</div><h4>Energiehaushalt &amp; Belastungssteuerung</h4><p class="meth-val">Verhindert Überlastung und ineffektives Durchziehen.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Arbeite mit Energie, nicht gegen sie.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Mehr Output ohne mehr Arbeit</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Pausen werden ignoriert</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Front-Load Fokusarbeit: Anspruchsvollste Aufgaben in die erste Tageshälfte legen.</li><li>Ultradian-Rhythmus: In 60–90-Minuten-Fokusblöcken arbeiten.</li><li>Decision Batching: Entscheidungen bündeln statt über den Tag verteilen.</li><li>Active Recovery Breaks: Pausen aktiv nutzen (Gehen, Dehnen statt Scrollen).</li><li>No-Zero-Energy-Tage: An Low-Energy-Tagen Mindestversionen statt Komplettausfall.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Fokus</div><h4>Chronotyp &amp; Tages-Timing</h4><p class="meth-val">Reduziert innere Reibung und Energieverschwendung.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Plane nach Biologie, nicht nach Kalender.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Spürbare Entlastung im Alltag</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Fremde Rhythmen kopieren</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Chronotyp-Mapping: Eigene Hoch- und Tiefphasen über 1–2 Wochen beobachten.</li><li>Peak-Time-Regel: Denk- und Entscheidungsarbeit nur in Hochenergiezeiten.</li><li>Low-Energy-Zonen schützen: In Tiefphasen nur Routinen oder einfache Aufgaben.</li><li>Fixe Startzeiten: Feste Aufstehzeit als biologischen Anker nutzen.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Schlaf / Fokus</div><h4>Licht &amp; zirkadianer Rhythmus</h4><p class="meth-val">Verbessert Schlafqualität, Stimmung und Tagesenergie.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Licht steuert Energie stärker als Disziplin.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Großer Effekt auf Schlaf</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Abendlicht wird unterschätzt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Morning Light Exposure: Morgens 5–15 Minuten Tageslicht nach dem Aufstehen.</li><li>Hell-dunkel-Kontrast: Tagsüber helles Licht, abends konsequent dimmen.</li><li>Screen Curfew: 60–90 Minuten vor dem Schlafen keine grellen Bildschirme.</li><li>Schlafumgebung optimieren: Schlafzimmer möglichst dunkel, kühl und ruhig.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--am)">Energie / Stoffwechsel</div><h4>Bewegung &amp; NEAT</h4><p class="meth-val">Erhöht Energie ohne zusätzliches Training.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Bewegung in den Alltag integrieren.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Niedrige Hürde, hoher Nutzen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird nicht als relevant wahrgenommen</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Walk-after-Meals: Nach größeren Mahlzeiten 10–20 Minuten gehen.</li><li>Stündliche Bewegungsregel: Mindestens einmal pro Stunde aufstehen.</li><li>Step Anchors: Telefonate bewusst im Gehen erledigen.</li><li>Movement Stacking: Bewegung an bestehende Routinen koppeln.</li></ul></div></details></div>
-  </div></div>
-  <div id="mp-output" class="meth-panel"><div class="meth-grid">
-    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Produktivität</h4><p class="meth-val">Mehr Fokus, weniger Reibung, sichtbarer Fortschritt.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Wähle 1–2 Methoden als Default, nicht alles.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr alltagstauglich + skalierbar</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu viele Methoden gleichzeitig verwässern den Effekt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Pomodoro: Feste Arbeitsintervalle mit geplanten Pausen.</li><li>Eat the Frog: Die schwierigste Aufgabe zuerst erledigen.</li><li>Timeboxing: Aufgaben mit fixer Zeit bearbeiten.</li><li>2-Minuten-Regel: Alles unter 2 Minuten sofort erledigen.</li><li>Ivy-Lee-Methode: Abends die 6 wichtigsten Aufgaben für morgen festlegen.</li><li>Single-Tasking: Immer nur an einer Aufgabe gleichzeitig.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Entscheidung</h4><p class="meth-val">Schneller entscheiden, weniger Grübeln.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Eine Methode pro Entscheidung reicht völlig.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr klar und wirkungsvoll</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Überanalyse ersetzt manchmal einfaches Tun</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>WOOP: Wunsch, Outcome, Obstacle, Plan definieren.</li><li>Regret-Minimization: Aus Sicht des 80-jährigen Selbst entscheiden.</li><li>Good-Enough Rule (70%): Bei ausreichender Klarheit entscheiden.</li><li>Decision Deadline: Feste Frist setzen, um Aufschub zu vermeiden.</li><li>Pre-Mortem: Vorab mögliche Gründe für Scheitern analysieren.</li><li>10-10-10-Modell: Auswirkungen in 10 Min, 10 Monaten, 10 Jahren.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Ziele</h4><p class="meth-val">Ziele werden klar, messbar und handlungsleitend.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Wenige Ziele, sauber formuliert.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Hohe Klarheit und Umsetzbarkeit</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu viele parallele Ziele erzeugen Stress</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>SMART-Ziele: Spezifisch, messbar, attraktiv, realistisch, terminiert.</li><li>Backcasting: Vom Endzustand rückwärts die Schritte ableiten.</li><li>Milestone-Logik: Große Ziele in klar definierte Zwischenetappen.</li><li>Anti-Goals: Klar definieren, was du bewusst nicht mehr tust.</li><li>Identity-Linked Goals: Ziele als Ausdruck der gewünschten Identität.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--gn)">Output</div><h4>Umsetzung &amp; Disziplin</h4><p class="meth-val">Umsetzung auch bei Widerstand und niedriger Motivation.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Disziplin entsteht durch Struktur, nicht durch Härte.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr systemisch und nachhaltig</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu hohe Standards brechen Konsistenz</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Reibungsdesign: Umgebung so gestalten, dass gutes Verhalten leicht wird.</li><li>Wenn–Dann-Regeln: Klare Auslöser definieren, die Verhalten starten.</li><li>5-Minuten-Regel: Aufgabe 5 Minuten beginnen, danach entscheiden.</li><li>Minimum-Standard: Kleinste Version definieren, die auch an schlechten Tagen gilt.</li><li>Friction for Bad Habits: Schlechte Gewohnheiten bewusst umständlich machen.</li></ul></div></details></div>
-  </div></div>
-  <div id="mp-off" class="meth-panel"><div class="meth-grid">
-    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Nervensystemregulation</h4><p class="meth-val">Vom Leistungs- in den Erholungsmodus wechseln.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Abends Struktur statt Disziplin. Gleiche Signale täglich.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Stärkster Hebel für Schlaf &amp; Erholung</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Abendliche Reizüberflutung sabotiert Wirkung</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Abend-Routine: Fester Ablauf (Licht runter, ruhige Tätigkeiten, gleiche Uhrzeit).</li><li>Digital Curfew: Bildschirme 60–90 Minuten vor dem Schlafen beenden.</li><li>Physiologischer Seufzer: Zwei kurze Nasenatemzüge + langer Ausatem.</li><li>Consistent Sleep Window: Feste Schlaf- und Aufstehzeit statt variabler Einschlafversuche.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Regeneration</h4><p class="meth-val">Energie wieder aufladen ohne neue Belastung.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Low Intensity, kein Leistungsanspruch.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sofort spürbar + langfristig stabilisierend</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird oft mit Faulheit verwechselt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Aktive Erholung: Lockere Bewegung ohne Ziel (Spaziergang, Mobility).</li><li>NSDR / Powernap: 10–20 Minuten Tiefenentspannung oder kurzer Schlaf.</li><li>Passive Recovery Slots: Bewusst nichts tun – kein Input, kein Scrollen.</li><li>Deload-Woche: Alle 4–6 Wochen Volumen und Intensität reduzieren.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Resilienz</h4><p class="meth-val">Belastbar bleiben, ohne härter zu werden.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Erst Sicherheit herstellen, dann fordern.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr starker Schutz vor Erschöpfung</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Ego verwechselt Resilienz mit Härte</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Grenzen setzen (Nein sagen): Klare Regeln zum Schutz von Energie definieren.</li><li>Selbstmitgefühl: In Stressmomenten bewusst freundlich mit sich sprechen.</li><li>Bounce-Back-Ritual: Nach Rückschlägen zur kleinsten stabilen Routine zurückkehren.</li><li>Stress dosieren: Kleine, kontrollierte Belastungen statt Dauerstress.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--bl)">Off</div><h4>Achtsamkeit &amp; Reflexion</h4><p class="meth-val">Mentale Weite, Präsenz und emotionale Stabilität.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Kurz, regelmäßig, ohne Leistungsanspruch.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr zugänglich, große Wirkung</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird im Stress zuerst gestrichen</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Naturmoment: 10–20 Minuten draußen ohne Handy oder Musik.</li><li>Gratitude Journal: Täglich 3 Dinge notieren und kurz fühlen.</li><li>Emotion Labeling: Gefühle benennen ohne sie zu bewerten.</li><li>Evening Reflection: 1 Frage am Abend: „Was darf heute enden?".</li></ul></div></details></div>
-  </div></div>
-  <div id="mp-progress" class="meth-panel"><div class="meth-grid">
-    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Klarheit &amp; mentale Ordnung</h4><p class="meth-val">Weniger Grübeln, mehr Klarheit – du steuerst den Tag statt ihn zu erleiden.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Wähle 1–2 Methoden. Effekt kommt durch Wiederholung.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sofort spürbar: weniger mentaler Lärm</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu viele Methoden – keine wird Routine</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Brain Dump: 2–5 Minuten alles ungefiltert aufschreiben, dann 1 Punkt markieren.</li><li>Daily Outcome Definition: Morgens 1 Ergebnis definieren, das den Tag erfolgreich macht.</li><li>Reflection Loop: Abends 3 Fragen (Win / schwer / Lernpunkt).</li><li>Top-3-Filter: Alles prüfen: „Zahlt das auf meine Top 3 ein?".</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Identität &amp; Selbstwirksamkeit</h4><p class="meth-val">Du baust Vertrauen in dich über Beweise – nicht über Motivation.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Mach es klein und täglich. Identität entsteht durch Beweise.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr starker Hebel für Disziplin und Selbstvertrauen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu groß planen – du nimmst dir die Beweise wieder weg</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Selbstwirksamkeits-Log: Abends 1–3 Beweise notieren, dass du geliefert hast.</li><li>Identity-Based Tracking: „Ich bin jemand, der …" + Beweis aus dem Tag.</li><li>No-Zero-Days: Jeden Tag mindestens 1 Mini-Handlung.</li><li>Bounce-Back-Rule: Nach Rückschlägen sofort zur kleinsten stabilen Routine zurückkehren.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Wachstum &amp; Komfortzone</h4><p class="meth-val">Angst wird zu Handlung – du trainierst Mut wie einen Muskel.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Skaliere klein. 1 Mini-Challenge pro Woche reicht.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr starker Hebel für Selbstvertrauen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Zu groß starten – Vermeidung wird stärker</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Mutliste: 10 Mut-Aktionen sammeln und wöchentlich eine umsetzen.</li><li>Rejection Practice: Situationen mit möglicher Ablehnung bewusst suchen.</li><li>Failure Normalization: Fehlversuche neutral dokumentieren (Test → Ergebnis → Lernpunkt).</li><li>Progressive Exposure: Schwierigkeit schrittweise erhöhen statt zu springen.</li></ul></div></details></div>
-    <div class="meth-card"><div class="meth-zone" style="color:var(--pu)">Progress</div><h4>Sinn &amp; langfristige Ausrichtung</h4><p class="meth-val">Du bleibst auf Kurs – auch wenn Motivation schwankt.</p><div class="meth-row"><span class="meth-rl">Tipp</span><span class="meth-rv">Baue eine Wochenroutine. Sinn entsteht durch Rückblick.</span></div><div class="meth-row"><span class="meth-rl">Stärke</span><span class="meth-rv">Sehr stark für Fokus und Durchhaltevermögen</span></div><div class="meth-row"><span class="meth-rl">Risiko</span><span class="meth-rv">Wird als „zu langsam" unterschätzt</span></div><details><summary>Beispiel-Methoden anzeigen</summary><div class="meth-ex"><ul><li>Weekly Reflection &amp; Planning: Woche reflektieren und 1–3 Prioritäten setzen.</li><li>Effort–Meaning Link: Schwierige Aufgaben mit einem größeren Warum verknüpfen.</li><li>Values Check-in: Prüfen, ob Handeln mit eigenen Werten übereinstimmt.</li><li>North-Star Question: Regelmäßig fragen „Wozu zahlt das langfristig ein?".</li></ul></div></details></div>
-  </div></div>
-</div>
-
-<div class="dv"></div>
+<div class="dv" style="max-width:100%;border-color:rgba(255,255,255,.08);background:var(--t)"></div>
 
 <!-- PRODUKTE -->
-<div class="sec" id="produkte">
+<div id="produkte" class="wrap sec">
   <span class="ey">Das System in der Praxis</span>
-  <h2 style="margin-bottom:12px;">Drei Wege. Ein Ziel.</h2>
-  <p class="lead" style="margin-bottom:40px;">Ob du zuerst verstehen, umsetzen oder täglich anwenden willst – hier ist dein Einstieg.</p>
+  <h2 style="margin-bottom:12px">Drei Wege. Ein Ziel.</h2>
+  <p class="lead" style="margin-bottom:0;max-width:480px">Ob du zuerst verstehen, umsetzen oder täglich anwenden willst – hier ist dein Einstieg.</p>
   <div class="prods">
     <div class="prod">
       <div class="prod-ico">📖</div>
@@ -306,7 +589,7 @@
         <li>Psychologie &amp; Neurowissenschaft</li>
         <li>Mit konkreten Übungen</li>
       </ul>
-      <a href="https://amzn.eu/d/0VMuCtQ" target="_blank" rel="noopener" class="btn btn-dk" style="width:100%;justify-content:center;margin-top:auto;">Auf Amazon ansehen →</a>
+      <a href="https://amzn.eu/d/0VMuCtQ" target="_blank" rel="noopener" class="btn btn-dk" style="width:100%;justify-content:center;margin-top:auto">Auf Amazon ansehen →</a>
     </div>
     <div class="prod feat">
       <div class="prod-badge">Empfohlen</div>
@@ -319,19 +602,19 @@
         <li>Wöchentliche System-Reviews</li>
         <li>Baseline, Rotation &amp; Interventionen</li>
       </ul>
-      <a href="https://amzn.eu/d/7aRxLZl" target="_blank" rel="noopener" class="btn btn-am" style="width:100%;justify-content:center;margin-top:auto;">Auf Amazon ansehen →</a>
+      <a href="https://amzn.eu/d/7aRxLZl" target="_blank" rel="noopener" class="btn btn-am" style="width:100%;justify-content:center;margin-top:auto">Auf Amazon ansehen →</a>
     </div>
     <div class="prod">
       <div class="prod-ico">📱</div>
       <div class="prod-type">App</div>
-      <h3>LOOP App</h3>
-      <p>Das komplette System digital. Geführter Self-Check, alle Methoden interaktiv – immer dabei.</p>
+      <h3>Clarity App</h3>
+      <p>Das System digital. Tagesblöcke, Methoden, Habits, Wissen und Identitätsarbeit – immer dabei.</p>
       <ul class="pf">
-        <li>Geführter Onboarding-Prozess</li>
-        <li>Tägliche Check-ins &amp; Impulse</li>
-        <li>Bald verfügbar</li>
+        <li>Tagesplan nach LOOP-Blöcken</li>
+        <li>Innen-Arbeit &amp; Leitbild</li>
+        <li>Kostenlos im Browser starten</li>
       </ul>
-      <span class="btn btn-off" style="width:100%;justify-content:center;margin-top:auto;">Bald verfügbar</span>
+      <a href="clarity-app.html" class="btn btn-am" style="width:100%;justify-content:center;margin-top:auto">App starten →</a>
     </div>
   </div>
 </div>
@@ -343,34 +626,30 @@
 </div>
 
 <!-- FINAL CTA -->
-<div class="final">
+<div class="final-bg" style="text-align:center">
   <span class="ey">Bereit anzufangen?</span>
   <h2>Hör auf zu warten.<br>Bau dein System.</h2>
-  <p class="lead">Das Buch erklärt das Warum. Das Journal gibt dir die Struktur für jeden Tag.</p>
-  <div class="fa" style="margin-top:32px;">
-    <a href="https://amzn.eu/d/0VMuCtQ" target="_blank" rel="noopener" class="btn btn-dk btn-sm">Erfolgs-DNA – Buch →</a>
-    <a href="https://amzn.eu/d/7aRxLZl" target="_blank" rel="noopener" class="btn btn-am btn-sm">Mein Erfolgsplaner →</a>
+  <p class="lead" style="max-width:420px;margin:0 auto">Das Buch erklärt das Warum. Das Journal gibt dir Struktur. Die App macht es täglich.</p>
+  <div class="fa">
+    <a href="https://amzn.eu/d/0VMuCtQ" target="_blank" rel="noopener" class="btn btn-dk">Erfolgs-DNA →</a>
+    <a href="https://amzn.eu/d/7aRxLZl" target="_blank" rel="noopener" class="btn btn-am">Mein Erfolgsplaner →</a>
+    <a href="clarity-app.html" class="btn" style="background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.15)">App starten →</a>
   </div>
 </div>
 
-<div class="dv"></div>
-<footer class="ft">
-  <div class="ft-logo">LOOP<em>.</em>System</div>
+<footer class="footer">
+  <div class="footer-logo">LOOP<em>.</em>System</div>
   <p>Nachhaltiger Fortschritt durch Identität, System &amp; Struktur</p>
 </footer>
 
 <script>
-function switchTab(btn, panelId, tabClass) {
-  if (!btn || !panelId) return;
-  const parent = btn.closest('div, section, details');
-  if (parent) parent.querySelectorAll('.' + tabClass).forEach(t => t.classList.remove('active'));
+function switchTab(btn, panelId) {
+  const det = btn.closest('.det-in');
+  det.querySelectorAll('.f-tab').forEach(t => t.classList.remove('active'));
+  det.querySelectorAll('.f-panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
-  const container = document.getElementById(panelId)?.parentElement;
-  if (container) container.querySelectorAll('[id^="' + panelId.split('-')[0] + '-"]').forEach(p => p.classList.remove('active'));
-  const panel = document.getElementById(panelId);
-  if (panel) panel.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
 }
 </script>
-
 </body>
 </html>
